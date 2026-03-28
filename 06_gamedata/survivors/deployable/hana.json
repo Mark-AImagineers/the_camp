@@ -40,7 +40,12 @@
       "bridget": "Two systems people. They agree on process, disagree on priorities. The arguments are productive.",
       "rook": "She reads The Three differently than Tomás does. Hasn't shared her assessment yet.",
       "mark": "Never met him. Doesn't romanticize absence. 'He's gone. What's the plan now.'"
-    }
+    },
+
+  "review": {
+    "status": "approved",
+    "reviewed_at": "2026-03-28"
+  }
   },
 
   "flags": {
@@ -49,5 +54,10 @@
     "has_secret": true,
     "secret_hint": "Why she left the military. Why she arrived alone. Fifteen years doesn't end with a clean exit.",
     "unlock_condition": null
+  },
+
+  "review": {
+    "status": "approved",
+    "reviewed_at": "2026-03-28"
   }
 }

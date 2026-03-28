@@ -40,7 +40,12 @@
       "yssa": "She's curious about him. He finds that amusing.",
       "darro": "Quiet understanding. Two men who work without needing to talk about it.",
       "otto": "Otto draws near him sometimes. Cullum doesn't seem to mind."
-    }
+    },
+
+  "review": {
+    "status": "approved",
+    "reviewed_at": "2026-03-28"
+  }
   },
 
   "flags": {
@@ -49,5 +54,10 @@
     "has_secret": true,
     "secret_hint": "Knew something about Mark that he's decided isn't his to share. The trigger hasn't happened yet.",
     "unlock_condition": null
+  },
+
+  "review": {
+    "status": "approved",
+    "reviewed_at": "2026-03-28"
   }
 }

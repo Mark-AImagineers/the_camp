@@ -40,7 +40,12 @@
       "bridget": "Notices Bridget's personal ledger. Hasn't said anything about it.",
       "lena": "Lets Lena check on her without resistance. That's rare.",
       "cullum": "Watches him the way she watches everything — silently, completely."
-    }
+    },
+
+  "review": {
+    "status": "approved",
+    "reviewed_at": "2026-03-28"
+  }
   },
 
   "flags": {
@@ -49,5 +54,10 @@
     "has_secret": false,
     "secret_hint": null,
     "unlock_condition": null
+  },
+
+  "review": {
+    "status": "approved",
+    "reviewed_at": "2026-03-28"
   }
 }

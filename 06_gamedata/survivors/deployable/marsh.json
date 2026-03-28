@@ -40,7 +40,12 @@
       "tomas": "Knows Tomás watches him. Doesn't react. Doesn't change. That's either nothing or everything.",
       "yssa": "She's tried talking to him. He answered in single words. She found it funny. He didn't.",
       "cullum": "Two people who exist at the edges of the Camp. They don't interact. They notice each other."
-    }
+    },
+
+  "review": {
+    "status": "approved",
+    "reviewed_at": "2026-03-28"
+  }
   },
 
   "flags": {
@@ -49,5 +54,10 @@
     "has_secret": true,
     "secret_hint": "What he's watching for at the gate. What the three of them left behind. It may still be coming.",
     "unlock_condition": null
+  },
+
+  "review": {
+    "status": "approved",
+    "reviewed_at": "2026-03-28"
   }
 }

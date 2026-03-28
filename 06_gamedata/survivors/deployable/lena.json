@@ -40,7 +40,12 @@
       "sera": "Professional. Sera tracks supplies, Lena uses them. The relationship is functional.",
       "raine": "Understands her. A mother protecting her child doesn't need explaining.",
       "otto": "Gentle with him in a way she isn't with adults. Checks on him without being asked."
-    }
+    },
+
+  "review": {
+    "status": "approved",
+    "reviewed_at": "2026-03-28"
+  }
   },
 
   "flags": {
@@ -49,5 +54,10 @@
     "has_secret": false,
     "secret_hint": null,
     "unlock_condition": null
+  },
+
+  "review": {
+    "status": "approved",
+    "reviewed_at": "2026-03-28"
   }
 }

@@ -40,7 +40,12 @@
       "tomas": "Knows Tomás is watching. Doesn't change his behavior because of it. That's either innocence or discipline.",
       "mark": "Has filed whatever he knows about the early days under 'not relevant anymore.'",
       "darro": "Mutual non-interference. Two men who don't need to talk."
-    }
+    },
+
+  "review": {
+    "status": "approved",
+    "reviewed_at": "2026-03-28"
+  }
   },
 
   "flags": {
@@ -49,5 +54,10 @@
     "has_secret": true,
     "secret_hint": "The scar. The real story. What the three of them did before they arrived. It's all connected.",
     "unlock_condition": null
+  },
+
+  "review": {
+    "status": "approved",
+    "reviewed_at": "2026-03-28"
   }
 }

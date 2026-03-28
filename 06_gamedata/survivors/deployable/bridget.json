@@ -40,7 +40,12 @@
       "felix": "Thinks his food demand is disproportionate. She's said so. He disagrees. This is ongoing.",
       "darro": "Respects his work. Doesn't understand why he won't talk more.",
       "lena": "Appreciates Lena's honesty about medical limitations. Wishes more people were that direct."
-    }
+    },
+
+  "review": {
+    "status": "approved",
+    "reviewed_at": "2026-03-28"
+  }
   },
 
   "flags": {
@@ -49,5 +54,10 @@
     "has_secret": true,
     "secret_hint": "The personal ledger tracks something the official one doesn't. She hasn't explained what or why.",
     "unlock_condition": null
+  },
+
+  "review": {
+    "status": "approved",
+    "reviewed_at": "2026-03-28"
   }
 }

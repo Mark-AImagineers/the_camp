@@ -40,7 +40,12 @@
       "marsh": "Opposites. Sol talks constantly, Marsh says nothing. They've run together. It works better than expected.",
       "sera": "She tracks his supply runs. His counts are always accurate despite the chaos. That surprised her.",
       "felix": "Sol brings back parts Felix needs. They have a good exchange going."
-    }
+    },
+
+  "review": {
+    "status": "approved",
+    "reviewed_at": "2026-03-28"
+  }
   },
 
   "flags": {
@@ -49,5 +54,10 @@
     "has_secret": false,
     "secret_hint": null,
     "unlock_condition": null
+  },
+
+  "review": {
+    "status": "approved",
+    "reviewed_at": "2026-03-28"
   }
 }

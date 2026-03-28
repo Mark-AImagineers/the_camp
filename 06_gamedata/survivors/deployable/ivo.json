@@ -40,7 +40,12 @@
       "tomas": "Tomás doesn't trust him. Ivo knows this. He's pleasant about it, which makes it worse.",
       "yssa": "She thinks he's funny. He enjoys the audience. Tomás watches this and worries.",
       "sera": "She finds him useful for camp morale. Keeps the ledger locked when he's near. Hasn't decided if that's fair."
-    }
+    },
+
+  "review": {
+    "status": "approved",
+    "reviewed_at": "2026-03-28"
+  }
   },
 
   "flags": {
@@ -49,5 +54,10 @@
     "has_secret": true,
     "secret_hint": "He wasn't a teacher. What he actually was before the After — and what the three of them did together — is the secret that connects all three.",
     "unlock_condition": null
+  },
+
+  "review": {
+    "status": "approved",
+    "reviewed_at": "2026-03-28"
   }
 }

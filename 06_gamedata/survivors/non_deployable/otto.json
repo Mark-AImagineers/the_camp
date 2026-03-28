@@ -40,7 +40,12 @@
       "sera": "Watches her work. Doesn't follow her the way Alma does, but notices her.",
       "lena": "Lets her check on him without flinching. That's significant.",
       "alma": "Two quiet children in the same space. They don't play together. They exist near each other."
-    }
+    },
+
+  "review": {
+    "status": "approved",
+    "reviewed_at": "2026-03-28"
+  }
   },
 
   "flags": {
@@ -49,5 +54,10 @@
     "has_secret": true,
     "secret_hint": "His drawings sometimes depict things he shouldn't be able to know. Nobody has figured out why.",
     "unlock_condition": null
+  },
+
+  "review": {
+    "status": "approved",
+    "reviewed_at": "2026-03-28"
   }
 }

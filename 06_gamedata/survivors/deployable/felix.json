@@ -40,7 +40,12 @@
       "bridget": "She thinks his food demand is excessive. He thinks her opinion on generator work is uninformed. They're both right.",
       "sera": "She tracks his extra rations in the ledger without comment. He appreciates that.",
       "tomas": "Neutral. Tomás doesn't care about the generator politics as long as it runs."
-    }
+    },
+
+  "review": {
+    "status": "approved",
+    "reviewed_at": "2026-03-28"
+  }
   },
 
   "flags": {
@@ -49,5 +54,10 @@
     "has_secret": false,
     "secret_hint": null,
     "unlock_condition": null
+  },
+
+  "review": {
+    "status": "approved",
+    "reviewed_at": "2026-03-28"
   }
 }

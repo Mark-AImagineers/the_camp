@@ -40,7 +40,12 @@
       "tomas": "Respects him grudgingly. He's earned it. She wouldn't say it to his face.",
       "lena": "Functional respect. Lena doesn't patronize her. That's enough.",
       "cullum": "Curious about him. He doesn't explain himself and she respects that."
-    }
+    },
+
+  "review": {
+    "status": "approved",
+    "reviewed_at": "2026-03-28"
+  }
   },
 
   "flags": {
@@ -49,5 +54,10 @@
     "has_secret": false,
     "secret_hint": null,
     "unlock_condition": null
+  },
+
+  "review": {
+    "status": "approved",
+    "reviewed_at": "2026-03-28"
   }
 }

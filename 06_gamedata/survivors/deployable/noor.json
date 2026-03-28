@@ -40,7 +40,12 @@
       "otto": "Good with him. Animals and children respond to the same calm. Otto lets her near him without flinching.",
       "darro": "Respects his work. He respects her composure. Not much conversation. Not needed.",
       "mark": "Never met him. Doesn't carry opinions about someone she didn't know."
-    }
+    },
+
+  "review": {
+    "status": "approved",
+    "reviewed_at": "2026-03-28"
+  }
   },
 
   "flags": {
@@ -49,5 +54,10 @@
     "has_secret": false,
     "secret_hint": null,
     "unlock_condition": null
+  },
+
+  "review": {
+    "status": "approved",
+    "reviewed_at": "2026-03-28"
   }
 }

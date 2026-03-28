@@ -40,7 +40,12 @@
       "bridget": "She has opinions about food allocation. He has opinions about who understands farming. They disagree constructively.",
       "raine": "She helps with the beds when Otto is sleeping. They don't talk much. The work is the conversation.",
       "mark": "Never met him. Arrived after. Doesn't care about the politics of succession."
-    }
+    },
+
+  "review": {
+    "status": "approved",
+    "reviewed_at": "2026-03-28"
+  }
   },
 
   "flags": {
@@ -49,5 +54,10 @@
     "has_secret": true,
     "secret_hint": "Who he left behind. Why he walked three weeks through territory nobody walks through. The seed packets might be from somewhere specific.",
     "unlock_condition": null
+  },
+
+  "review": {
+    "status": "approved",
+    "reviewed_at": "2026-03-28"
   }
 }
