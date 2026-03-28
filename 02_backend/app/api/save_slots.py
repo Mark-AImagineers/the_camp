@@ -26,6 +26,7 @@ def list_slots(authorization: str = Header()):
     user_id = _get_user_id(authorization)
     conn = get_db()
     cur = conn.cursor()
+    cur.execute("SET app.current_user_id = %s", (user_id,))
     cur.execute(
         "SELECT id, slot_number, name, day_count, created_at FROM game.save_slots "
         "WHERE user_id = %s ORDER BY slot_number",
@@ -60,6 +61,7 @@ def create_slot(req: CreateSlotRequest, authorization: str = Header()):
 
     conn = get_db()
     cur = conn.cursor()
+    cur.execute("SET app.current_user_id = %s", (user_id,))
 
     # Check existing count
     cur.execute("SELECT COUNT(*) FROM game.save_slots WHERE user_id = %s", (user_id,))
@@ -110,6 +112,7 @@ def delete_slot(slot_id: str, authorization: str = Header()):
     user_id = _get_user_id(authorization)
     conn = get_db()
     cur = conn.cursor()
+    cur.execute("SET app.current_user_id = %s", (user_id,))
 
     # Verify ownership
     cur.execute(
