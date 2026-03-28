@@ -3,37 +3,41 @@ import random
 from pathlib import Path
 
 
-def _load_lore_characters() -> list[dict]:
-    """Load all individual character JSON files from the survivors gamedata folder."""
+def _load_character_file(f: Path) -> dict:
+    """Load and flatten a single character JSON file."""
+    data = json.loads(f.read_text())
+    return {
+        "lore_id": data["lore_id"],
+        "name": data["name"],
+        "background": data["identity"]["background"],
+        "background_detail": data["identity"].get("background_detail"),
+        "age_bracket": data["identity"].get("age_bracket"),
+        "persona": data["personality"].get("persona"),
+        "trait": data["personality"].get("trait"),
+        "trait_description": data["personality"].get("trait_description"),
+        "stat_bias": data["stats"].get("bias", []),
+        "base_range": data["stats"].get("base_range", [3, 7]),
+        "base_relationship": data["relationships"].get("base_strength", 30),
+        "can_deploy": data["flags"].get("can_deploy", True),
+    }
+
+
+def _load_lore_characters() -> tuple[list[dict], list[dict]]:
+    """Load character files from deployable/ and non_deployable/ folders.
+    Returns (deployable, non_deployable) tuple."""
     search_paths = [
         Path("/app/06_gamedata/survivors"),
         Path("06_gamedata/survivors"),
     ]
     for base in search_paths:
-        if base.is_dir():
-            characters = []
-            for f in sorted(base.glob("*.json")):
-                if f.name == "lore_characters.json":
-                    continue  # skip legacy combined file
-                data = json.loads(f.read_text())
-                # Flatten the nested structure for DB insertion
-                char = {
-                    "lore_id": data["lore_id"],
-                    "name": data["name"],
-                    "background": data["identity"]["background"],
-                    "background_detail": data["identity"].get("background_detail"),
-                    "age_bracket": data["identity"].get("age_bracket"),
-                    "persona": data["personality"].get("persona"),
-                    "trait": data["personality"].get("trait"),
-                    "trait_description": data["personality"].get("trait_description"),
-                    "stat_bias": data["stats"].get("bias", []),
-                    "base_range": data["stats"].get("base_range", [3, 7]),
-                    "base_relationship": data["relationships"].get("base_strength", 30),
-                    "can_deploy": data["flags"].get("can_deploy", True),
-                }
-                characters.append(char)
-            if characters:
-                return characters
+        deployable_dir = base / "deployable"
+        non_deployable_dir = base / "non_deployable"
+        if deployable_dir.is_dir():
+            deployable = [_load_character_file(f) for f in sorted(deployable_dir.glob("*.json"))]
+            non_deployable = []
+            if non_deployable_dir.is_dir():
+                non_deployable = [_load_character_file(f) for f in sorted(non_deployable_dir.glob("*.json"))]
+            return deployable, non_deployable
     raise FileNotFoundError("No character files found in survivors gamedata")
 
 
@@ -57,11 +61,7 @@ def _roll_stats(stat_bias: list[str], base_range: list[int] = None) -> dict[str,
 
 def seed_survivors(cur, save_slot_id: str):
     """Seed all lore characters for a new save slot. 5 random deployable ones activated, rest not."""
-    characters = _load_lore_characters()
-
-    # Split into deployable and non-deployable
-    deployable = [c for c in characters if c["can_deploy"]]
-    non_deployable = [c for c in characters if not c["can_deploy"]]
+    deployable, non_deployable = _load_lore_characters()
 
     # Pick 5 random starters from deployable pool
     random.shuffle(deployable)
