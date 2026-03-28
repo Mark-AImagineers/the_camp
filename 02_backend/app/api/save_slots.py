@@ -88,6 +88,9 @@ def create_slot(req: CreateSlotRequest, authorization: str = Header()):
     )
     slot_id = cur.fetchone()[0]
 
+    # Set save_slot_id for RLS on game tables
+    cur.execute("SET app.current_save_slot_id = %s", (str(slot_id),))
+
     # Seed initial resources
     cur.execute(
         "INSERT INTO game.resources (save_slot_id, food, medicine, morale, population) "
