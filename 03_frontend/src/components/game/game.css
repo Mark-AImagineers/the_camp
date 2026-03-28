@@ -56,22 +56,13 @@
 }
 
 .topbar-clock {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 1px;
   white-space: nowrap;
 }
 
-.clock-date {
-  font-size: 9px;
-  color: #4a3d2e;
-}
-
-.clock-time {
-  font-size: 11px;
+.clock-inline {
+  font-size: 10px;
   color: #7a6a54;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.05em;
 }
 
 .clock-loading {
