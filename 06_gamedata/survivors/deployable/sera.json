@@ -5,7 +5,7 @@
   "identity": {
     "background": "Schoolteacher",
     "background_detail": "She taught children how to read. Comprehension, retention, attention to detail — she brought all of it with her and turned it into something the Camp could use. She keeps the ledger, the headcount, the inventory, the names of people who didn't make it back. She does it without being asked because someone has to and because letting things go unrecorded feels, to her, like a second kind of death.",
-    "age": "32",
+    "age": 32,
     "gender": "female",
     "before": "Taught comprehension and retention. Now she applies both to keeping people accounted for."
   },
@@ -49,5 +49,10 @@
     "has_secret": true,
     "secret_hint": "Knows things about the Camp's history she hasn't volunteered yet. What Mark told her before he left.",
     "unlock_condition": null
+  },
+
+  "review": {
+    "status": "approved",
+    "reviewed_at": "2026-03-28"
   }
 }

@@ -5,7 +5,7 @@
   "identity": {
     "background": "Child",
     "background_detail": "Raine's son. Seven years old. Doesn't talk much. He draws. The drawings are of things no seven-year-old should have seen, rendered in whatever materials he can find, left in corners of the warehouse like he's trying to put them somewhere outside himself.",
-    "age": "7",
+    "age": 7,
     "gender": "male",
     "before": "He was three when the world ended. He doesn't remember the Before."
   },

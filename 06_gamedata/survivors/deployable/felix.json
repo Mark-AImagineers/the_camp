@@ -5,7 +5,7 @@
   "identity": {
     "background": "Mechanic",
     "background_detail": "The only person in the Camp who fully understands the generator. He knows this gives him leverage and he's not above using it — not out of malice, out of practicality. He wants more food allocation for the work he does. He thinks that's fair.",
-    "age": "mid_30s",
+    "age": 35,
     "gender": "male",
     "before": "Mechanic. Knew engines inside out. Now he knows the one machine that keeps the lights on."
   },

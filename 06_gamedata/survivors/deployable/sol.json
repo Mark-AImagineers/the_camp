@@ -5,7 +5,7 @@
   "identity": {
     "background": "Courier",
     "background_detail": "Bike messenger in the city before. Fast and reckless in a way that should have killed him by now and somehow hasn't. He knows the city grid — not from maps, from muscle memory. Every shortcut, every alley, every building with a roof exit.",
-    "age": "mid_20s",
+    "age": 25,
     "gender": "male",
     "before": "Courier. Knew every shortcut in the city. Now those shortcuts keep people alive."
   },

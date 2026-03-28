@@ -5,7 +5,7 @@
   "identity": {
     "background": "Child",
     "background_detail": "Eight years old. Follows Sera through the warehouse with focused quiet. Doesn't ask questions. Hands things over before Sera asks for them. Has memorised the inventory system better than half the adults and corrects mistakes by silently moving items back to where they belong.",
-    "age": "8",
+    "age": 8,
     "gender": "female",
     "before": "She was four when the world ended. She doesn't talk about before because there isn't one."
   },

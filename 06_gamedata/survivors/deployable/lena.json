@@ -5,7 +5,7 @@
   "identity": {
     "background": "Nursing student",
     "background_detail": "One semester short of finishing. She knows enough to be dangerous in the good way — she can clean wounds, manage infections if the supplies hold, recognize the things she can't fix and say so honestly. What she can't do is pretend she has answers she doesn't have, and she won't.",
-    "age": "late_20s",
+    "age": 27,
     "gender": "female",
     "before": "One semester short of a nursing degree. Close enough to save lives. Honest enough to say when she can't."
   },

@@ -5,7 +5,7 @@
   "identity": {
     "background": "Accountant",
     "background_detail": "She keeps a personal ledger that isn't the Camp's official one. She's never explained why. She's methodical, reliable, and has strong opinions about resource allocation that she will absolutely share if asked and sometimes if not asked.",
-    "age": "late_40s",
+    "age": 48,
     "gender": "female",
     "before": "Accountant. Numbers were her job. Now they're the difference between eating and not eating."
   },

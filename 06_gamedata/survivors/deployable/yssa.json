@@ -5,7 +5,7 @@
   "identity": {
     "background": "Student",
     "background_detail": "She was fifteen when the world ended. The Camp is the only adult life she's ever known. That makes her both the most adapted person here and the most quietly furious about it — she doesn't mourn a career or a life she built because she never got to build one.",
-    "age": "19",
+    "age": 19,
     "gender": "female",
     "before": "Still in school when it ended. The After is the only adult life she knows."
   },

@@ -5,7 +5,7 @@
   "identity": {
     "background": "Logistics",
     "background_detail": "The scar runs from his left ear to his jaw. He'll tell you he got it from a car accident. He'll tell you differently each time. He doesn't care if you believe him — the deflection is the point, not the story. He makes decisions quickly and without visible doubt. The other two defer to him, though none of them would describe it that way.",
-    "age": "early_30s",
+    "age": 31,
     "gender": "male",
     "before": "Says logistics. The scar says otherwise."
   },

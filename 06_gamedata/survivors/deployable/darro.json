@@ -5,7 +5,7 @@
   "identity": {
     "background": "Construction foreman",
     "background_detail": "Big. Quiet. The kind of man who communicates more with what he doesn't say than what he does. He built most of what makes the Camp functional — the reinforced gate, the rain collection system, the section of wall that stopped an incursion eight months ago. If it's standing and it's holding, Darro either built it or fixed it.",
-    "age": "mid_40s",
+    "age": 45,
     "gender": "male",
     "before": "Built things for people who paid him. Now he builds things so people survive."
   },
@@ -49,5 +49,10 @@
     "has_secret": false,
     "secret_hint": null,
     "unlock_condition": null
+  },
+
+  "review": {
+    "status": "approved",
+    "reviewed_at": "2026-03-28"
   }
 }

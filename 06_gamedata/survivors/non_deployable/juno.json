@@ -5,7 +5,7 @@
   "identity": {
     "background": "Child",
     "background_detail": "Twelve years old. Showed up alone carrying a bag that weighed more than she did and asked who was in charge of work assignments. Her first sentence at the Camp. Her second was 'I don't need a bed, I need a job.'",
-    "age": "12",
+    "age": 12,
     "gender": "female",
     "before": "She was eight when the world ended. Old enough to remember. Young enough that it shaped everything."
   },
