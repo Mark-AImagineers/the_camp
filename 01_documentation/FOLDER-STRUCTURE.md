@@ -24,16 +24,21 @@ thecamp/
 ├── 02_backend/             ← FastAPI application
 │   ├── app/
 │   │   ├── api/            ← Route handlers
+│   │   │   ├── auth.py         ← Register, login, refresh, me
+│   │   │   ├── save_slots.py   ← Create/select/delete save slots
+│   │   │   └── ...
 │   │   ├── models/         ← SQLAlchemy models
 │   │   ├── schemas/        ← Pydantic schemas
 │   │   ├── services/
-│   │   │   ├── expedition.py   ← Run engine
+│   │   │   ├── auth.py         ← JWT creation, password hashing, token validation
+│   │   │   ├── expedition.py   ← Run engine (server-authoritative)
 │   │   │   ├── narrative.py    ← Claude API integration
 │   │   │   ├── loot.py         ← Loot table generation
 │   │   │   └── survivor.py     ← Survivor generation + management
 │   │   ├── core/
 │   │   │   ├── config.py       ← Settings / env vars
-│   │   │   └── database.py     ← DB connection
+│   │   │   ├── database.py     ← DB connection + RLS session setup
+│   │   │   └── security.py     ← JWT deps, get_current_user, get_current_save_slot
 │   │   └── main.py
 │   ├── alembic/            ← Database migrations
 │   ├── tests/

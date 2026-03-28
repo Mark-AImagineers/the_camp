@@ -1,0 +1,54 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: thecamp-ingress
+  namespace: aim
+  annotations:
+    traefik.ingress.kubernetes.io/router.entrypoints: web
+spec:
+  ingressClassName: traefik
+  rules:
+    # Production - Frontend
+    - host: thecamp.aimagineers.io
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: thecamp-frontend
+                port:
+                  number: 3000
+    # Production - Backend API
+    - host: thecamp-api.aimagineers.io
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: thecamp-backend
+                port:
+                  number: 8000
+    # Staging - Frontend
+    - host: stage-thecamp.aimagineers.io
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: thecamp-frontend-staging
+                port:
+                  number: 3000
+    # Staging - Backend API
+    - host: stage-thecamp-api.aimagineers.io
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: thecamp-backend-staging
+                port:
+                  number: 8000

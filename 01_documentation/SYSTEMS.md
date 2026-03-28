@@ -245,6 +245,40 @@ Templates are stored in `06_gamedata/narrative/`.
 
 ---
 
+## Authentication & Data Model
+
+### Auth
+- Own infrastructure — no third-party auth (no Supabase, no Firebase)
+- FastAPI + python-jose JWT (access token 30min, refresh token 30 days)
+- Password hashing via passlib/bcrypt
+- Auth tables in the same PostgreSQL instance
+
+### Data Hierarchy
+```
+user (account)
+  └── save_slots (max 3 — each slot IS a player)
+        └── all game state belongs here
+```
+
+- One user = one account = max 3 save slots
+- Each save slot is a completely independent game life
+- No shared vault or cross-slot transfers
+- Multiplayer trading (future) operates between save slots, not accounts
+
+### Server Authority
+- All game mutations go through the API — no client-side game logic
+- Client sends intents ("assign survivor X to zone Y"), server resolves outcomes
+- Resource counts, survivor stats, inventory — server is source of truth
+- Expedition resolution is entirely server-side (prevents outcome manipulation)
+
+### Data Isolation (RLS)
+- Every game table has `save_slot_id` column
+- PostgreSQL Row-Level Security policies enforce isolation at the DB level
+- FastAPI middleware sets `app.current_save_slot_id` per request
+- Even buggy queries cannot leak data across save slots
+
+---
+
 ## Death & Memory
 
 When a survivor dies:

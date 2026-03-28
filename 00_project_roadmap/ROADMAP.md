@@ -16,7 +16,8 @@
 - [x] UI layout approved
 - [x] Folder structure created
 - [x] Documentation written
-- [ ] Repo initialised with base project files
+- [x] Repo initialised with base project files
+- [x] Auth & data architecture decided (own infra, JWT, RLS, server-authoritative hybrid)
 - [ ] Database schema designed
 - [ ] Local dev environment running
 
@@ -24,7 +25,10 @@
 Goal: feel the loop before building the visual layer.
 
 - [ ] FastAPI backend scaffold
-- [ ] PostgreSQL schema — survivors, stash, expeditions, camp_state
+- [ ] Auth system — registration, login, JWT tokens, refresh flow
+- [ ] Save slot system — create/select/delete (max 3 per user)
+- [ ] PostgreSQL schema — users, save_slots, survivors, stash, expeditions, camp_state
+- [ ] RLS policies on all game tables (save_slot_id isolation)
 - [ ] Survivor generator (procedural names, stats, traits)
 - [ ] Zone definition loader (JSON/YAML)
 - [ ] Basic expedition engine (event resolution, no Claude API yet)

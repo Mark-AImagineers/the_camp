@@ -1,0 +1,66 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: thecamp-backend
+  namespace: aim
+  labels:
+    app: thecamp-backend
+    environment: production
+spec:
+  replicas: 1
+  revisionHistoryLimit: 2
+  selector:
+    matchLabels:
+      app: thecamp-backend
+  template:
+    metadata:
+      labels:
+        app: thecamp-backend
+        environment: production
+    spec:
+      nodeSelector:
+        kubernetes.io/hostname: aimph
+      imagePullSecrets:
+        - name: gitlab-registry-secret
+      containers:
+        - name: thecamp-backend
+          image: ${REGISTRY_IMAGE_BACKEND}:${IMAGE_TAG}
+          ports:
+            - containerPort: 8000
+          envFrom:
+            - secretRef:
+                name: thecamp-prod-secret
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "100m"
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 8000
+            initialDelaySeconds: 10
+            periodSeconds: 5
+            timeoutSeconds: 3
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8000
+            initialDelaySeconds: 30
+            periodSeconds: 10
+            timeoutSeconds: 3
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: thecamp-backend
+  namespace: aim
+spec:
+  selector:
+    app: thecamp-backend
+  ports:
+    - port: 8000
+      targetPort: 8000
+  type: ClusterIP
