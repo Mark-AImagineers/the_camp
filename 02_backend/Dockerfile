@@ -1,4 +1,4 @@
-FROM python:3.11-slim-bookworm
+FROM 10.43.68.80:5050/aimagineers/the_camp/python:3.11-slim-bookworm
 
 WORKDIR /app
 

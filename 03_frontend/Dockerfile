@@ -1,4 +1,4 @@
-FROM node:20-alpine AS build
+FROM 10.43.68.80:5050/aimagineers/the_camp/node:20-alpine AS build
 
 WORKDIR /app
 
@@ -12,7 +12,7 @@ RUN rm -f package-lock.json && npm install
 COPY 03_frontend/ .
 RUN npm run build
 
-FROM nginx:1-alpine
+FROM 10.43.68.80:5050/aimagineers/the_camp/nginx:1-alpine
 
 COPY --from=build /app/dist /usr/share/nginx/html
 COPY 03_frontend/nginx.conf.template /etc/nginx/templates/default.conf.template
