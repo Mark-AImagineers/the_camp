@@ -3,6 +3,7 @@ from pydantic import BaseModel
 
 from app.core.database import get_db
 from app.core.security import decode_token
+from app.services.survivor_generator import seed_survivors
 
 router = APIRouter()
 
@@ -98,6 +99,9 @@ def create_slot(req: CreateSlotRequest, authorization: str = Header()):
         (str(slot_id),),
     )
 
+    # Seed survivors (5 random activated + 10 inactive)
+    seed_survivors(cur, str(slot_id))
+
     conn.commit()
     cur.close()
     conn.close()
@@ -132,3 +136,66 @@ def delete_slot(slot_id: str, authorization: str = Header()):
     conn.commit()
     cur.close()
     conn.close()
+
+
+@router.get("/{slot_id}/survivors")
+def list_survivors(slot_id: str, authorization: str = Header()):
+    user_id = _get_user_id(authorization)
+    conn = get_db()
+    cur = conn.cursor()
+    cur.execute("SET app.current_user_id = %s", (user_id,))
+
+    # Verify ownership
+    cur.execute(
+        "SELECT 1 FROM game.save_slots WHERE id = %s AND user_id = %s",
+        (slot_id, user_id),
+    )
+    if not cur.fetchone():
+        cur.close()
+        conn.close()
+        raise HTTPException(status_code=404, detail="Slot not found")
+
+    cur.execute("SET app.current_save_slot_id = %s", (slot_id,))
+    cur.execute(
+        """SELECT id, lore_id, name, background, background_detail, age_bracket,
+                  persona, trait, trait_description,
+                  strength, agility, perception, endurance, luck,
+                  hp, max_hp, condition, camp_role, is_activated,
+                  relationship_strength, morale_modifier, is_dead
+           FROM game.survivors
+           WHERE save_slot_id = %s
+           ORDER BY is_dead ASC, is_activated DESC, name ASC""",
+        (slot_id,),
+    )
+    rows = cur.fetchall()
+    cur.close()
+    conn.close()
+
+    survivors = []
+    for r in rows:
+        survivors.append({
+            "id": str(r[0]),
+            "lore_id": r[1],
+            "name": r[2],
+            "background": r[3],
+            "background_detail": r[4],
+            "age_bracket": r[5],
+            "persona": r[6],
+            "trait": r[7],
+            "trait_description": r[8],
+            "strength": r[9],
+            "agility": r[10],
+            "perception": r[11],
+            "endurance": r[12],
+            "luck": r[13],
+            "hp": r[14],
+            "max_hp": r[15],
+            "condition": r[16],
+            "camp_role": r[17],
+            "is_activated": r[18],
+            "relationship_strength": r[19],
+            "morale_modifier": r[20],
+            "is_dead": r[21],
+        })
+
+    return {"survivors": survivors}

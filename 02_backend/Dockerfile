@@ -6,6 +6,7 @@ COPY 02_backend/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY 02_backend/ .
+COPY 06_gamedata/ /app/06_gamedata/
 
 COPY version.json /version.json
 

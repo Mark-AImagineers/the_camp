@@ -112,13 +112,43 @@ He's not wrong that the Camp runs partly on his goodwill. He's also not wrong th
 ---
 
 ### The Three
-**A group of men, late 20s to mid 30s, who arrived together.**
 
-They work. They don't cause problems. They don't integrate. Nobody knows their full story and they haven't offered it. They have a dynamic between them that suggests a shared history nobody else was part of — a shorthand, a way of moving around each other, an awareness that reads less like friendship and more like people who've been through something together and came out changed.
+*A group of men, late 20s to mid 30s, who arrived together. They work. They don't cause problems. They don't integrate. Nobody knows their full story and they haven't offered it. They have a dynamic between them that suggests a shared history nobody else was part of — a shorthand, a way of moving around each other, an awareness that reads less like friendship and more like people who've been through something together and came out changed.*
 
-One of them has a scar he deflects questions about. One of them watches the gate more than seems natural. The third one smiles too easily, which in the After is its own kind of signal.
+*Tomás watches them more than he watches anyone else in the Camp.*
 
-Tomás watches them more than he watches anyone else in the Camp.
+---
+
+### Rook
+**Early 30s. Before: unclear. He says logistics.**
+
+The scar runs from his left ear to his jaw. He'll tell you he got it from a car accident. He'll tell you differently each time. He doesn't care if you believe him — the deflection is the point, not the story.
+
+He's the one the other two defer to, though none of them would describe it that way. He makes decisions quickly and without visible doubt, which is either confidence or something he learned to perform. He works hard. Never complains. Never volunteers for anything either — waits to be asked, then does it well enough that you can't complain about the waiting.
+
+He knows things about what happened in the early days that he files under *not relevant anymore*. Whether that's true is a question he's decided isn't yours to ask.
+
+---
+
+### Marsh
+**Late 20s. Before: doesn't say. Watches the gate.**
+
+He's the one you notice standing by the perimeter when he should be asleep. He doesn't pace — he stands, still, facing out, like he's waiting for something specific. Nobody's asked him directly what he's waiting for. The people who've thought about it decided they don't want to know.
+
+He's quiet in a way that's different from Darro's quiet. Darro is still because he chooses to be. Marsh is still because something trained him to be. He follows Rook's lead without it looking like following. He does his work. He eats alone.
+
+He's useful on runs — good instincts, moves well, doesn't panic. But there's a flatness to how he handles danger that makes people uncomfortable in a way they can't quite name.
+
+---
+
+### Ivo
+**Mid 30s. Before: says he was a teacher. Smiles when he says it.**
+
+The smile is the thing people notice. It's easy, warm, the kind of expression that belonged to the Before — to someone who sold things, or hosted things, or made people feel comfortable for a living. In the After, that kind of ease reads as a mask or a weapon, and most people at the Camp have settled on one or the other without deciding which.
+
+He's charming. He remembers names after hearing them once. He offers to help before being asked. All of which would be fine if it didn't feel, to certain people, like a performance that's been running for a very long time.
+
+Tomás doesn't trust him. Sera finds him useful but keeps the ledger locked when he's nearby. Yssa thinks he's funny, which worries Tomás more than anything else about him.
 
 ---
 
@@ -134,13 +164,32 @@ Whether she's right is something you'll have to figure out yourself.
 ---
 
 ### The Children
-**Four of them. Various ages. Various situations.**
 
-Otto belongs to Raine. The other three arrived in different configurations of alone.
+*Four of them. Various ages. Various situations. Otto belongs to Raine. The other three arrived in different configurations of alone. They are the reason certain decisions feel heavier than they would otherwise. Nobody says this out loud. Nobody has to.*
 
-One has an older sibling in the Camp who is barely managing their own survival and doing their best anyway. One attached herself to Sera in the first week and hasn't let go, following her through the warehouse with the focused quiet of a child who has learned that the safest place is near competent adults. One is twelve and old enough to work and insists on it, with a stubbornness that nobody has found a good argument against.
+---
 
-They are the reason certain decisions feel heavier than they would otherwise. Nobody says this out loud. Nobody has to.
+### Alma
+**8 years old. Attached herself to Sera in the first week.**
+
+She follows Sera through the warehouse with the focused quiet of a child who has learned that the safest place is near competent adults. She doesn't ask questions. She hands things over before Sera asks for them. She's memorised the inventory system better than half the adults and corrects mistakes by silently moving items back to where they belong.
+
+She doesn't talk about where she came from. She doesn't talk much at all. When she does speak, it's practical — quantities, locations, what's running low. Sera has stopped trying to get her to play. What Alma does with the ledger *is* play, as far as Alma is concerned.
+
+She sleeps on a mat next to Sera's cot. Nobody assigned this. Nobody questioned it.
+
+---
+
+### Juno
+**12 years old. Insists on working.**
+
+She showed up alone, walked through the gate carrying a bag that weighed more than she did, and asked who was in charge of work assignments. That was her first sentence at the Camp. Her second was *I don't need a bed, I need a job.*
+
+She's stubborn in a way that nobody has found a good argument against, because every argument requires telling a twelve-year-old that she's too young to be useful, and she'll look at you with an expression that makes the word *young* feel like something that belongs to a world that doesn't exist anymore.
+
+She does maintenance. She carries water. She sorted the medical supply closet in a single afternoon and Lena hasn't been able to improve on the system since. She refuses to be treated as fragile and she's earned it, which is a sentence that shouldn't apply to someone her age but does.
+
+Her older sibling is somewhere in the Camp. Barely managing. Doing their best. Juno doesn't talk about it.
 
 ---
 
