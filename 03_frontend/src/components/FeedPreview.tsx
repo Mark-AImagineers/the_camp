@@ -12,11 +12,14 @@ const EVENTS: FeedEvent[] = [
   { time: '08:19', text: 'Ground floor cleared. No contacts.', type: 'normal', delay: 2800 },
   { time: '08:34', text: '\u26A0 Movement detected. East stairwell. Unconfirmed.', type: 'warning', delay: 2200 },
   { time: '08:41', text: 'Marcus is checking the stairwell. Elena is holding position.', type: 'normal', delay: 1800 },
-  { time: '08:47', text: 'Contact. Two infected. Marcus engaged.', type: 'danger', delay: 1400 },
+  { time: '08:47', text: 'Contact. Two Altered. Marcus engaged.', type: 'danger', delay: 1400 },
   { time: '08:49', text: 'Marcus took a hit. Health: 41%.', type: 'danger', delay: 1200 },
   { time: '08:51', text: 'Elena applied a field dressing. 1 medkit used.', type: 'normal', delay: 2400 },
-  { time: '09:04', text: 'Pharmacy found. Gate is padlocked.', type: 'normal', delay: 3000 },
+  { time: '09:04', text: 'Pharmacy found. Gate is padlocked.', type: 'normal', delay: 3200 },
+  { time: '09:11', text: '\u26A0 Door was locked from the inside.', type: 'warning', delay: 2800 },
   { time: '09:18', text: '\u2605 Antibiotics \u00D74 \u2014 Rare find.', type: 'good', delay: 2000 },
+  { time: '09:22', text: 'Marcus wants to push deeper. Elena says they should extract.', type: 'normal', delay: 3500 },
+  { time: '09:23', text: '', type: 'normal', delay: 0 },
 ]
 
 const TYPE_COLORS: Record<string, string> = {
@@ -69,14 +72,23 @@ export default function FeedPreview() {
         overflowY: 'auto',
       }}
     >
-      {EVENTS.slice(0, visibleLines).map((event, i) => (
-        <div key={i} style={{ color: TYPE_COLORS[event.type], opacity: 0, animation: 'fadeIn 0.3s forwards' }}>
-          <span style={{ color: '#4a3d2e' }}>[{event.time}]</span> {event.text}
+      {EVENTS.slice(0, visibleLines).map((event, i) => {
+        if (!event.text) return null
+        return (
+          <div key={i} style={{ color: TYPE_COLORS[event.type], opacity: 0, animation: 'fadeIn 0.3s forwards' }}>
+            <span style={{ color: '#4a3d2e' }}>[{event.time}]</span> {event.text}
+          </div>
+        )
+      })}
+      {visibleLines >= EVENTS.length ? (
+        <div style={{ marginTop: '0.8rem', padding: '0.6rem 0.8rem', border: '1px solid #3a2e00', background: '#1a1500', opacity: 0, animation: 'fadeIn 0.5s 0.5s forwards' }}>
+          <div style={{ color: '#ba7517', fontSize: '0.75rem', marginBottom: '0.4rem' }}>{'\u26A0'} What do you do?</div>
+          <span style={{ color: '#4a3d2e', fontSize: '0.7rem', marginRight: '0.8rem' }}>[ Push deeper ]</span>
+          <span style={{ color: '#4a3d2e', fontSize: '0.7rem', marginRight: '0.8rem' }}>[ Extract now ]</span>
         </div>
-      ))}
-      {visibleLines > 0 && (
+      ) : visibleLines > 0 ? (
         <span style={{ color: '#7a6a54', animation: 'blink 1s step-end infinite' }}>{'\u2588'}</span>
-      )}
+      ) : null}
     </div>
   )
 }
