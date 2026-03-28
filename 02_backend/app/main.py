@@ -1,10 +1,12 @@
 import json
-import os
 import re
 from pathlib import Path
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
+
+from app.api.auth import router as auth_router
+from app.core.database import get_db
 
 app = FastAPI(title="TheCamp API")
 
@@ -16,12 +18,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-DATABASE_URL = os.environ.get("DATABASE_URL", "")
-
-
-def _get_db():
-    import psycopg2
-    return psycopg2.connect(DATABASE_URL)
+app.include_router(auth_router, prefix="/auth")
 
 
 def _load_version() -> dict:
@@ -48,10 +45,8 @@ EMAIL_RE = re.compile(r"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$")
 def join_waitlist(req: WaitlistRequest):
     if not EMAIL_RE.match(req.email):
         raise HTTPException(status_code=400, detail="Invalid email")
-    if not DATABASE_URL:
-        raise HTTPException(status_code=503, detail="Database not configured")
     try:
-        conn = _get_db()
+        conn = get_db()
         cur = conn.cursor()
         cur.execute(
             "INSERT INTO auth.waitlist (email) VALUES (%s) ON CONFLICT (email) DO NOTHING",
