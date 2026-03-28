@@ -24,7 +24,7 @@ export default function Login() {
       const data = await res.json()
       if (res.ok) {
         setTokens(data.access_token, data.refresh_token)
-        navigate('/')
+        navigate('/slots')
       } else if (res.status === 403 && data.detail?.includes('pending')) {
         navigate('/pending')
       } else {

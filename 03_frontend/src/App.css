@@ -375,6 +375,136 @@
   font-style: italic;
 }
 
+/* Save Slots */
+.slots-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.slots-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
+  max-width: 360px;
+}
+
+.slot-card {
+  border: 1px solid #2a2a2a;
+  padding: 1.2rem 1.5rem;
+  position: relative;
+}
+
+.slot-card + .slot-card {
+  border-top: none;
+}
+
+.slot-card.filled {
+  background: #111111;
+}
+
+.slot-card.empty {
+  background: #0d0d0d;
+}
+
+.slot-card.creating {
+  background: #111111;
+}
+
+.slot-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.slot-label {
+  font-size: 0.65rem;
+  color: #4a3d2e;
+  letter-spacing: 0.15em;
+}
+
+.slot-delete {
+  background: none;
+  border: none;
+  color: #4a3d2e;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+  font-family: monospace;
+}
+
+.slot-delete:hover {
+  color: #993c1d;
+}
+
+.slot-name {
+  font-size: 0.85rem;
+  color: #c9b99a;
+  margin: 0 0 0.25rem;
+}
+
+.slot-info {
+  font-size: 0.7rem;
+  color: #4a3d2e;
+  margin: 0 0 0.75rem;
+}
+
+.slot-empty-text {
+  font-size: 0.8rem;
+  color: #2a2a2a;
+  margin: 0 0 0.75rem;
+}
+
+.slot-action {
+  background: transparent;
+  border: 1px solid #ba7517;
+  color: #ba7517;
+  font-family: monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  padding: 0.4rem 1rem;
+  cursor: pointer;
+  border-radius: 0;
+}
+
+.slot-action:hover {
+  background: #1a1500;
+}
+
+.slot-action.dim {
+  border-color: #2a2a2a;
+  color: #4a3d2e;
+}
+
+.slot-action.dim:hover {
+  border-color: #ba7517;
+  color: #ba7517;
+}
+
+.slot-name-input {
+  background: #0d0d0d;
+  border: 1px solid #2a2a2a;
+  color: #c9b99a;
+  font-family: monospace;
+  font-size: 0.8rem;
+  padding: 0.5rem 0.75rem;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 0.75rem;
+  border-radius: 0;
+}
+
+.slot-name-input::placeholder {
+  color: #4a3d2e;
+}
+
+.slot-name-input:focus {
+  border-color: #ba7517;
+}
+
 /* Animations */
 @keyframes fadeIn {
   from { opacity: 0; }

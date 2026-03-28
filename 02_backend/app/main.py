@@ -6,6 +6,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
 from app.api.auth import router as auth_router
+from app.api.save_slots import router as save_slots_router
 from app.core.database import get_db
 
 app = FastAPI(title="TheCamp API")
@@ -19,6 +20,7 @@ app.add_middleware(
 )
 
 app.include_router(auth_router, prefix="/auth")
+app.include_router(save_slots_router, prefix="/save-slots")
 
 
 def _load_version() -> dict:
