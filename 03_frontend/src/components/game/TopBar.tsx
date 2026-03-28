@@ -40,7 +40,7 @@ function formatTime(h: number, m: number, s: number): string {
 
 export default function TopBar() {
   const [config, setConfig] = useState<ClockConfig | null>(null)
-  const [time, setTime] = useState<{ year: number; day: number; hour: number; minute: number } | null>(null)
+  const [time, setTime] = useState<{ year: number; day: number; hour: number; minute: number; second: number } | null>(null)
 
   useEffect(() => {
     apiFetch('/world-clock')
