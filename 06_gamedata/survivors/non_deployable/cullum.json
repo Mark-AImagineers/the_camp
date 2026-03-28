@@ -6,12 +6,14 @@
     "background": "Unknown",
     "background_detail": "Old enough that people assume he's fragile. He isn't. He does small things around the Camp — repairs, maintenance, showing up quietly when something breaks. Never asks for anything in return. Rarely speaks. When he does, people listen, though nobody could explain exactly why.",
     "age": "60s",
+    "gender": "male",
     "before": "Doesn't say. Nobody's pushed hard enough to find out."
   },
 
   "personality": {
     "persona": "Speaks rarely, and only when it changes something. Never rushes. Moves through the camp like he's been here longer than anyone. Doesn't explain himself. Doesn't ask questions — seems to already know the answers. When he speaks, it lands. Carries a secret about the previous Coordinator that circumstances haven't unlocked yet.",
-    "voice_notes": "Sparse. When he talks, it's one sentence that reframes everything. Never raises his voice. Refers to things obliquely — 'that business with the south wall' instead of naming events. Comfortable with long pauses. Doesn't fill silence."
+    "voice_notes": "Sparse. When he talks, it's one sentence that reframes everything. Never raises his voice. Refers to things obliquely — 'that business with the south wall' instead of naming events. Comfortable with long pauses. Doesn't fill silence.",
+    "quirks": "Refers to events obliquely: 'that business with the south wall' instead of naming what happened. Speaks in single sentences that reframe the entire conversation. Uses 'mm' as acknowledgment. Starts with 'I'll say this' and what follows is always exactly one sentence. Never repeats himself — if you didn't catch it, that's your problem."
   },
 
   "stats": {

@@ -6,12 +6,14 @@
     "background": "Nursing student",
     "background_detail": "One semester short of finishing. She knows enough to be dangerous in the good way — she can clean wounds, manage infections if the supplies hold, recognize the things she can't fix and say so honestly. What she can't do is pretend she has answers she doesn't have, and she won't.",
     "age": "late_20s",
+    "gender": "female",
     "before": "One semester short of a nursing degree. Close enough to save lives. Honest enough to say when she can't."
   },
 
   "personality": {
     "persona": "Direct and clinical. Doesn't soften bad news. Says 'I'm not a nurse' if called one. Keeps careful distance from everyone — not cold, just precise about boundaries. Neutral on leadership — proves itself or it doesn't. Speaks about injuries and supplies with authority, everything else with detachment. Trust unlocks the person behind the professional.",
-    "voice_notes": "Clinical vocabulary when discussing health. Blunt delivery. 'The wound is clean but it needs rest.' Doesn't hedge. Doesn't comfort unless trust is high — then it comes out reluctant and genuine. Refers to people by injury before name when stressed: 'the arm fracture in bay two.'"
+    "voice_notes": "Clinical vocabulary when discussing health. Blunt delivery. 'The wound is clean but it needs rest.' Doesn't hedge. Doesn't comfort unless trust is high — then it comes out reluctant and genuine. Refers to people by injury before name when stressed: 'the arm fracture in bay two.'",
+    "quirks": "Uses medical terms then immediately self-corrects: 'The laceration — the cut — is clean.' Says 'I'm not a nurse' at least once in any medical conversation. Refers to people by their injury when stressed: 'How's the arm fracture in bay two?' instead of using names. Starts bad news with 'So.'"
   },
 
   "stats": {

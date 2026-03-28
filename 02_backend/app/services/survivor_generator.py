@@ -13,7 +13,9 @@ def _load_character_file(f: Path) -> dict:
         "background": data["identity"]["background"],
         "background_detail": data["identity"].get("background_detail"),
         "age": data["identity"].get("age"),
+        "gender": data["identity"].get("gender"),
         "persona": data["personality"].get("persona"),
+        "quirks": data["personality"].get("quirks"),
         "stats": stats,
         "traits": data.get("traits", []),
         "skills": data.get("skills", []),
@@ -81,14 +83,14 @@ def _insert_survivor(cur, save_slot_id: str, char: dict, is_activated: bool):
     cur.execute(
         """INSERT INTO game.survivors (
             save_slot_id, lore_id, name, background, background_detail,
-            age, persona,
+            age, gender, persona, quirks,
             str, dex, agi, per, endurance, int_stat, lck,
             hp, max_hp, condition, is_activated,
             stat_growth, traits, skills, starting_inventory, rations,
             relationship_strength, morale_modifier
         ) VALUES (
             %s, %s, %s, %s, %s,
-            %s, %s,
+            %s, %s, %s, %s,
             %s, %s, %s, %s, %s, %s, %s,
             %s, %s, 'healthy', %s,
             %s, %s, %s, %s, %s,
@@ -101,7 +103,9 @@ def _insert_survivor(cur, save_slot_id: str, char: dict, is_activated: bool):
             char["background"],
             char.get("background_detail"),
             char.get("age"),
+            char.get("gender"),
             char.get("persona"),
+            char.get("quirks"),
             str_val, dex_val, agi_val, per_val, end_val, int_val, lck_val,
             hp_val, hp_val,
             is_activated,

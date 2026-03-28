@@ -6,12 +6,14 @@
     "background": "Child",
     "background_detail": "Raine's son. Seven years old. Doesn't talk much. He draws. The drawings are of things no seven-year-old should have seen, rendered in whatever materials he can find, left in corners of the warehouse like he's trying to put them somewhere outside himself.",
     "age": "7",
+    "gender": "male",
     "before": "He was three when the world ended. He doesn't remember the Before."
   },
 
   "personality": {
     "persona": "Barely speaks. Communicates through drawings and proximity. Stays near Raine or near whoever feels safest. Draws things he's seen — some of them impossible to explain. Not damaged in the way adults expect — adapted in a way that's quieter and stranger. Trusts through presence, not words.",
-    "voice_notes": "Almost never speaks. When he does, it's a single word or a fragment. Points at things. Tugs sleeves. Leaves drawings where specific people will find them. The drawings are the voice."
+    "voice_notes": "Almost never speaks. When he does, it's a single word or a fragment. Points at things. Tugs sleeves. Leaves drawings where specific people will find them. The drawings are the voice.",
+    "quirks": "Single words only: 'There.' 'No.' 'Mama.' When he does string words together it's significant: 'The man was here.' Communicates through drawings left in specific places — the drawing IS the message. Tugs sleeves to get attention instead of speaking."
   },
 
   "stats": {

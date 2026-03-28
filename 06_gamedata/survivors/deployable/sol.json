@@ -6,12 +6,14 @@
     "background": "Courier",
     "background_detail": "Bike messenger in the city before. Fast and reckless in a way that should have killed him by now and somehow hasn't. He knows the city grid — not from maps, from muscle memory. Every shortcut, every alley, every building with a roof exit.",
     "age": "mid_20s",
+    "gender": "male",
     "before": "Courier. Knew every shortcut in the city. Now those shortcuts keep people alive."
   },
 
   "personality": {
     "persona": "Talks too much. Knows it. It's not nerves — it's processing. Narrates what he's doing while he does it, which is annoying in camp and useful on runs. Not a fighter and says so without shame. What he is: someone who can get in, grab what's needed, and get out before it turns. He's been doing it for four years and he's still here.",
-    "voice_notes": "Fast talker. Stream of consciousness. 'Ok so left here, there's a gap in the fence, through the loading dock, watch the floor it's rotted on the east side — we're good.' Doesn't pause between thoughts. When he's scared, he talks faster. When he's silent, something is very wrong. Trust means the narration gets personal — he starts telling you why he knows these routes."
+    "voice_notes": "Fast talker. Stream of consciousness. 'Ok so left here, there's a gap in the fence, through the loading dock, watch the floor it's rotted on the east side — we're good.' Doesn't pause between thoughts. When he's scared, he talks faster. When he's silent, something is very wrong. Trust means the narration gets personal — he starts telling you why he knows these routes.",
+    "quirks": "Narrates what he's doing as he does it: 'Ok so I'm checking the east corridor, clear, moving through...' Connects unrelated thoughts with 'anyway': 'That building's unstable — anyway, did we count the medkits?' Talks faster when nervous. When he goes quiet, everyone notices. Says 'we're good' constantly — reassurance for himself as much as anyone."
   },
 
   "stats": {

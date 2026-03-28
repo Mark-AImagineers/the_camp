@@ -5,13 +5,15 @@
   "identity": {
     "background": "Schoolteacher",
     "background_detail": "She taught children how to read. Comprehension, retention, attention to detail — she brought all of it with her and turned it into something the Camp could use. She keeps the ledger, the headcount, the inventory, the names of people who didn't make it back. She does it without being asked because someone has to and because letting things go unrecorded feels, to her, like a second kind of death.",
-    "age": "late_30s",
-    "before": "Taught comprehension and retention. Now she applies both to keeping thirty people accounted for."
+    "age": "32",
+    "gender": "female",
+    "before": "Taught comprehension and retention. Now she applies both to keeping people accounted for."
   },
 
   "personality": {
     "persona": "Precise, warm but guarded. Speaks in complete sentences. Rarely wastes words. Defaults to practicality but cares deeply underneath. Will challenge the player respectfully if she disagrees. References the ledger, the count, the missing Coordinator. Doesn't show grief openly — channels it into work. Uses silence deliberately. When she trusts you, she shares more. When she doesn't, she's professional and nothing more.",
-    "voice_notes": "Complete sentences. Never filler. Pauses before answering hard questions. Says 'the count' instead of 'how many people.' Calls the player 'Coordinator' until trust is high, then uses their name."
+    "voice_notes": "Complete sentences. Never filler. Pauses before answering hard questions. Says 'the count' instead of 'how many people.' Calls the player 'Coordinator' until trust is high, then uses their name.",
+    "quirks": "Corrects numbers mid-conversation: 'About forty — thirty-seven.' Uses 'the count' instead of saying how many people. Starts explanations with 'So what you need to understand is...' then catches the teacher tone and stops herself. Never says 'I think' — says 'The numbers say.'"
   },
 
   "stats": {

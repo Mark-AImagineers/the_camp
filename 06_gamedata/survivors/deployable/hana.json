@@ -6,12 +6,14 @@
     "background": "Army logistics officer",
     "background_detail": "Fifteen years in. She doesn't talk about her service and doesn't need to — it's in how she moves, how she organizes space, how she looks at a room and sees sightlines before furniture. She arrived alone, clean, carrying a pack that was exactly the right weight for the distance she'd covered.",
     "age": "early_40s",
+    "gender": "female",
     "before": "Military logistics. Fifteen years. Everything about her is calibrated."
   },
 
   "personality": {
     "persona": "Operational. Not warm, not cold — functional. Follows a chain of command if it exists, builds one if it doesn't. Won't watch avoidable mistakes with lives on the line and say nothing. Assessed the Camp's defenses on day one, waited a week to speak, then laid out fourteen vulnerabilities in order of severity. Tomás agreed with twelve.",
-    "voice_notes": "Precise. Military cadence without military jargon — she translates for civilians automatically. Numbers first, context second. 'Fourteen points of vulnerability. Twelve critical. Two I'd call structural.' Doesn't soften assessments. When trust is high, the operational mask cracks and she says things like 'I'm tired of counting the ways this place could fall.' Then it's back."
+    "voice_notes": "Precise. Military cadence without military jargon — she translates for civilians automatically. Numbers first, context second. 'Fourteen points of vulnerability. Twelve critical. Two I'd call structural.' Doesn't soften assessments. When trust is high, the operational mask cracks and she says things like 'I'm tired of counting the ways this place could fall.' Then it's back.",
+    "quirks": "Leads with numbers: 'Fourteen vulnerabilities. Twelve critical.' Says 'copy' or 'understood' instead of yes. Uses 'we' for the camp and 'they' for threats — never names the Altered directly, calls them 'hostiles' or 'contacts.' Says 'that's above my pay grade' about decisions she disagrees with — dry humor that doesn't sound like humor."
   },
 
   "stats": {

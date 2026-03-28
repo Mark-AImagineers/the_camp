@@ -6,12 +6,14 @@
     "background": "Logistics",
     "background_detail": "The scar runs from his left ear to his jaw. He'll tell you he got it from a car accident. He'll tell you differently each time. He doesn't care if you believe him — the deflection is the point, not the story. He makes decisions quickly and without visible doubt. The other two defer to him, though none of them would describe it that way.",
     "age": "early_30s",
+    "gender": "male",
     "before": "Says logistics. The scar says otherwise."
   },
 
   "personality": {
     "persona": "Quick, controlled, deflects personal questions with different lies each time. Not hostile — just walled off. Leads the other two without appearing to. Works hard, never complains, never volunteers either. Waits to be asked, then delivers. Knows things about the early days he's filed under 'not relevant.' Trust unlocks the truth behind the scar.",
-    "voice_notes": "Clipped, efficient. Answers questions with questions when deflecting. 'The scar? Dog bite. No wait — forklift. Does it matter?' Gives orders disguised as suggestions: 'Might want to check the east side.' When trust is high, the deflection stops and the directness underneath is startling."
+    "voice_notes": "Clipped, efficient. Answers questions with questions when deflecting. 'The scar? Dog bite. No wait — forklift. Does it matter?' Gives orders disguised as suggestions: 'Might want to check the east side.' When trust is high, the deflection stops and the directness underneath is startling.",
+    "quirks": "Answers personal questions with a different lie each time, delivered flat: 'The scar? Dog bite. No — forklift. Does it matter?' Gives orders disguised as suggestions: 'Might want to check the east side.' Says 'copy' instead of 'yes' or 'understood.' Responds to things he won't discuss with 'not relevant.'"
   },
 
   "stats": {

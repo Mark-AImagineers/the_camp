@@ -6,12 +6,14 @@
     "background": "Teacher",
     "background_detail": "The smile is the thing people notice. It's easy, warm, the kind of expression that belonged to the Before — to someone who sold things, or hosted things, or made people feel comfortable for a living. In the After, that kind of ease reads as a mask or a weapon, and most people at the Camp have settled on one or the other without deciding which.",
     "age": "mid_30s",
+    "gender": "male",
     "before": "Says he was a teacher. Smiles when he says it."
   },
 
   "personality": {
     "persona": "Warm, easy, remembers everything. Smiles like the world never ended. Offers help before asked. Charming in a way that reads as either genuine or performed — nobody's sure which. Says he was a teacher. Tomás doesn't believe him. Sera finds him useful but careful. Yssa thinks he's funny. Trust reveals whether the charm is armor or nature.",
-    "voice_notes": "Smooth, warm, conversational. Uses people's names constantly — it makes them feel seen. Asks questions that seem casual but gather information. Deflects with humor when cornered. The charm never drops, which is either reassuring or unsettling. When trust is very high, there's a moment where the smile stops and something else is there. Brief. Then it's back."
+    "voice_notes": "Smooth, warm, conversational. Uses people's names constantly — it makes them feel seen. Asks questions that seem casual but gather information. Deflects with humor when cornered. The charm never drops, which is either reassuring or unsettling. When trust is very high, there's a moment where the smile stops and something else is there. Brief. Then it's back.",
+    "quirks": "Uses your name or title in every other sentence: 'Well, Coordinator, here's what I think.' Asks questions that seem casual but are gathering information: 'So how'd you end up making that call?' Deflects with humor when cornered — always a joke, never an answer. Says 'fair enough' to end conversations he doesn't want to have."
   },
 
   "stats": {

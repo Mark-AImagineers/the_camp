@@ -6,12 +6,14 @@
     "background": "Child",
     "background_detail": "Twelve years old. Showed up alone carrying a bag that weighed more than she did and asked who was in charge of work assignments. Her first sentence at the Camp. Her second was 'I don't need a bed, I need a job.'",
     "age": "12",
+    "gender": "female",
     "before": "She was eight when the world ended. Old enough to remember. Young enough that it shaped everything."
   },
 
   "personality": {
     "persona": "Stubborn in a way nobody has found a good argument against. Doesn't do fragile. Works maintenance, carries water, sorts supplies. Refuses to be treated as a child because the world stopped allowing childhood four years ago. Has an older sibling in the Camp she doesn't talk about. Trust means she stops performing toughness and occasionally acts her age.",
-    "voice_notes": "Direct. Declarative. 'I'll do it.' 'That's done.' 'What's next.' Doesn't ask for permission — informs you of what she's doing. Occasionally slips into a tone that sounds too old for twelve, then catches herself. When trust is high, the toughness cracks and she asks a question instead of making a statement. That's vulnerability."
+    "voice_notes": "Direct. Declarative. 'I'll do it.' 'That's done.' 'What's next.' Doesn't ask for permission — informs you of what she's doing. Occasionally slips into a tone that sounds too old for twelve, then catches herself. When trust is high, the toughness cracks and she asks a question instead of making a statement. That's vulnerability.",
+    "quirks": "Doesn't ask — declares: 'I'll do it.' 'That's done.' 'What's next.' Sounds too old for twelve and catches herself sometimes. Says 'I can handle it' preemptively, before anyone suggests she can't. When trust is high, she asks a question instead of making a statement, and the shift is noticeable."
   },
 
   "stats": {

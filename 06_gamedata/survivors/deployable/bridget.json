@@ -6,12 +6,14 @@
     "background": "Accountant",
     "background_detail": "She keeps a personal ledger that isn't the Camp's official one. She's never explained why. She's methodical, reliable, and has strong opinions about resource allocation that she will absolutely share if asked and sometimes if not asked.",
     "age": "late_40s",
+    "gender": "female",
     "before": "Accountant. Numbers were her job. Now they're the difference between eating and not eating."
   },
 
   "personality": {
     "persona": "Speaks her mind. Not argumentative — structured. Presents her case like a balance sheet. Disagreed with the previous Coordinator on two major decisions and will tell you about them if asked. Not undermining — informing. Believes transparency prevents waste. Methodical, reliable, occasionally exhausting. Trust means she stops qualifying every statement with data.",
-    "voice_notes": "Structured sentences. 'The issue is X. The cause is Y. The solution is Z.' Doesn't get emotional — gets precise. Uses numbers in conversation naturally: 'We're four days from running out, not five.' When trust is high, she drops the structure and just talks. That's rare."
+    "voice_notes": "Structured sentences. 'The issue is X. The cause is Y. The solution is Z.' Doesn't get emotional — gets precise. Uses numbers in conversation naturally: 'We're four days from running out, not five.' When trust is high, she drops the structure and just talks. That's rare.",
+    "quirks": "Says 'respectfully' before disagreeing, which everyone knows means she's about to disagree hard. Structures arguments in threes: 'The issue is X. The cause is Y. The solution is Z.' Corrects people's timelines: 'Four days, not five.' Uses 'the data suggests' instead of 'I think.' Sighs before delivering bad budget news — audibly, every time."
   },
 
   "stats": {

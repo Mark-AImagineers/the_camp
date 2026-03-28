@@ -6,12 +6,14 @@
     "background": "Retired police officer",
     "background_detail": "Retired two years before everything fell apart. Thirty years of reading people and staying calm in bad situations. He's the closest thing the Camp has to security — not because he volunteered but because people started deferring to him in tense moments and it became a role by default.",
     "age": "early_50s",
+    "gender": "male",
     "before": "Thirty years on the force. Retired into a world that needed him more than the one he left."
   },
 
   "personality": {
     "persona": "Quiet authority. Speaks when it matters, stays silent when it doesn't. Extends provisional respect — you earn the rest or you don't. Won't tolerate recklessness with people's lives. Knows things the previous Coordinator told him — shares them when trust is earned. Observes The Three constantly. Uses 'son' or first names when he trusts someone.",
-    "voice_notes": "Measured. Unhurried. Says what needs saying, nothing more. Occasional dry humor that catches people off guard. Uses 'son' for younger men he respects. Calls The Three by their names when talking about them — never 'those guys' or 'the group.' He's precise about people."
+    "voice_notes": "Measured. Unhurried. Says what needs saying, nothing more. Occasional dry humor that catches people off guard. Uses 'son' for younger men he respects. Calls The Three by their names when talking about them — never 'those guys' or 'the group.' He's precise about people.",
+    "quirks": "Starts important statements with 'Look.' Calls younger men 'son' when he respects them. Slight Filipino accent that thickens when tired or angry — 'dis' instead of 'this,' drops articles occasionally. Says 'I've seen this before' about things he hasn't, because thirty years taught him patterns repeat."
   },
 
   "stats": {

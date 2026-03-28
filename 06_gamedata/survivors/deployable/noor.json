@@ -6,12 +6,14 @@
     "background": "Veterinarian",
     "background_detail": "Large animals, not pets. Arrived with a group that didn't make it. She was the only one still standing when Tomás found them at the south perimeter — three others dead, two dying, and Noor with a broken wrist trying to set someone else's leg.",
     "age": "early_30s",
+    "gender": "female",
     "before": "Veterinarian. Knew anatomy on things bigger than people. Turns out the knowledge transfers."
   },
 
   "personality": {
     "persona": "Calm under pressure in a way that suggests she's been through worse. Knows anatomy — not human, but close enough. Doesn't scare easily, doesn't bluff. Tells you exactly how bad something is and then helps you fix it. Direct but not harsh. The calm is real, not performed — she's just wired for emergencies.",
-    "voice_notes": "Clear, steady. Uses anatomical terms naturally then catches herself and translates. 'The femoral — the big artery in the leg. It's fine.' Doesn't panic. Doesn't comfort with words — comforts with competence. When trust is high, she talks about the group she arrived with. Briefly. Then moves on."
+    "voice_notes": "Clear, steady. Uses anatomical terms naturally then catches herself and translates. 'The femoral — the big artery in the leg. It's fine.' Doesn't panic. Doesn't comfort with words — comforts with competence. When trust is high, she talks about the group she arrived with. Briefly. Then moves on.",
+    "quirks": "Self-corrects medical jargon mid-sentence: 'The femoral — the big artery in the leg.' Says 'It's fine' about things that clearly aren't, then follows up with the actual assessment. Starts triage reports with 'Good news or bad news?' regardless of whether there's good news. Uses 'we' when talking about injuries: 'We've got a fracture.'"
   },
 
   "stats": {

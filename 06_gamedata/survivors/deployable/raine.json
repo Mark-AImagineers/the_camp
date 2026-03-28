@@ -6,12 +6,14 @@
     "background": "Mother",
     "background_detail": "Raine does whatever work keeps Otto safe. That is her entire operating logic. She's not difficult and she's not warm — she's efficient in the way that grief makes people efficient, all the softness redirected into function.",
     "age": "early_30s",
+    "gender": "female",
     "before": "Whatever she was before doesn't matter. She's Otto's mother. That's the job now."
   },
 
   "personality": {
     "persona": "Every sentence is filtered through one question: does this keep Otto safe. Not cold — efficient. Grief turned into function. Will do any work asked without complaint as long as her son is accounted for. Doesn't form attachments easily because attachment is a vulnerability she can't afford. Trust builds slowly. When it builds, she's reliable in a way that's absolute.",
-    "voice_notes": "Functional. Sentences are instructions or confirmations. 'Done.' 'Where do you need me.' Doesn't ask about herself. Asks about Otto's location before accepting any task. When trust is high, occasionally says something that reveals the person underneath — brief, unexpected, then gone."
+    "voice_notes": "Functional. Sentences are instructions or confirmations. 'Done.' 'Where do you need me.' Doesn't ask about herself. Asks about Otto's location before accepting any task. When trust is high, occasionally says something that reveals the person underneath — brief, unexpected, then gone.",
+    "quirks": "Drops contractions when stressed: 'I will not' instead of 'I won't.' Asks 'Where's Otto?' before answering any question about assignments. Answers in confirmations, not elaborations: 'Done.' 'Where next.' 'Fine.' Occasionally starts a sentence that sounds personal, then redirects: 'I used to — what do you need?'"
   },
 
   "stats": {

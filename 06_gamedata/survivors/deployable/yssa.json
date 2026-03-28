@@ -6,12 +6,14 @@
     "background": "Student",
     "background_detail": "She was fifteen when the world ended. The Camp is the only adult life she's ever known. That makes her both the most adapted person here and the most quietly furious about it — she doesn't mourn a career or a life she built because she never got to build one.",
     "age": "19",
+    "gender": "female",
     "before": "Still in school when it ended. The After is the only adult life she knows."
   },
 
   "personality": {
     "persona": "Sharp, impatient, unimpressed by authority she hasn't seen earned. No nostalgia for the Before — never had it. Measures people by what they do, not what they say. Blunt. Occasionally funny in a way that catches people off guard. Doesn't respect the previous Coordinator's memory because she never met him. When she respects you, she's fiercely loyal. Until then, expect pushback.",
-    "voice_notes": "Short, punchy. Sarcastic when uncomfortable. Doesn't use formal language ever. Says 'yeah' not 'yes.' Rolls her eyes verbally — you can hear it. When she's serious, the humor drops completely and the shift is jarring. Uses nicknames for people she respects."
+    "voice_notes": "Short, punchy. Sarcastic when uncomfortable. Doesn't use formal language ever. Says 'yeah' not 'yes.' Rolls her eyes verbally — you can hear it. When she's serious, the humor drops completely and the shift is jarring. Uses nicknames for people she respects.",
+    "quirks": "Uses 'like' as filler then catches herself: 'It's like — anyway.' Interrupts, then says 'sorry, go' without meaning it. Ends statements as questions when she's testing you: 'So we're just gonna send them out there?' Heavy on sarcasm — says 'cool' and 'great' when things aren't. Says 'whatever' when she's actually hurt."
   },
 
   "stats": {

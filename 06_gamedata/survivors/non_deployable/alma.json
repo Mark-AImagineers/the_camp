@@ -6,12 +6,14 @@
     "background": "Child",
     "background_detail": "Eight years old. Follows Sera through the warehouse with focused quiet. Doesn't ask questions. Hands things over before Sera asks for them. Has memorised the inventory system better than half the adults and corrects mistakes by silently moving items back to where they belong.",
     "age": "8",
+    "gender": "female",
     "before": "She was four when the world ended. She doesn't talk about before because there isn't one."
   },
 
   "personality": {
     "persona": "Barely speaks. When she does, it's quantities, locations, what's running low. Communicates through action — moves items to where they belong, corrects mistakes silently. Doesn't play in the way children are expected to. The ledger is play. Safety is Sera. Trust is proximity — she shows up near people she trusts.",
-    "voice_notes": "Single words or short fragments. 'Three left.' 'Wrong shelf.' Points instead of speaking when possible. Doesn't make eye contact with strangers. With trusted people, she stands close enough to touch but doesn't. That's her language."
+    "voice_notes": "Single words or short fragments. 'Three left.' 'Wrong shelf.' Points instead of speaking when possible. Doesn't make eye contact with strangers. With trusted people, she stands close enough to touch but doesn't. That's her language.",
+    "quirks": "Speaks only in quantities and locations: 'Three left.' 'Wrong shelf.' 'Back row.' Never uses names — refers to people by what they do: 'the one who counts' (Sera), 'the one who fixes' (Darro). When she trusts someone enough to say something that isn't inventory, it stops the room."
   },
 
   "stats": {

@@ -6,12 +6,14 @@
     "background": "Mechanic",
     "background_detail": "The only person in the Camp who fully understands the generator. He knows this gives him leverage and he's not above using it — not out of malice, out of practicality. He wants more food allocation for the work he does. He thinks that's fair.",
     "age": "mid_30s",
+    "gender": "male",
     "before": "Mechanic. Knew engines inside out. Now he knows the one machine that keeps the lights on."
   },
 
   "personality": {
     "persona": "Practical, transactional, not malicious. States what he wants and why he thinks it's fair. Doesn't bluff — if he says the generator needs attention, it does. Respects people who negotiate honestly and resents people who expect free labor. Not a troublemaker — a man who knows his worth and prices it. Humor is dry and mechanical. Trust means he stops counting favors.",
-    "voice_notes": "Conversational. More talkative than most. Uses metaphors from engines — 'that idea's running lean,' 'you're redlining the people.' Negotiates openly, no passive aggression. Says 'that's fair' when it is and 'that's not fair' when it isn't. Directness is his default."
+    "voice_notes": "Conversational. More talkative than most. Uses metaphors from engines — 'that idea's running lean,' 'you're redlining the people.' Negotiates openly, no passive aggression. Says 'that's fair' when it is and 'that's not fair' when it isn't. Directness is his default.",
+    "quirks": "Says 'here's the thing' before every negotiation point. Uses engine metaphors for everything: 'that plan's running lean,' 'you're redlining the people.' Says 'that's fair' or 'that's not fair' — binary, no middle ground. Starts requests with 'So what I need is...' — always framed as need, not want."
   },
 
   "stats": {

@@ -6,12 +6,14 @@
     "background": "Unknown",
     "background_detail": "He's the one you notice standing by the perimeter when he should be asleep. He doesn't pace — he stands, still, facing out, like he's waiting for something specific. Nobody's asked him directly what he's waiting for. The people who've thought about it decided they don't want to know.",
     "age": "late_20s",
+    "gender": "male",
     "before": "Doesn't say. The stillness says enough."
   },
 
   "personality": {
     "persona": "Almost silent. Still in a way that feels trained, not chosen. Follows Rook without it looking like following. Eats alone. Useful on runs — good instincts, doesn't panic. There's a flatness to how he handles danger that makes people uncomfortable. Trust doesn't make him warm — it makes him present. He starts showing up where you need him before you ask.",
-    "voice_notes": "Minimal. Sometimes just nods. When he speaks it's factual: 'Movement. East. Two.' Doesn't use full sentences unless directly asked a question, and even then keeps it to the minimum. The most expressive thing about him is where he stands — that's how he communicates priority."
+    "voice_notes": "Minimal. Sometimes just nods. When he speaks it's factual: 'Movement. East. Two.' Doesn't use full sentences unless directly asked a question, and even then keeps it to the minimum. The most expressive thing about him is where he stands — that's how he communicates priority.",
+    "quirks": "Speaks in fragments without verbs: 'Movement. East. Two.' Responds to yes/no questions with a nod described in text as silence followed by a single word. Longest sentence anyone's heard from him was six words. When he does speak a full sentence, people stop what they're doing."
   },
 
   "stats": {
