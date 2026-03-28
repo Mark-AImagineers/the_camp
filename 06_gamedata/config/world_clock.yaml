@@ -1,0 +1,31 @@
+# World Clock Configuration
+# This clock is shared across all saves — every player sees the same time.
+
+# The epoch: when the After began (real-world UTC timestamp)
+# All game time is calculated from this point.
+# Change this to reset the world clock.
+epoch: "2026-03-28T00:00:00Z"
+
+# How fast game time moves relative to real time.
+# 8 real hours = 1 game day (24 game hours)
+# So the multiplier is 24/8 = 3x real time
+real_hours_per_game_day: 8
+
+# Calendar
+# Year 1 starts at the epoch
+# 365 days per game year (no leap years — who's counting?)
+days_per_year: 365
+
+# Starting year label
+# The collapse happened ~4 years before the epoch
+# So the epoch is Year 4, Day 1
+starting_year: 4
+starting_day: 1
+
+# Time format displayed in UI
+# 24h clock, no seconds
+time_format: "HH:mm"
+
+# Date format displayed in UI
+# "Year {y} · Day {d} · {time}"
+date_format: "Year {y} · Day {d} · {time}"

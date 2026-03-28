@@ -4,6 +4,7 @@ from pathlib import Path
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
+import yaml
 
 from app.api.auth import router as auth_router
 from app.api.save_slots import router as save_slots_router
@@ -34,6 +35,32 @@ def _load_version() -> dict:
 def health():
     info = _load_version()
     return {"status": "ok", "version": info.get("version", "unknown"), "service": "thecamp-api"}
+
+
+def _load_world_clock_config() -> dict:
+    paths = [
+        Path("/app/06_gamedata/config/world_clock.yaml"),
+        Path("06_gamedata/config/world_clock.yaml"),
+    ]
+    for p in paths:
+        if p.exists():
+            return yaml.safe_load(p.read_text())
+    return {}
+
+
+@app.get("/world-clock")
+def world_clock():
+    config = _load_world_clock_config()
+    if not config:
+        raise HTTPException(status_code=503, detail="World clock config not found")
+    return {
+        "epoch": config["epoch"],
+        "real_hours_per_game_day": config["real_hours_per_game_day"],
+        "days_per_year": config["days_per_year"],
+        "starting_year": config["starting_year"],
+        "starting_day": config["starting_day"],
+        "date_format": config["date_format"],
+    }
 
 
 class WaitlistRequest(BaseModel):
