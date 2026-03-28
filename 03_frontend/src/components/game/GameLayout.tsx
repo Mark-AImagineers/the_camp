@@ -6,10 +6,12 @@ import BottomBar from './BottomBar'
 import './game.css'
 
 export default function GameLayout() {
+  const saveSlotId = localStorage.getItem('thecamp_save_slot_id')
+
   return (
     <div className="game-grid">
       <TopBar />
-      <LeftPanel />
+      <LeftPanel saveSlotId={saveSlotId} />
       <CenterPanel />
       <RightPanel />
       <BottomBar />

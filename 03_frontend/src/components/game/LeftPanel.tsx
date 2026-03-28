@@ -1,15 +1,33 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { apiFetch } from '../../lib/api'
+import SurvivorRow from './SurvivorRow'
+import type { Survivor } from './SurvivorRow'
 
 type Tab = 'people' | 'stash' | 'camp'
 
-const PLACEHOLDER: Record<Tab, string> = {
-  people: 'Survivor roster will appear here.',
-  stash: 'Inventory will appear here.',
-  camp: 'Facilities will appear here.',
+interface Props {
+  saveSlotId: string | null
 }
 
-export default function LeftPanel() {
+export default function LeftPanel({ saveSlotId }: Props) {
   const [tab, setTab] = useState<Tab>('people')
+  const [survivors, setSurvivors] = useState<Survivor[]>([])
+  const [expandedId, setExpandedId] = useState<string | null>(null)
+  const [loading, setLoading] = useState(false)
+
+  useEffect(() => {
+    if (!saveSlotId) return
+    setLoading(true)
+    apiFetch(`/save-slots/${saveSlotId}/survivors`)
+      .then(res => res.json())
+      .then(data => setSurvivors(data.survivors || []))
+      .catch(() => {})
+      .finally(() => setLoading(false))
+  }, [saveSlotId])
+
+  const toggleExpanded = (id: string) => {
+    setExpandedId(prev => prev === id ? null : id)
+  }
 
   return (
     <div className="panel left-panel">
@@ -25,7 +43,26 @@ export default function LeftPanel() {
         ))}
       </div>
       <div className="panel-body">
-        <p className="placeholder-text">{PLACEHOLDER[tab]}</p>
+        {tab === 'people' && (
+          loading ? (
+            <p className="placeholder-text">Loading roster...</p>
+          ) : survivors.length === 0 ? (
+            <p className="placeholder-text">No survivors found.</p>
+          ) : (
+            <div className="survivor-list">
+              {survivors.map(s => (
+                <SurvivorRow
+                  key={s.id}
+                  survivor={s}
+                  isExpanded={expandedId === s.id}
+                  onToggle={() => toggleExpanded(s.id)}
+                />
+              ))}
+            </div>
+          )
+        )}
+        {tab === 'stash' && <p className="placeholder-text">Inventory will appear here.</p>}
+        {tab === 'camp' && <p className="placeholder-text">Facilities will appear here.</p>}
       </div>
     </div>
   )
