@@ -5,22 +5,29 @@
   "identity": {
     "background": "Child",
     "background_detail": "Eight years old. Follows Sera through the warehouse with focused quiet. Doesn't ask questions. Hands things over before Sera asks for them. Has memorised the inventory system better than half the adults and corrects mistakes by silently moving items back to where they belong.",
-    "age_bracket": "8",
+    "age": "8",
     "before": "She was four when the world ended. She doesn't talk about before because there isn't one."
   },
 
   "personality": {
     "persona": "Barely speaks. When she does, it's quantities, locations, what's running low. Communicates through action — moves items to where they belong, corrects mistakes silently. Doesn't play in the way children are expected to. The ledger is play. Safety is Sera. Trust is proximity — she shows up near people she trusts.",
-    "trait": "Shadow",
-    "trait_description": "+5% inventory accuracy passively. Stays near Sera — if Sera is on an expedition, Alma's morale drops. Cannot be sent on expeditions.",
     "voice_notes": "Single words or short fragments. 'Three left.' 'Wrong shelf.' Points instead of speaking when possible. Doesn't make eye contact with strangers. With trusted people, she stands close enough to touch but doesn't. That's her language."
   },
 
   "stats": {
-    "bias": ["perception", "luck"],
-    "base_range": [1, 4],
-    "bias_bonus": 2
+    "str": { "base": 1, "growth": 0.5 },
+    "dex": { "base": 3, "growth": 0.8 },
+    "agi": { "base": 3, "growth": 0.9 },
+    "per": { "base": 7, "growth": 1.3 },
+    "end": { "base": 2, "growth": 0.6 },
+    "int": { "base": 5, "growth": 1.1 },
+    "lck": { "base": 5, "growth": 1.0 },
+    "hp":  { "base": 45, "growth": 0.6 }
   },
+  "traits": [],
+  "skills": [],
+  "starting_inventory": [],
+  "rations": 0,
 
   "relationships": {
     "base_strength": 10,

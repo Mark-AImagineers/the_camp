@@ -5,22 +5,29 @@
   "identity": {
     "background": "Logistics",
     "background_detail": "The scar runs from his left ear to his jaw. He'll tell you he got it from a car accident. He'll tell you differently each time. He doesn't care if you believe him — the deflection is the point, not the story. He makes decisions quickly and without visible doubt. The other two defer to him, though none of them would describe it that way.",
-    "age_bracket": "early_30s",
+    "age": "early_30s",
     "before": "Says logistics. The scar says otherwise."
   },
 
   "personality": {
     "persona": "Quick, controlled, deflects personal questions with different lies each time. Not hostile — just walled off. Leads the other two without appearing to. Works hard, never complains, never volunteers either. Waits to be asked, then delivers. Knows things about the early days he's filed under 'not relevant.' Trust unlocks the truth behind the scar.",
-    "trait": "Decisive",
-    "trait_description": "+10% expedition speed. Team doesn't hesitate at decision points. Scar story changes every time — unlocking the real one requires high trust.",
     "voice_notes": "Clipped, efficient. Answers questions with questions when deflecting. 'The scar? Dog bite. No wait — forklift. Does it matter?' Gives orders disguised as suggestions: 'Might want to check the east side.' When trust is high, the deflection stops and the directness underneath is startling."
   },
 
   "stats": {
-    "bias": ["agility", "perception"],
-    "base_range": [3, 7],
-    "bias_bonus": 2
+    "str": { "base": 6, "growth": 1.0 },
+    "dex": { "base": 6, "growth": 1.1 },
+    "agi": { "base": 7, "growth": 1.2 },
+    "per": { "base": 7, "growth": 1.2 },
+    "end": { "base": 6, "growth": 1.0 },
+    "int": { "base": 6, "growth": 1.0 },
+    "lck": { "base": 4, "growth": 0.8 },
+    "hp":  { "base": 105, "growth": 1.0 }
   },
+  "traits": [],
+  "skills": [],
+  "starting_inventory": [],
+  "rations": 0,
 
   "relationships": {
     "base_strength": 15,

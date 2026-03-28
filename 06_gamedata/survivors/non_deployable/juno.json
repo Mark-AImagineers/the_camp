@@ -5,22 +5,29 @@
   "identity": {
     "background": "Child",
     "background_detail": "Twelve years old. Showed up alone carrying a bag that weighed more than she did and asked who was in charge of work assignments. Her first sentence at the Camp. Her second was 'I don't need a bed, I need a job.'",
-    "age_bracket": "12",
+    "age": "12",
     "before": "She was eight when the world ended. Old enough to remember. Young enough that it shaped everything."
   },
 
   "personality": {
     "persona": "Stubborn in a way nobody has found a good argument against. Doesn't do fragile. Works maintenance, carries water, sorts supplies. Refuses to be treated as a child because the world stopped allowing childhood four years ago. Has an older sibling in the Camp she doesn't talk about. Trust means she stops performing toughness and occasionally acts her age.",
-    "trait": "Stubborn",
-    "trait_description": "Does maintenance and logistics at 80% adult efficiency. Refuses to be idle — assigns herself if unassigned. +5 morale from other survivors who respect her. Cannot be sent on combat expeditions.",
     "voice_notes": "Direct. Declarative. 'I'll do it.' 'That's done.' 'What's next.' Doesn't ask for permission — informs you of what she's doing. Occasionally slips into a tone that sounds too old for twelve, then catches herself. When trust is high, the toughness cracks and she asks a question instead of making a statement. That's vulnerability."
   },
 
   "stats": {
-    "bias": ["agility", "endurance"],
-    "base_range": [2, 5],
-    "bias_bonus": 2
+    "str": { "base": 2, "growth": 0.8 },
+    "dex": { "base": 4, "growth": 1.0 },
+    "agi": { "base": 5, "growth": 1.1 },
+    "per": { "base": 5, "growth": 1.0 },
+    "end": { "base": 4, "growth": 1.0 },
+    "int": { "base": 5, "growth": 1.1 },
+    "lck": { "base": 4, "growth": 0.9 },
+    "hp":  { "base": 65, "growth": 0.9 }
   },
+  "traits": [],
+  "skills": [],
+  "starting_inventory": [],
+  "rations": 0,
 
   "relationships": {
     "base_strength": 15,

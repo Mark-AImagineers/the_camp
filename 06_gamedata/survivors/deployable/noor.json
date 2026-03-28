@@ -5,22 +5,29 @@
   "identity": {
     "background": "Veterinarian",
     "background_detail": "Large animals, not pets. Arrived with a group that didn't make it. She was the only one still standing when Tomás found them at the south perimeter — three others dead, two dying, and Noor with a broken wrist trying to set someone else's leg.",
-    "age_bracket": "early_30s",
+    "age": "early_30s",
     "before": "Veterinarian. Knew anatomy on things bigger than people. Turns out the knowledge transfers."
   },
 
   "personality": {
     "persona": "Calm under pressure in a way that suggests she's been through worse. Knows anatomy — not human, but close enough. Doesn't scare easily, doesn't bluff. Tells you exactly how bad something is and then helps you fix it. Direct but not harsh. The calm is real, not performed — she's just wired for emergencies.",
-    "trait": "Field Surgeon",
-    "trait_description": "+15% healing when paired with Lena. Can perform emergency treatment on expeditions without medkits (reduced effectiveness). Reduces death chance from critical injuries by one tier.",
     "voice_notes": "Clear, steady. Uses anatomical terms naturally then catches herself and translates. 'The femoral — the big artery in the leg. It's fine.' Doesn't panic. Doesn't comfort with words — comforts with competence. When trust is high, she talks about the group she arrived with. Briefly. Then moves on."
   },
 
   "stats": {
-    "bias": ["perception", "endurance"],
-    "base_range": [3, 7],
-    "bias_bonus": 2
+    "str": { "base": 4, "growth": 0.8 },
+    "dex": { "base": 7, "growth": 1.2 },
+    "agi": { "base": 4, "growth": 0.8 },
+    "per": { "base": 7, "growth": 1.2 },
+    "end": { "base": 6, "growth": 1.0 },
+    "int": { "base": 8, "growth": 1.3 },
+    "lck": { "base": 4, "growth": 0.8 },
+    "hp":  { "base": 100, "growth": 1.0 }
   },
+  "traits": [],
+  "skills": [],
+  "starting_inventory": [],
+  "rations": 0,
 
   "relationships": {
     "base_strength": 25,

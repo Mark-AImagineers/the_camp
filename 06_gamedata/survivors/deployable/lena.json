@@ -5,22 +5,29 @@
   "identity": {
     "background": "Nursing student",
     "background_detail": "One semester short of finishing. She knows enough to be dangerous in the good way — she can clean wounds, manage infections if the supplies hold, recognize the things she can't fix and say so honestly. What she can't do is pretend she has answers she doesn't have, and she won't.",
-    "age_bracket": "late_20s",
-    "before": "Almost a nurse. Now the closest thing the Camp has to one."
+    "age": "late_20s",
+    "before": "One semester short of a nursing degree. Close enough to save lives. Honest enough to say when she can't."
   },
 
   "personality": {
     "persona": "Direct and clinical. Doesn't soften bad news. Says 'I'm not a nurse' if called one. Keeps careful distance from everyone — not cold, just precise about boundaries. Neutral on leadership — proves itself or it doesn't. Speaks about injuries and supplies with authority, everything else with detachment. Trust unlocks the person behind the professional.",
-    "trait": "Careful",
-    "trait_description": "+20% healing speed when assigned as Medic. Reduces injury severity by one tier on expeditions. Will not take unnecessary risks — may extract early.",
     "voice_notes": "Clinical vocabulary when discussing health. Blunt delivery. 'The wound is clean but it needs rest.' Doesn't hedge. Doesn't comfort unless trust is high — then it comes out reluctant and genuine. Refers to people by injury before name when stressed: 'the arm fracture in bay two.'"
   },
 
   "stats": {
-    "bias": ["perception", "endurance"],
-    "base_range": [3, 7],
-    "bias_bonus": 2
+    "str": { "base": 3, "growth": 0.7 },
+    "dex": { "base": 7, "growth": 1.2 },
+    "agi": { "base": 4, "growth": 0.8 },
+    "per": { "base": 7, "growth": 1.2 },
+    "end": { "base": 5, "growth": 1.0 },
+    "int": { "base": 7, "growth": 1.2 },
+    "lck": { "base": 4, "growth": 0.8 },
+    "hp":  { "base": 95, "growth": 0.9 }
   },
+  "traits": [],
+  "skills": [],
+  "starting_inventory": [],
+  "rations": 0,
 
   "relationships": {
     "base_strength": 30,

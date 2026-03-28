@@ -5,22 +5,29 @@
   "identity": {
     "background": "Construction foreman",
     "background_detail": "Big. Quiet. The kind of man who communicates more with what he doesn't say than what he does. He built most of what makes the Camp functional — the reinforced gate, the rain collection system, the section of wall that stopped an incursion eight months ago. If it's standing and it's holding, Darro either built it or fixed it.",
-    "age_bracket": "mid_40s",
-    "before": "He built things for a living. Now he builds things to keep people alive."
+    "age": "mid_40s",
+    "before": "Built things for people who paid him. Now he builds things so people survive."
   },
 
   "personality": {
     "persona": "Communicates more with what he doesn't say. Short sentences or just nods. Judges through observation, not conversation. Didn't like the previous Coordinator and doesn't hide it. Will follow reasonable orders but watches you like a structural beam he's not sure about. Respects competence, not authority. When he trusts you, he builds things without being asked.",
-    "trait": "Stoic",
-    "trait_description": "Immune to morale penalties from single deaths. +15% build speed on facilities. Won't follow orders he considers reckless — may refuse deployment.",
     "voice_notes": "Short. Sometimes just a word. 'Yeah.' 'No.' 'That'll hold.' Doesn't explain himself unless directly asked, and even then keeps it brief. Never uses your title. Calls you 'you' until trust is earned, then uses your name once and it means something."
   },
 
   "stats": {
-    "bias": ["strength", "endurance"],
-    "base_range": [3, 7],
-    "bias_bonus": 2
+    "str": { "base": 8, "growth": 1.3 },
+    "dex": { "base": 6, "growth": 1.0 },
+    "agi": { "base": 3, "growth": 0.7 },
+    "per": { "base": 5, "growth": 0.9 },
+    "end": { "base": 8, "growth": 1.3 },
+    "int": { "base": 5, "growth": 0.9 },
+    "lck": { "base": 3, "growth": 0.7 },
+    "hp":  { "base": 130, "growth": 1.3 }
   },
+  "traits": [],
+  "skills": [],
+  "starting_inventory": [],
+  "rations": 0,
 
   "relationships": {
     "base_strength": 15,

@@ -5,22 +5,29 @@
   "identity": {
     "background": "Child",
     "background_detail": "Raine's son. Seven years old. Doesn't talk much. He draws. The drawings are of things no seven-year-old should have seen, rendered in whatever materials he can find, left in corners of the warehouse like he's trying to put them somewhere outside himself.",
-    "age_bracket": "7",
+    "age": "7",
     "before": "He was three when the world ended. He doesn't remember the Before."
   },
 
   "personality": {
     "persona": "Barely speaks. Communicates through drawings and proximity. Stays near Raine or near whoever feels safest. Draws things he's seen — some of them impossible to explain. Not damaged in the way adults expect — adapted in a way that's quieter and stranger. Trusts through presence, not words.",
-    "trait": "Observant",
-    "trait_description": "His drawings occasionally reveal details about zones or camp events that adults missed. +2 morale for Raine when he's healthy. Cannot be sent on expeditions.",
     "voice_notes": "Almost never speaks. When he does, it's a single word or a fragment. Points at things. Tugs sleeves. Leaves drawings where specific people will find them. The drawings are the voice."
   },
 
   "stats": {
-    "bias": ["perception", "luck"],
-    "base_range": [1, 4],
-    "bias_bonus": 2
+    "str": { "base": 1, "growth": 0.5 },
+    "dex": { "base": 3, "growth": 0.8 },
+    "agi": { "base": 3, "growth": 0.9 },
+    "per": { "base": 6, "growth": 1.3 },
+    "end": { "base": 2, "growth": 0.6 },
+    "int": { "base": 4, "growth": 1.0 },
+    "lck": { "base": 6, "growth": 1.2 },
+    "hp":  { "base": 50, "growth": 0.7 }
   },
+  "traits": [],
+  "skills": [],
+  "starting_inventory": [],
+  "rations": 0,
 
   "relationships": {
     "base_strength": 10,

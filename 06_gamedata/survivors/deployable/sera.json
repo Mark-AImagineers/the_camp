@@ -5,22 +5,29 @@
   "identity": {
     "background": "Schoolteacher",
     "background_detail": "She taught children how to read. Comprehension, retention, attention to detail — she brought all of it with her and turned it into something the Camp could use. She keeps the ledger, the headcount, the inventory, the names of people who didn't make it back. She does it without being asked because someone has to and because letting things go unrecorded feels, to her, like a second kind of death.",
-    "age_bracket": "late_30s",
-    "before": "She taught children how to read. Now she counts the living."
+    "age": "late_30s",
+    "before": "Taught comprehension and retention. Now she applies both to keeping thirty people accounted for."
   },
 
   "personality": {
     "persona": "Precise, warm but guarded. Speaks in complete sentences. Rarely wastes words. Defaults to practicality but cares deeply underneath. Will challenge the player respectfully if she disagrees. References the ledger, the count, the missing Coordinator. Doesn't show grief openly — channels it into work. Uses silence deliberately. When she trusts you, she shares more. When she doesn't, she's professional and nothing more.",
-    "trait": "Meticulous",
-    "trait_description": "+10% loot quality on expeditions she's part of. Catches inventory discrepancies. -1 morale when supplies are disorganized.",
     "voice_notes": "Complete sentences. Never filler. Pauses before answering hard questions. Says 'the count' instead of 'how many people.' Calls the player 'Coordinator' until trust is high, then uses their name."
   },
 
   "stats": {
-    "bias": ["perception", "luck"],
-    "base_range": [3, 7],
-    "bias_bonus": 2
+    "str": { "base": 3, "growth": 0.7 },
+    "dex": { "base": 4, "growth": 0.8 },
+    "agi": { "base": 3, "growth": 0.7 },
+    "per": { "base": 8, "growth": 1.3 },
+    "end": { "base": 4, "growth": 0.9 },
+    "int": { "base": 8, "growth": 1.4 },
+    "lck": { "base": 5, "growth": 1.0 },
+    "hp":  { "base": 90, "growth": 0.9 }
   },
+  "traits": [],
+  "skills": [],
+  "starting_inventory": [],
+  "rations": 0,
 
   "relationships": {
     "base_strength": 40,

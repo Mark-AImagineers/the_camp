@@ -5,22 +5,29 @@
   "identity": {
     "background": "Teacher",
     "background_detail": "The smile is the thing people notice. It's easy, warm, the kind of expression that belonged to the Before — to someone who sold things, or hosted things, or made people feel comfortable for a living. In the After, that kind of ease reads as a mask or a weapon, and most people at the Camp have settled on one or the other without deciding which.",
-    "age_bracket": "mid_30s",
+    "age": "mid_30s",
     "before": "Says he was a teacher. Smiles when he says it."
   },
 
   "personality": {
     "persona": "Warm, easy, remembers everything. Smiles like the world never ended. Offers help before asked. Charming in a way that reads as either genuine or performed — nobody's sure which. Says he was a teacher. Tomás doesn't believe him. Sera finds him useful but careful. Yssa thinks he's funny. Trust reveals whether the charm is armor or nature.",
-    "trait": "Charming",
-    "trait_description": "+10% trade efficiency with external contacts. +5 morale when assigned to camp social roles. Tomás doesn't trust him. Sera keeps the ledger locked near him.",
     "voice_notes": "Smooth, warm, conversational. Uses people's names constantly — it makes them feel seen. Asks questions that seem casual but gather information. Deflects with humor when cornered. The charm never drops, which is either reassuring or unsettling. When trust is very high, there's a moment where the smile stops and something else is there. Brief. Then it's back."
   },
 
   "stats": {
-    "bias": ["luck", "agility"],
-    "base_range": [3, 7],
-    "bias_bonus": 2
+    "str": { "base": 4, "growth": 0.8 },
+    "dex": { "base": 5, "growth": 1.0 },
+    "agi": { "base": 6, "growth": 1.1 },
+    "per": { "base": 6, "growth": 1.0 },
+    "end": { "base": 4, "growth": 0.8 },
+    "int": { "base": 7, "growth": 1.2 },
+    "lck": { "base": 7, "growth": 1.3 },
+    "hp":  { "base": 90, "growth": 0.9 }
   },
+  "traits": [],
+  "skills": [],
+  "starting_inventory": [],
+  "rations": 0,
 
   "relationships": {
     "base_strength": 20,

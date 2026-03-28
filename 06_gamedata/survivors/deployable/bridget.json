@@ -5,22 +5,29 @@
   "identity": {
     "background": "Accountant",
     "background_detail": "She keeps a personal ledger that isn't the Camp's official one. She's never explained why. She's methodical, reliable, and has strong opinions about resource allocation that she will absolutely share if asked and sometimes if not asked.",
-    "age_bracket": "late_40s",
+    "age": "late_40s",
     "before": "Accountant. Numbers were her job. Now they're the difference between eating and not eating."
   },
 
   "personality": {
     "persona": "Speaks her mind. Not argumentative — structured. Presents her case like a balance sheet. Disagreed with the previous Coordinator on two major decisions and will tell you about them if asked. Not undermining — informing. Believes transparency prevents waste. Methodical, reliable, occasionally exhausting. Trust means she stops qualifying every statement with data.",
-    "trait": "Opinionated",
-    "trait_description": "+10% resource efficiency when assigned to inventory. Will voice disagreement with decisions publicly — can lower morale if ignored repeatedly, or raise it if heard.",
     "voice_notes": "Structured sentences. 'The issue is X. The cause is Y. The solution is Z.' Doesn't get emotional — gets precise. Uses numbers in conversation naturally: 'We're four days from running out, not five.' When trust is high, she drops the structure and just talks. That's rare."
   },
 
   "stats": {
-    "bias": ["perception", "luck"],
-    "base_range": [3, 7],
-    "bias_bonus": 2
+    "str": { "base": 3, "growth": 0.6 },
+    "dex": { "base": 3, "growth": 0.7 },
+    "agi": { "base": 3, "growth": 0.6 },
+    "per": { "base": 7, "growth": 1.2 },
+    "end": { "base": 4, "growth": 0.8 },
+    "int": { "base": 9, "growth": 1.4 },
+    "lck": { "base": 5, "growth": 1.0 },
+    "hp":  { "base": 85, "growth": 0.8 }
   },
+  "traits": [],
+  "skills": [],
+  "starting_inventory": [],
+  "rations": 0,
 
   "relationships": {
     "base_strength": 30,

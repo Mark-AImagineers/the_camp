@@ -5,22 +5,29 @@
   "identity": {
     "background": "Mother",
     "background_detail": "Raine does whatever work keeps Otto safe. That is her entire operating logic. She's not difficult and she's not warm — she's efficient in the way that grief makes people efficient, all the softness redirected into function.",
-    "age_bracket": "early_30s",
-    "before": "It doesn't matter what she was before. She's Otto's mother. That's the job now."
+    "age": "early_30s",
+    "before": "Whatever she was before doesn't matter. She's Otto's mother. That's the job now."
   },
 
   "personality": {
     "persona": "Every sentence is filtered through one question: does this keep Otto safe. Not cold — efficient. Grief turned into function. Will do any work asked without complaint as long as her son is accounted for. Doesn't form attachments easily because attachment is a vulnerability she can't afford. Trust builds slowly. When it builds, she's reliable in a way that's absolute.",
-    "trait": "Protective",
-    "trait_description": "Takes damage for teammates on expeditions. +20% work output when Otto is safe in camp. Refuses deployment if Otto is sick or in danger.",
     "voice_notes": "Functional. Sentences are instructions or confirmations. 'Done.' 'Where do you need me.' Doesn't ask about herself. Asks about Otto's location before accepting any task. When trust is high, occasionally says something that reveals the person underneath — brief, unexpected, then gone."
   },
 
   "stats": {
-    "bias": ["endurance", "strength"],
-    "base_range": [3, 7],
-    "bias_bonus": 2
+    "str": { "base": 5, "growth": 1.0 },
+    "dex": { "base": 4, "growth": 0.9 },
+    "agi": { "base": 5, "growth": 1.0 },
+    "per": { "base": 5, "growth": 0.9 },
+    "end": { "base": 7, "growth": 1.2 },
+    "int": { "base": 4, "growth": 0.8 },
+    "lck": { "base": 4, "growth": 0.8 },
+    "hp":  { "base": 110, "growth": 1.1 }
   },
+  "traits": [],
+  "skills": [],
+  "starting_inventory": [],
+  "rations": 0,
 
   "relationships": {
     "base_strength": 20,

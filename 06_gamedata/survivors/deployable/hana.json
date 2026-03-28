@@ -5,22 +5,29 @@
   "identity": {
     "background": "Army logistics officer",
     "background_detail": "Fifteen years in. She doesn't talk about her service and doesn't need to — it's in how she moves, how she organizes space, how she looks at a room and sees sightlines before furniture. She arrived alone, clean, carrying a pack that was exactly the right weight for the distance she'd covered.",
-    "age_bracket": "early_40s",
+    "age": "early_40s",
     "before": "Military logistics. Fifteen years. Everything about her is calibrated."
   },
 
   "personality": {
     "persona": "Operational. Not warm, not cold — functional. Follows a chain of command if it exists, builds one if it doesn't. Won't watch avoidable mistakes with lives on the line and say nothing. Assessed the Camp's defenses on day one, waited a week to speak, then laid out fourteen vulnerabilities in order of severity. Tomás agreed with twelve.",
-    "trait": "Tactical",
-    "trait_description": "+15% raid defense. +10% expedition planning efficiency. Identifies optimal team compositions. Reduces supply waste by 10% when assigned to logistics.",
     "voice_notes": "Precise. Military cadence without military jargon — she translates for civilians automatically. Numbers first, context second. 'Fourteen points of vulnerability. Twelve critical. Two I'd call structural.' Doesn't soften assessments. When trust is high, the operational mask cracks and she says things like 'I'm tired of counting the ways this place could fall.' Then it's back."
   },
 
   "stats": {
-    "bias": ["perception", "strength"],
-    "base_range": [3, 7],
-    "bias_bonus": 2
+    "str": { "base": 6, "growth": 1.0 },
+    "dex": { "base": 5, "growth": 0.9 },
+    "agi": { "base": 5, "growth": 0.9 },
+    "per": { "base": 8, "growth": 1.3 },
+    "end": { "base": 6, "growth": 1.0 },
+    "int": { "base": 8, "growth": 1.3 },
+    "lck": { "base": 3, "growth": 0.7 },
+    "hp":  { "base": 110, "growth": 1.1 }
   },
+  "traits": [],
+  "skills": [],
+  "starting_inventory": [],
+  "rations": 0,
 
   "relationships": {
     "base_strength": 30,

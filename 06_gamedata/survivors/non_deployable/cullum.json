@@ -5,22 +5,29 @@
   "identity": {
     "background": "Unknown",
     "background_detail": "Old enough that people assume he's fragile. He isn't. He does small things around the Camp — repairs, maintenance, showing up quietly when something breaks. Never asks for anything in return. Rarely speaks. When he does, people listen, though nobody could explain exactly why.",
-    "age_bracket": "60s",
+    "age": "60s",
     "before": "Doesn't say. Nobody's pushed hard enough to find out."
   },
 
   "personality": {
     "persona": "Speaks rarely, and only when it changes something. Never rushes. Moves through the camp like he's been here longer than anyone. Doesn't explain himself. Doesn't ask questions — seems to already know the answers. When he speaks, it lands. Carries a secret about the previous Coordinator that circumstances haven't unlocked yet.",
-    "trait": "Quiet Presence",
-    "trait_description": "+5 morale to the camp passively. Reduces arguments between survivors. Knows something about Mark he hasn't shared.",
     "voice_notes": "Sparse. When he talks, it's one sentence that reframes everything. Never raises his voice. Refers to things obliquely — 'that business with the south wall' instead of naming events. Comfortable with long pauses. Doesn't fill silence."
   },
 
   "stats": {
-    "bias": ["perception", "luck"],
-    "base_range": [3, 7],
-    "bias_bonus": 2
+    "str": { "base": 3, "growth": 0.5 },
+    "dex": { "base": 4, "growth": 0.6 },
+    "agi": { "base": 2, "growth": 0.4 },
+    "per": { "base": 8, "growth": 1.2 },
+    "end": { "base": 4, "growth": 0.6 },
+    "int": { "base": 8, "growth": 1.2 },
+    "lck": { "base": 6, "growth": 1.0 },
+    "hp":  { "base": 75, "growth": 0.7 }
   },
+  "traits": [],
+  "skills": [],
+  "starting_inventory": [],
+  "rations": 0,
 
   "relationships": {
     "base_strength": 25,

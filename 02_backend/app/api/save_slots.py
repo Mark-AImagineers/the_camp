@@ -157,10 +157,11 @@ def list_survivors(slot_id: str, authorization: str = Header()):
 
     cur.execute("SET app.current_save_slot_id = %s", (slot_id,))
     cur.execute(
-        """SELECT id, lore_id, name, background, background_detail, age_bracket,
-                  persona, trait, trait_description,
-                  strength, agility, perception, endurance, luck,
+        """SELECT id, lore_id, name, background, background_detail, age,
+                  persona,
+                  str, dex, agi, per, endurance, int_stat, lck,
                   hp, max_hp, condition, camp_role, is_activated,
+                  stat_growth, traits, skills, starting_inventory, rations,
                   relationship_strength, morale_modifier, is_dead
            FROM game.survivors
            WHERE save_slot_id = %s
@@ -179,23 +180,25 @@ def list_survivors(slot_id: str, authorization: str = Header()):
             "name": r[2],
             "background": r[3],
             "background_detail": r[4],
-            "age_bracket": r[5],
+            "age": r[5],
             "persona": r[6],
-            "trait": r[7],
-            "trait_description": r[8],
-            "strength": r[9],
-            "agility": r[10],
-            "perception": r[11],
-            "endurance": r[12],
-            "luck": r[13],
+            "stats": {
+                "str": r[7], "dex": r[8], "agi": r[9], "per": r[10],
+                "end": r[11], "int": r[12], "lck": r[13],
+            },
             "hp": r[14],
             "max_hp": r[15],
             "condition": r[16],
             "camp_role": r[17],
             "is_activated": r[18],
-            "relationship_strength": r[19],
-            "morale_modifier": r[20],
-            "is_dead": r[21],
+            "stat_growth": r[19],
+            "traits": r[20],
+            "skills": r[21],
+            "starting_inventory": r[22],
+            "rations": r[23],
+            "relationship_strength": r[24],
+            "morale_modifier": r[25],
+            "is_dead": r[26],
         })
 
     return {"survivors": survivors}

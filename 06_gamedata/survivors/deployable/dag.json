@@ -5,22 +5,29 @@
   "identity": {
     "background": "Farmer",
     "background_detail": "Arrived six months ago carrying seed packets in a waterproof bag like they were worth more than gold. They were. He walked for three weeks through territory nobody walks through. Set up the growing beds along the south wall without asking permission. Within a month, the Camp had greens that weren't from a can.",
-    "age_bracket": "late_30s",
+    "age": "late_30s",
     "before": "Farmer. The real kind. Soil under the nails, not the hobby kind."
   },
 
   "personality": {
     "persona": "Talks about growing seasons, water tables, and nitrogen. The deflection from personal questions is obvious — redirects everything to the soil, the seeds, the next harvest. Not evasive in a hostile way — just a man who's decided that what he grows matters more than where he came from. Patient. Practical. Measures time in seasons, not days.",
-    "trait": "Green Thumb",
-    "trait_description": "+30% food production when assigned as Farmer. Can identify fertile land on expeditions. Knows which scavenged plants are edible and which aren't.",
     "voice_notes": "Unhurried. Talks about soil the way other people talk about people. 'That patch needs rest.' 'The rain was good for the south beds.' Deflects personal questions with agricultural facts. 'Where are you from?' 'Somewhere the soil was better than here.' When trust is high, the deflection fades and he talks about someone he left behind. Once. Then never again."
   },
 
   "stats": {
-    "bias": ["strength", "endurance"],
-    "base_range": [3, 7],
-    "bias_bonus": 2
+    "str": { "base": 7, "growth": 1.1 },
+    "dex": { "base": 5, "growth": 0.9 },
+    "agi": { "base": 4, "growth": 0.8 },
+    "per": { "base": 5, "growth": 0.9 },
+    "end": { "base": 8, "growth": 1.3 },
+    "int": { "base": 5, "growth": 1.0 },
+    "lck": { "base": 4, "growth": 0.8 },
+    "hp":  { "base": 120, "growth": 1.2 }
   },
+  "traits": [],
+  "skills": [],
+  "starting_inventory": [],
+  "rations": 0,
 
   "relationships": {
     "base_strength": 25,
