@@ -14,6 +14,7 @@ variables:
 
 build-backend:
   stage: build
+  tags: [k3s]
   image:
     name: gcr.io/kaniko-project/executor:v1.23.2-debug
     entrypoint: [""]
@@ -37,6 +38,7 @@ build-backend:
 
 build-frontend-staging:
   stage: build
+  tags: [k3s]
   image:
     name: gcr.io/kaniko-project/executor:v1.23.2-debug
     entrypoint: [""]
@@ -61,6 +63,7 @@ build-frontend-staging:
 
 build-frontend-prod:
   stage: build
+  tags: [k3s]
   image:
     name: gcr.io/kaniko-project/executor:v1.23.2-debug
     entrypoint: [""]
@@ -87,6 +90,7 @@ build-frontend-prod:
 
 deploy-staging:
   stage: deploy-staging
+  tags: [k3s]
   image: alpine:latest
   needs:
     - build-backend
@@ -142,6 +146,7 @@ deploy-staging:
 
 deploy-production:
   stage: deploy-production
+  tags: [k3s]
   image: alpine:latest
   needs:
     - build-backend
