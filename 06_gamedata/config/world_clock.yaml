@@ -12,20 +12,10 @@ epoch: "2026-03-28T00:00:00Z"
 real_hours_per_game_day: 8
 
 # Calendar
-# Year 1 starts at the epoch
-# 365 days per game year (no leap years — who's counting?)
 days_per_year: 365
 
-# Starting year label
-# The collapse happened ~4 years before the epoch
-# So the epoch is Year 4, Day 1
-starting_year: 4
+# Starting date — the in-game date when the epoch begins
+# Uses a real calendar: year, month (1-12), day (1-31)
+starting_year: 2026
+starting_month: 1
 starting_day: 1
-
-# Time format displayed in UI
-# 24h clock, no seconds
-time_format: "HH:mm"
-
-# Date format displayed in UI
-# "Year {y} · Day {d} · {time}"
-date_format: "Year {y} · Day {d} · {time}"

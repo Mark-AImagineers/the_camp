@@ -56,10 +56,9 @@ def world_clock():
     return {
         "epoch": config["epoch"],
         "real_hours_per_game_day": config["real_hours_per_game_day"],
-        "days_per_year": config["days_per_year"],
         "starting_year": config["starting_year"],
+        "starting_month": config.get("starting_month", 1),
         "starting_day": config["starting_day"],
-        "date_format": config["date_format"],
     }
 
 

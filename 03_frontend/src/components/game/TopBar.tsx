@@ -5,13 +5,24 @@ import './game.css'
 interface ClockConfig {
   epoch: string
   real_hours_per_game_day: number
-  days_per_year: number
   starting_year: number
+  starting_month: number
   starting_day: number
-  date_format: string
 }
 
-function calcGameTime(config: ClockConfig): { year: number; day: number; hour: number; minute: number; second: number } {
+const MONTH_NAMES = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+const DAYS_IN_MONTH = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+
+interface GameTime {
+  year: number
+  month: number
+  day: number
+  hour: number
+  minute: number
+  second: number
+}
+
+function calcGameTime(config: ClockConfig): GameTime {
   const epochMs = new Date(config.epoch).getTime()
   const nowMs = Date.now()
   const elapsedRealMs = nowMs - epochMs
@@ -27,20 +38,40 @@ function calcGameTime(config: ClockConfig): { year: number; day: number; hour: n
   const minute = Math.floor(remainingMinutes)
   const second = Math.floor((remainingMinutes - minute) * 60)
 
-  const absoluteDay = config.starting_day + totalGameDays
-  const yearOffset = Math.floor((absoluteDay - 1) / config.days_per_year)
-  const dayInYear = ((absoluteDay - 1) % config.days_per_year) + 1
+  // Walk forward from starting date
+  let year = config.starting_year
+  let month = config.starting_month - 1 // 0-indexed
+  let day = config.starting_day
+  let daysLeft = totalGameDays
 
-  return { year: config.starting_year + yearOffset, day: dayInYear, hour, minute, second }
+  while (daysLeft > 0) {
+    const daysInCurrentMonth = DAYS_IN_MONTH[month]
+    const daysRemainingInMonth = daysInCurrentMonth - day + 1
+
+    if (daysLeft >= daysRemainingInMonth) {
+      daysLeft -= daysRemainingInMonth
+      month++
+      day = 1
+      if (month >= 12) {
+        month = 0
+        year++
+      }
+    } else {
+      day += daysLeft
+      daysLeft = 0
+    }
+  }
+
+  return { year, month: month + 1, day, hour, minute, second }
 }
 
-function formatTime(h: number, m: number, s: number): string {
-  return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`
+function pad(n: number): string {
+  return String(n).padStart(2, '0')
 }
 
 export default function TopBar() {
   const [config, setConfig] = useState<ClockConfig | null>(null)
-  const [time, setTime] = useState<{ year: number; day: number; hour: number; minute: number; second: number } | null>(null)
+  const [time, setTime] = useState<GameTime | null>(null)
 
   useEffect(() => {
     apiFetch('/world-clock')
@@ -68,7 +99,7 @@ export default function TopBar() {
       </div>
       <span className="topbar-clock">
         {time ? (
-          <span className="clock-inline">Y{time.year} · D{time.day} · {formatTime(time.hour, time.minute, time.second)}</span>
+          <span className="clock-inline">{time.year} · {MONTH_NAMES[time.month - 1]} {time.day} · {pad(time.hour)}:{pad(time.minute)}:{pad(time.second)}</span>
         ) : (
           <span className="clock-loading">--:--:--</span>
         )}
