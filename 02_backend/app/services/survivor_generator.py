@@ -19,7 +19,7 @@ def _load_character_file(f: Path) -> dict:
         "stats": stats,
         "traits": data.get("traits", []),
         "skills": data.get("skills", []),
-        "starting_inventory": data.get("starting_inventory", []),
+        "inventory": data.get("inventory", []),
         "rations": data.get("rations", 0),
         "base_relationship": data["relationships"].get("base_strength", 30),
         "can_deploy": data["flags"].get("can_deploy", True),
@@ -86,7 +86,7 @@ def _insert_survivor(cur, save_slot_id: str, char: dict, is_activated: bool):
             age, gender, persona, quirks,
             str, dex, agi, per, endurance, int_stat, lck,
             hp, max_hp, condition, is_activated,
-            stat_growth, traits, skills, starting_inventory, rations,
+            stat_growth, traits, skills, inventory, rations,
             relationship_strength, morale_modifier
         ) VALUES (
             %s, %s, %s, %s, %s,
@@ -112,7 +112,7 @@ def _insert_survivor(cur, save_slot_id: str, char: dict, is_activated: bool):
             json.dumps(stat_growth),
             json.dumps(char.get("traits", [])),
             json.dumps(char.get("skills", [])),
-            json.dumps(char.get("starting_inventory", [])),
+            json.dumps(char.get("inventory", [])),
             char.get("rations", 0),
             char.get("base_relationship", 30),
         ),

@@ -161,7 +161,7 @@ def list_survivors(slot_id: str, authorization: str = Header()):
                   persona,
                   str, dex, agi, per, endurance, int_stat, lck,
                   hp, max_hp, condition, camp_role, is_activated,
-                  stat_growth, traits, skills, starting_inventory, rations,
+                  stat_growth, traits, skills, inventory, rations,
                   relationship_strength, morale_modifier, is_dead
            FROM game.survivors
            WHERE save_slot_id = %s
@@ -194,7 +194,7 @@ def list_survivors(slot_id: str, authorization: str = Header()):
             "stat_growth": r[19],
             "traits": r[20],
             "skills": r[21],
-            "starting_inventory": r[22],
+            "inventory": r[22],
             "rations": r[23],
             "relationship_strength": r[24],
             "morale_modifier": r[25],
