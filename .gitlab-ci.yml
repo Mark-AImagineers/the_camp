@@ -1,0 +1,195 @@
+stages:
+  - build
+  - deploy-staging
+  - deploy-production
+
+variables:
+  IMAGE_TAG: "${CI_COMMIT_SHORT_SHA}"
+  K8S_NAMESPACE: "aim"
+  REGISTRY: "10.43.68.80:5050"
+  REGISTRY_IMAGE_BACKEND: "${REGISTRY}/aimagineers/the_camp/backend"
+  REGISTRY_IMAGE_FRONTEND: "${REGISTRY}/aimagineers/the_camp/frontend"
+
+# --- Build Stage ---
+
+build-backend:
+  stage: build
+  image:
+    name: gcr.io/kaniko-project/executor:v1.23.2-debug
+    entrypoint: [""]
+  script:
+    - echo "Building ${REGISTRY_IMAGE_BACKEND}:${IMAGE_TAG}..."
+    - |
+      mkdir -p /kaniko/.docker
+      AUTH=$(echo -n "${CI_REGISTRY_USER}:${CI_REGISTRY_PASSWORD}" | base64 | tr -d '\n')
+      printf '{"auths":{"%s":{"auth":"%s"}}}' "${REGISTRY}" "${AUTH}" > /kaniko/.docker/config.json
+    - /kaniko/executor
+        --context="${CI_PROJECT_DIR}"
+        --dockerfile="${CI_PROJECT_DIR}/02_backend/Dockerfile"
+        --destination="${REGISTRY_IMAGE_BACKEND}:${IMAGE_TAG}"
+        --destination="${REGISTRY_IMAGE_BACKEND}:latest"
+        --insecure
+        --skip-tls-verify
+        --cache=true
+        --cache-repo="${REGISTRY}/aimagineers/the_camp/backend/cache"
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
+
+build-frontend-staging:
+  stage: build
+  image:
+    name: gcr.io/kaniko-project/executor:v1.23.2-debug
+    entrypoint: [""]
+  script:
+    - echo "Building ${REGISTRY_IMAGE_FRONTEND}:${IMAGE_TAG}-staging..."
+    - |
+      mkdir -p /kaniko/.docker
+      AUTH=$(echo -n "${CI_REGISTRY_USER}:${CI_REGISTRY_PASSWORD}" | base64 | tr -d '\n')
+      printf '{"auths":{"%s":{"auth":"%s"}}}' "${REGISTRY}" "${AUTH}" > /kaniko/.docker/config.json
+    - /kaniko/executor
+        --context="${CI_PROJECT_DIR}"
+        --dockerfile="${CI_PROJECT_DIR}/03_frontend/Dockerfile"
+        --build-arg=VITE_API_URL=${VITE_API_URL_STAGING}
+        --destination="${REGISTRY_IMAGE_FRONTEND}:${IMAGE_TAG}-staging"
+        --destination="${REGISTRY_IMAGE_FRONTEND}:staging"
+        --insecure
+        --skip-tls-verify
+        --cache=true
+        --cache-repo="${REGISTRY}/aimagineers/the_camp/frontend/cache"
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
+
+build-frontend-prod:
+  stage: build
+  image:
+    name: gcr.io/kaniko-project/executor:v1.23.2-debug
+    entrypoint: [""]
+  script:
+    - echo "Building ${REGISTRY_IMAGE_FRONTEND}:${IMAGE_TAG}-prod..."
+    - |
+      mkdir -p /kaniko/.docker
+      AUTH=$(echo -n "${CI_REGISTRY_USER}:${CI_REGISTRY_PASSWORD}" | base64 | tr -d '\n')
+      printf '{"auths":{"%s":{"auth":"%s"}}}' "${REGISTRY}" "${AUTH}" > /kaniko/.docker/config.json
+    - /kaniko/executor
+        --context="${CI_PROJECT_DIR}"
+        --dockerfile="${CI_PROJECT_DIR}/03_frontend/Dockerfile"
+        --build-arg=VITE_API_URL=${VITE_API_URL_PROD}
+        --destination="${REGISTRY_IMAGE_FRONTEND}:${IMAGE_TAG}-prod"
+        --destination="${REGISTRY_IMAGE_FRONTEND}:prod"
+        --insecure
+        --skip-tls-verify
+        --cache=true
+        --cache-repo="${REGISTRY}/aimagineers/the_camp/frontend/cache"
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
+
+# --- Deploy Staging (automatic on push to main) ---
+
+deploy-staging:
+  stage: deploy-staging
+  image: alpine:latest
+  needs:
+    - build-backend
+    - build-frontend-staging
+  before_script:
+    - apk add --no-cache openssh-client
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - ssh-keyscan -H ${DEPLOY_HOST} >> ~/.ssh/known_hosts 2>/dev/null
+  script:
+    - echo "Deploying TheCamp staging (${IMAGE_TAG})..."
+
+    # Substitute variables in staging K8s manifests
+    - mkdir -p /tmp/k8s-manifests
+    - |
+      # Backend staging manifest — uses commit SHA tag
+      sed -e "s|\${REGISTRY_IMAGE_BACKEND}|${REGISTRY_IMAGE_BACKEND}|g" \
+          -e "s|\${IMAGE_TAG}|${IMAGE_TAG}|g" \
+          05_deployment/k8s/thecamp-backend-staging.yaml > /tmp/k8s-manifests/thecamp-backend-staging.yaml
+      # Frontend staging manifest — uses staging-specific tag
+      sed -e "s|\${REGISTRY_IMAGE_FRONTEND}|${REGISTRY_IMAGE_FRONTEND}|g" \
+          -e "s|\${IMAGE_TAG}|${IMAGE_TAG}-staging|g" \
+          05_deployment/k8s/thecamp-frontend-staging.yaml > /tmp/k8s-manifests/thecamp-frontend-staging.yaml
+      # Ingress
+      cp 05_deployment/k8s/thecamp-ingress.yaml /tmp/k8s-manifests/thecamp-ingress.yaml
+
+    # Clean remote dir and copy files
+    - ssh -o StrictHostKeyChecking=no ${DEPLOY_USER}@${DEPLOY_HOST} 'rm -rf /tmp/k8s-manifests'
+    - scp -r /tmp/k8s-manifests ${DEPLOY_USER}@${DEPLOY_HOST}:/tmp/k8s-manifests
+
+    # Deploy staging on K3s
+    - |
+      ssh -o StrictHostKeyChecking=no ${DEPLOY_USER}@${DEPLOY_HOST} 'bash -s' << 'DEPLOY_EOF'
+        set -e
+
+        echo "Applying staging manifests..."
+        kubectl apply -f /tmp/k8s-manifests/
+
+        echo "Waiting for staging rollout..."
+        kubectl rollout status deployment/thecamp-backend-staging -n aim --timeout=180s
+        kubectl rollout status deployment/thecamp-frontend-staging -n aim --timeout=180s
+
+        rm -rf /tmp/k8s-manifests
+        echo "Staging deployment complete:"
+        kubectl get pods -n aim | grep thecamp.*staging || true
+      DEPLOY_EOF
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
+
+# --- Deploy Production (manual trigger) ---
+
+deploy-production:
+  stage: deploy-production
+  image: alpine:latest
+  needs:
+    - build-backend
+    - build-frontend-prod
+  before_script:
+    - apk add --no-cache openssh-client
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - ssh-keyscan -H ${DEPLOY_HOST} >> ~/.ssh/known_hosts 2>/dev/null
+  script:
+    - echo "Deploying TheCamp production (${IMAGE_TAG})..."
+
+    # Substitute variables in production K8s manifests
+    - mkdir -p /tmp/k8s-manifests
+    - |
+      # Backend prod manifest — uses commit SHA tag
+      sed -e "s|\${REGISTRY_IMAGE_BACKEND}|${REGISTRY_IMAGE_BACKEND}|g" \
+          -e "s|\${IMAGE_TAG}|${IMAGE_TAG}|g" \
+          05_deployment/k8s/thecamp-backend.yaml > /tmp/k8s-manifests/thecamp-backend.yaml
+      # Frontend prod manifest — uses prod-specific tag
+      sed -e "s|\${REGISTRY_IMAGE_FRONTEND}|${REGISTRY_IMAGE_FRONTEND}|g" \
+          -e "s|\${IMAGE_TAG}|${IMAGE_TAG}-prod|g" \
+          05_deployment/k8s/thecamp-frontend.yaml > /tmp/k8s-manifests/thecamp-frontend.yaml
+      # Ingress
+      cp 05_deployment/k8s/thecamp-ingress.yaml /tmp/k8s-manifests/thecamp-ingress.yaml
+
+    # Clean remote dir and copy files
+    - ssh -o StrictHostKeyChecking=no ${DEPLOY_USER}@${DEPLOY_HOST} 'rm -rf /tmp/k8s-manifests'
+    - scp -r /tmp/k8s-manifests ${DEPLOY_USER}@${DEPLOY_HOST}:/tmp/k8s-manifests
+
+    # Deploy production on K3s
+    - |
+      ssh -o StrictHostKeyChecking=no ${DEPLOY_USER}@${DEPLOY_HOST} 'bash -s' << 'DEPLOY_EOF'
+        set -e
+
+        echo "Applying production manifests..."
+        kubectl apply -f /tmp/k8s-manifests/
+
+        echo "Waiting for production rollout..."
+        kubectl rollout status deployment/thecamp-backend -n aim --timeout=180s
+        kubectl rollout status deployment/thecamp-frontend -n aim --timeout=180s
+
+        rm -rf /tmp/k8s-manifests
+        echo "Production deployment complete:"
+        kubectl get pods -n aim | grep -E 'thecamp-(backend|frontend)' | grep -v staging || true
+      DEPLOY_EOF
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
+      when: manual
