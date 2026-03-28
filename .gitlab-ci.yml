@@ -105,6 +105,16 @@ deploy-staging:
   script:
     - echo "Deploying TheCamp staging (${IMAGE_TAG})..."
 
+    # Create staging env file from CI/CD variables
+    - |
+      cat > /tmp/thecamp-staging.env << ENVEOF
+      ENVIRONMENT=staging
+      DATABASE_URL=${DATABASE_URL_STAGING:-postgresql://thecamp_api:thecamp_api_2026@postgres:5432/thecamp_db}
+      SECRET_KEY=${SECRET_KEY}
+      OPENAI_API_KEY=${OPENAI_API_KEY}
+      ENVEOF
+    - sed -i 's/^[[:space:]]*//' /tmp/thecamp-staging.env
+
     # Substitute variables in staging K8s manifests
     - mkdir -p /tmp/k8s-manifests
     - |
@@ -120,13 +130,19 @@ deploy-staging:
       cp 05_deployment/k8s/thecamp-ingress.yaml /tmp/k8s-manifests/thecamp-ingress.yaml
 
     # Clean remote dir and copy files
-    - ssh -o StrictHostKeyChecking=no ${DEPLOY_USER}@${DEPLOY_HOST} 'rm -rf /tmp/k8s-manifests'
+    - ssh -o StrictHostKeyChecking=no ${DEPLOY_USER}@${DEPLOY_HOST} 'rm -rf /tmp/k8s-manifests /tmp/thecamp-staging.env'
+    - scp /tmp/thecamp-staging.env ${DEPLOY_USER}@${DEPLOY_HOST}:/tmp/thecamp-staging.env
     - scp -r /tmp/k8s-manifests ${DEPLOY_USER}@${DEPLOY_HOST}:/tmp/k8s-manifests
 
     # Deploy staging on K3s
     - |
       ssh -o StrictHostKeyChecking=no ${DEPLOY_USER}@${DEPLOY_HOST} 'bash -s' << 'DEPLOY_EOF'
         set -e
+
+        echo "Updating staging secrets..."
+        kubectl delete secret thecamp-staging-secret -n aim --ignore-not-found
+        kubectl create secret generic thecamp-staging-secret -n aim --from-env-file=/tmp/thecamp-staging.env
+        rm -f /tmp/thecamp-staging.env
 
         echo "Applying staging manifests..."
         kubectl apply -f /tmp/k8s-manifests/
@@ -161,6 +177,16 @@ deploy-production:
   script:
     - echo "Deploying TheCamp production (${IMAGE_TAG})..."
 
+    # Create production env file from CI/CD variables
+    - |
+      cat > /tmp/thecamp-prod.env << ENVEOF
+      ENVIRONMENT=production
+      DATABASE_URL=${DATABASE_URL_PROD:-postgresql://thecamp_api:thecamp_api_2026@postgres:5432/thecamp_db}
+      SECRET_KEY=${SECRET_KEY}
+      OPENAI_API_KEY=${OPENAI_API_KEY}
+      ENVEOF
+    - sed -i 's/^[[:space:]]*//' /tmp/thecamp-prod.env
+
     # Substitute variables in production K8s manifests
     - mkdir -p /tmp/k8s-manifests
     - |
@@ -176,13 +202,19 @@ deploy-production:
       cp 05_deployment/k8s/thecamp-ingress.yaml /tmp/k8s-manifests/thecamp-ingress.yaml
 
     # Clean remote dir and copy files
-    - ssh -o StrictHostKeyChecking=no ${DEPLOY_USER}@${DEPLOY_HOST} 'rm -rf /tmp/k8s-manifests'
+    - ssh -o StrictHostKeyChecking=no ${DEPLOY_USER}@${DEPLOY_HOST} 'rm -rf /tmp/k8s-manifests /tmp/thecamp-prod.env'
+    - scp /tmp/thecamp-prod.env ${DEPLOY_USER}@${DEPLOY_HOST}:/tmp/thecamp-prod.env
     - scp -r /tmp/k8s-manifests ${DEPLOY_USER}@${DEPLOY_HOST}:/tmp/k8s-manifests
 
     # Deploy production on K3s
     - |
       ssh -o StrictHostKeyChecking=no ${DEPLOY_USER}@${DEPLOY_HOST} 'bash -s' << 'DEPLOY_EOF'
         set -e
+
+        echo "Updating production secrets..."
+        kubectl delete secret thecamp-prod-secret -n aim --ignore-not-found
+        kubectl create secret generic thecamp-prod-secret -n aim --from-env-file=/tmp/thecamp-prod.env
+        rm -f /tmp/thecamp-prod.env
 
         echo "Applying production manifests..."
         kubectl apply -f /tmp/k8s-manifests/
