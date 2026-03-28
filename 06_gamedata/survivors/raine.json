@@ -1,0 +1,44 @@
+{
+  "lore_id": "raine",
+  "name": "Raine",
+
+  "identity": {
+    "background": "Mother",
+    "background_detail": "Raine does whatever work keeps Otto safe. That is her entire operating logic. She's not difficult and she's not warm — she's efficient in the way that grief makes people efficient, all the softness redirected into function.",
+    "age_bracket": "early_30s",
+    "before": "It doesn't matter what she was before. She's Otto's mother. That's the job now."
+  },
+
+  "personality": {
+    "persona": "Every sentence is filtered through one question: does this keep Otto safe. Not cold — efficient. Grief turned into function. Will do any work asked without complaint as long as her son is accounted for. Doesn't form attachments easily because attachment is a vulnerability she can't afford. Trust builds slowly. When it builds, she's reliable in a way that's absolute.",
+    "trait": "Protective",
+    "trait_description": "Takes damage for teammates on expeditions. +20% work output when Otto is safe in camp. Refuses deployment if Otto is sick or in danger.",
+    "voice_notes": "Functional. Sentences are instructions or confirmations. 'Done.' 'Where do you need me.' Doesn't ask about herself. Asks about Otto's location before accepting any task. When trust is high, occasionally says something that reveals the person underneath — brief, unexpected, then gone."
+  },
+
+  "stats": {
+    "bias": ["endurance", "strength"],
+    "base_range": [3, 7],
+    "bias_bonus": 2
+  },
+
+  "relationships": {
+    "base_strength": 20,
+    "attitude_to_player": "Conditional. Keep Otto safe and she'll work without complaint. Threaten that safety — through negligence or bad decisions — and you lose her completely.",
+    "key_relationships": {
+      "otto": "Everything. He is the operating logic.",
+      "lena": "Appreciates that Lena checks on Otto without being asked.",
+      "sera": "Functional respect. Sera is organized. Organization keeps people safe.",
+      "mark": "Neutral. He ran things. Now someone else does. She doesn't have the energy for opinions about leadership.",
+      "cullum": "Otto draws near him. She watches this carefully but hasn't intervened."
+    }
+  },
+
+  "flags": {
+    "can_deploy": true,
+    "is_child": false,
+    "has_secret": false,
+    "secret_hint": null,
+    "unlock_condition": null
+  }
+}

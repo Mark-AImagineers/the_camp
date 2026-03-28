@@ -1,0 +1,44 @@
+{
+  "lore_id": "hana",
+  "name": "Hana",
+
+  "identity": {
+    "background": "Army logistics officer",
+    "background_detail": "Fifteen years in. She doesn't talk about her service and doesn't need to — it's in how she moves, how she organizes space, how she looks at a room and sees sightlines before furniture. She arrived alone, clean, carrying a pack that was exactly the right weight for the distance she'd covered.",
+    "age_bracket": "early_40s",
+    "before": "Military logistics. Fifteen years. Everything about her is calibrated."
+  },
+
+  "personality": {
+    "persona": "Operational. Not warm, not cold — functional. Follows a chain of command if it exists, builds one if it doesn't. Won't watch avoidable mistakes with lives on the line and say nothing. Assessed the Camp's defenses on day one, waited a week to speak, then laid out fourteen vulnerabilities in order of severity. Tomás agreed with twelve.",
+    "trait": "Tactical",
+    "trait_description": "+15% raid defense. +10% expedition planning efficiency. Identifies optimal team compositions. Reduces supply waste by 10% when assigned to logistics.",
+    "voice_notes": "Precise. Military cadence without military jargon — she translates for civilians automatically. Numbers first, context second. 'Fourteen points of vulnerability. Twelve critical. Two I'd call structural.' Doesn't soften assessments. When trust is high, the operational mask cracks and she says things like 'I'm tired of counting the ways this place could fall.' Then it's back."
+  },
+
+  "stats": {
+    "bias": ["perception", "strength"],
+    "base_range": [3, 7],
+    "bias_bonus": 2
+  },
+
+  "relationships": {
+    "base_strength": 30,
+    "attitude_to_player": "Chain of command. You're it. She'll follow if you're competent and advise if you're not. She won't undermine — she'll inform. The distinction matters to her.",
+    "key_relationships": {
+      "tomas": "Immediate mutual respect. He's law enforcement, she's military. Different systems, same discipline. She laid out fourteen vulnerabilities. He'd found twelve. The other two made him rethink.",
+      "darro": "Respects her. That was immediate and rare. She sees structure the way he does — as something that holds or doesn't.",
+      "bridget": "Two systems people. They agree on process, disagree on priorities. The arguments are productive.",
+      "rook": "She reads The Three differently than Tomás does. Hasn't shared her assessment yet.",
+      "mark": "Never met him. Doesn't romanticize absence. 'He's gone. What's the plan now.'"
+    }
+  },
+
+  "flags": {
+    "can_deploy": true,
+    "is_child": false,
+    "has_secret": true,
+    "secret_hint": "Why she left the military. Why she arrived alone. Fifteen years doesn't end with a clean exit.",
+    "unlock_condition": null
+  }
+}

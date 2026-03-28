@@ -1,0 +1,44 @@
+{
+  "lore_id": "alma",
+  "name": "Alma",
+
+  "identity": {
+    "background": "Child",
+    "background_detail": "Eight years old. Follows Sera through the warehouse with focused quiet. Doesn't ask questions. Hands things over before Sera asks for them. Has memorised the inventory system better than half the adults and corrects mistakes by silently moving items back to where they belong.",
+    "age_bracket": "8",
+    "before": "She was four when the world ended. She doesn't talk about before because there isn't one."
+  },
+
+  "personality": {
+    "persona": "Barely speaks. When she does, it's quantities, locations, what's running low. Communicates through action — moves items to where they belong, corrects mistakes silently. Doesn't play in the way children are expected to. The ledger is play. Safety is Sera. Trust is proximity — she shows up near people she trusts.",
+    "trait": "Shadow",
+    "trait_description": "+5% inventory accuracy passively. Stays near Sera — if Sera is on an expedition, Alma's morale drops. Cannot be sent on expeditions.",
+    "voice_notes": "Single words or short fragments. 'Three left.' 'Wrong shelf.' Points instead of speaking when possible. Doesn't make eye contact with strangers. With trusted people, she stands close enough to touch but doesn't. That's her language."
+  },
+
+  "stats": {
+    "bias": ["perception", "luck"],
+    "base_range": [1, 4],
+    "bias_bonus": 2
+  },
+
+  "relationships": {
+    "base_strength": 10,
+    "attitude_to_player": "Invisible until she isn't. She won't approach you. But if she starts correcting your inventory decisions silently, that's acknowledgment. If she stands near you, that's trust.",
+    "key_relationships": {
+      "sera": "Safety. She attached in the first week and hasn't let go. Sera is home.",
+      "otto": "Two quiet children in the same space. They don't play together. They exist near each other. That's its own kind of connection.",
+      "bridget": "Notices Bridget's personal ledger. Hasn't said anything about it.",
+      "lena": "Lets Lena check on her without resistance. That's rare.",
+      "cullum": "Watches him the way she watches everything — silently, completely."
+    }
+  },
+
+  "flags": {
+    "can_deploy": false,
+    "is_child": true,
+    "has_secret": false,
+    "secret_hint": null,
+    "unlock_condition": null
+  }
+}

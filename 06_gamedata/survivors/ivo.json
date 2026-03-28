@@ -1,0 +1,44 @@
+{
+  "lore_id": "ivo",
+  "name": "Ivo",
+
+  "identity": {
+    "background": "Teacher",
+    "background_detail": "The smile is the thing people notice. It's easy, warm, the kind of expression that belonged to the Before — to someone who sold things, or hosted things, or made people feel comfortable for a living. In the After, that kind of ease reads as a mask or a weapon, and most people at the Camp have settled on one or the other without deciding which.",
+    "age_bracket": "mid_30s",
+    "before": "Says he was a teacher. Smiles when he says it."
+  },
+
+  "personality": {
+    "persona": "Warm, easy, remembers everything. Smiles like the world never ended. Offers help before asked. Charming in a way that reads as either genuine or performed — nobody's sure which. Says he was a teacher. Tomás doesn't believe him. Sera finds him useful but careful. Yssa thinks he's funny. Trust reveals whether the charm is armor or nature.",
+    "trait": "Charming",
+    "trait_description": "+10% trade efficiency with external contacts. +5 morale when assigned to camp social roles. Tomás doesn't trust him. Sera keeps the ledger locked near him.",
+    "voice_notes": "Smooth, warm, conversational. Uses people's names constantly — it makes them feel seen. Asks questions that seem casual but gather information. Deflects with humor when cornered. The charm never drops, which is either reassuring or unsettling. When trust is very high, there's a moment where the smile stops and something else is there. Brief. Then it's back."
+  },
+
+  "stats": {
+    "bias": ["luck", "agility"],
+    "base_range": [3, 7],
+    "bias_bonus": 2
+  },
+
+  "relationships": {
+    "base_strength": 20,
+    "attitude_to_player": "Friendly. Immediately. Which is either wonderful or suspicious depending on who you ask. He'll be the first to offer help and the last to explain why.",
+    "key_relationships": {
+      "rook": "The dynamic is layered. Rook keeps Ivo's charm pointed outward. There's a reason for that.",
+      "marsh": "Ivo talks. Marsh doesn't. The balance between them is functional but opaque.",
+      "tomas": "Tomás doesn't trust him. Ivo knows this. He's pleasant about it, which makes it worse.",
+      "yssa": "She thinks he's funny. He enjoys the audience. Tomás watches this and worries.",
+      "sera": "She finds him useful for camp morale. Keeps the ledger locked when he's near. Hasn't decided if that's fair."
+    }
+  },
+
+  "flags": {
+    "can_deploy": true,
+    "is_child": false,
+    "has_secret": true,
+    "secret_hint": "He wasn't a teacher. What he actually was before the After — and what the three of them did together — is the secret that connects all three.",
+    "unlock_condition": null
+  }
+}

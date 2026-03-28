@@ -1,0 +1,44 @@
+{
+  "lore_id": "darro",
+  "name": "Darro",
+
+  "identity": {
+    "background": "Construction foreman",
+    "background_detail": "Big. Quiet. The kind of man who communicates more with what he doesn't say than what he does. He built most of what makes the Camp functional — the reinforced gate, the rain collection system, the section of wall that stopped an incursion eight months ago. If it's standing and it's holding, Darro either built it or fixed it.",
+    "age_bracket": "mid_40s",
+    "before": "He built things for a living. Now he builds things to keep people alive."
+  },
+
+  "personality": {
+    "persona": "Communicates more with what he doesn't say. Short sentences or just nods. Judges through observation, not conversation. Didn't like the previous Coordinator and doesn't hide it. Will follow reasonable orders but watches you like a structural beam he's not sure about. Respects competence, not authority. When he trusts you, he builds things without being asked.",
+    "trait": "Stoic",
+    "trait_description": "Immune to morale penalties from single deaths. +15% build speed on facilities. Won't follow orders he considers reckless — may refuse deployment.",
+    "voice_notes": "Short. Sometimes just a word. 'Yeah.' 'No.' 'That'll hold.' Doesn't explain himself unless directly asked, and even then keeps it brief. Never uses your title. Calls you 'you' until trust is earned, then uses your name once and it means something."
+  },
+
+  "stats": {
+    "bias": ["strength", "endurance"],
+    "base_range": [3, 7],
+    "bias_bonus": 2
+  },
+
+  "relationships": {
+    "base_strength": 15,
+    "attitude_to_player": "Suspicious. He didn't like the previous Coordinator. He hasn't decided about you yet. He's waiting to see if you're competent or just next in line.",
+    "key_relationships": {
+      "mark": "Didn't like him. Doesn't say why. The disappearance doesn't seem to bother him the way it bothers others.",
+      "sera": "Mutual respect. She records what he builds. That's enough.",
+      "felix": "Professional understanding. Two men who work with their hands. Felix's leverage play annoys him but he doesn't interfere.",
+      "tomas": "Respects him. Two quiet men who understand each other without needing to talk about it.",
+      "yssa": "Watches her with something like approval. She doesn't carry dead weight from the Before."
+    }
+  },
+
+  "flags": {
+    "can_deploy": true,
+    "is_child": false,
+    "has_secret": false,
+    "secret_hint": null,
+    "unlock_condition": null
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "lore_id": "sol",
+  "name": "Sol",
+
+  "identity": {
+    "background": "Courier",
+    "background_detail": "Bike messenger in the city before. Fast and reckless in a way that should have killed him by now and somehow hasn't. He knows the city grid — not from maps, from muscle memory. Every shortcut, every alley, every building with a roof exit.",
+    "age_bracket": "mid_20s",
+    "before": "Courier. Knew every shortcut in the city. Now those shortcuts keep people alive."
+  },
+
+  "personality": {
+    "persona": "Talks too much. Knows it. It's not nerves — it's processing. Narrates what he's doing while he does it, which is annoying in camp and useful on runs. Not a fighter and says so without shame. What he is: someone who can get in, grab what's needed, and get out before it turns. He's been doing it for four years and he's still here.",
+    "trait": "Fleet",
+    "trait_description": "+25% extraction speed. +15% loot on scavenge runs (knows where things are). Team always knows his position on expeditions (narrates constantly). Avoids combat — runs instead of fights.",
+    "voice_notes": "Fast talker. Stream of consciousness. 'Ok so left here, there's a gap in the fence, through the loading dock, watch the floor it's rotted on the east side — we're good.' Doesn't pause between thoughts. When he's scared, he talks faster. When he's silent, something is very wrong. Trust means the narration gets personal — he starts telling you why he knows these routes."
+  },
+
+  "stats": {
+    "bias": ["agility", "luck"],
+    "base_range": [3, 7],
+    "bias_bonus": 2
+  },
+
+  "relationships": {
+    "base_strength": 30,
+    "attitude_to_player": "Friendly, easy. Doesn't overthink authority. Give him a job and he'll do it fast and narrate the whole thing. He's not complicated — he's useful and he knows it.",
+    "key_relationships": {
+      "yssa": "Two fast people. They'd run well together. She finds his narration annoying and funny.",
+      "rook": "Rook appreciates efficiency. Sol delivers it. The talking tests Rook's patience.",
+      "marsh": "Opposites. Sol talks constantly, Marsh says nothing. They've run together. It works better than expected.",
+      "sera": "She tracks his supply runs. His counts are always accurate despite the chaos. That surprised her.",
+      "felix": "Sol brings back parts Felix needs. They have a good exchange going."
+    }
+  },
+
+  "flags": {
+    "can_deploy": true,
+    "is_child": false,
+    "has_secret": false,
+    "secret_hint": null,
+    "unlock_condition": null
+  }
+}

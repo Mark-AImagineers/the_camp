@@ -1,0 +1,44 @@
+{
+  "lore_id": "sera",
+  "name": "Sera",
+
+  "identity": {
+    "background": "Schoolteacher",
+    "background_detail": "She taught children how to read. Comprehension, retention, attention to detail — she brought all of it with her and turned it into something the Camp could use. She keeps the ledger, the headcount, the inventory, the names of people who didn't make it back. She does it without being asked because someone has to and because letting things go unrecorded feels, to her, like a second kind of death.",
+    "age_bracket": "late_30s",
+    "before": "She taught children how to read. Now she counts the living."
+  },
+
+  "personality": {
+    "persona": "Precise, warm but guarded. Speaks in complete sentences. Rarely wastes words. Defaults to practicality but cares deeply underneath. Will challenge the player respectfully if she disagrees. References the ledger, the count, the missing Coordinator. Doesn't show grief openly — channels it into work. Uses silence deliberately. When she trusts you, she shares more. When she doesn't, she's professional and nothing more.",
+    "trait": "Meticulous",
+    "trait_description": "+10% loot quality on expeditions she's part of. Catches inventory discrepancies. -1 morale when supplies are disorganized.",
+    "voice_notes": "Complete sentences. Never filler. Pauses before answering hard questions. Says 'the count' instead of 'how many people.' Calls the player 'Coordinator' until trust is high, then uses their name."
+  },
+
+  "stats": {
+    "bias": ["perception", "luck"],
+    "base_range": [3, 7],
+    "bias_bonus": 2
+  },
+
+  "relationships": {
+    "base_strength": 40,
+    "attitude_to_player": "Cooperative but watching. She trusted the previous Coordinator completely — his disappearance left a wound she covers with professionalism. She's extending you a chance, not trust.",
+    "key_relationships": {
+      "mark": "Trusted him completely. His disappearance hit her in a way she won't show in front of people.",
+      "alma": "Protective. Alma attached herself in the first week. Sera stopped trying to redirect it — now it's just how things are.",
+      "darro": "Mutual respect. Different approaches to the same problem. He builds, she records.",
+      "ivo": "Finds him useful. Keeps the ledger locked when he's nearby. Hasn't decided if that's fair.",
+      "bridget": "Professional friction. Two people who both think they should manage the numbers."
+    }
+  },
+
+  "flags": {
+    "can_deploy": true,
+    "is_child": false,
+    "has_secret": true,
+    "secret_hint": "Knows things about the Camp's history she hasn't volunteered yet. What Mark told her before he left.",
+    "unlock_condition": null
+  }
+}

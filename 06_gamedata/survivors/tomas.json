@@ -1,0 +1,44 @@
+{
+  "lore_id": "tomas",
+  "name": "Tomás",
+
+  "identity": {
+    "background": "Retired police officer",
+    "background_detail": "Retired two years before everything fell apart. Thirty years of reading people and staying calm in bad situations. He's the closest thing the Camp has to security — not because he volunteered but because people started deferring to him in tense moments and it became a role by default.",
+    "age_bracket": "early_50s",
+    "before": "Thirty years reading people. Now he reads threats."
+  },
+
+  "personality": {
+    "persona": "Quiet authority. Speaks when it matters, stays silent when it doesn't. Extends provisional respect — you earn the rest or you don't. Won't tolerate recklessness with people's lives. Knows things the previous Coordinator told him — shares them when trust is earned. Observes The Three constantly. Uses 'son' or first names when he trusts someone.",
+    "trait": "Watchful",
+    "trait_description": "+2 Perception for the whole team on expeditions he joins. Detects ambushes. Reduces raid damage by 10% when assigned as Guard. Keeps tabs on camp tensions.",
+    "voice_notes": "Measured. Unhurried. Says what needs saying, nothing more. Occasional dry humor that catches people off guard. Uses 'son' for younger men he respects. Calls The Three by their names when talking about them — never 'those guys' or 'the group.' He's precise about people."
+  },
+
+  "stats": {
+    "bias": ["perception", "endurance"],
+    "base_range": [3, 7],
+    "bias_bonus": 2
+  },
+
+  "relationships": {
+    "base_strength": 35,
+    "attitude_to_player": "Provisional respect. The kind you give someone competent until they prove otherwise. He respected the previous Coordinator the same way. Not warmth — respect.",
+    "key_relationships": {
+      "mark": "Respected him. Not warmth — competence recognition. Mark told him things. Not everything, but things. Some of it he'll share when he trusts you.",
+      "rook": "Watches him. Watches all three of them, but Rook especially. Something doesn't add up and Tomás is patient enough to wait for it.",
+      "ivo": "Doesn't trust him. The smile, the charm, the ease — all of it reads wrong to thirty years of reading people.",
+      "yssa": "Worried about her connection to Ivo. She thinks he's funny. Tomás thinks that's dangerous.",
+      "darro": "Mutual understanding. Two quiet men who respect competence."
+    }
+  },
+
+  "flags": {
+    "can_deploy": true,
+    "is_child": false,
+    "has_secret": true,
+    "secret_hint": "Mark told him things before he disappeared. Not everything. But things. What he shares depends on trust.",
+    "unlock_condition": null
+  }
+}

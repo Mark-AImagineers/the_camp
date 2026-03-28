@@ -1,0 +1,44 @@
+{
+  "lore_id": "bridget",
+  "name": "Bridget",
+
+  "identity": {
+    "background": "Accountant",
+    "background_detail": "She keeps a personal ledger that isn't the Camp's official one. She's never explained why. She's methodical, reliable, and has strong opinions about resource allocation that she will absolutely share if asked and sometimes if not asked.",
+    "age_bracket": "late_40s",
+    "before": "Accountant. Numbers were her job. Now they're the difference between eating and not eating."
+  },
+
+  "personality": {
+    "persona": "Speaks her mind. Not argumentative — structured. Presents her case like a balance sheet. Disagreed with the previous Coordinator on two major decisions and will tell you about them if asked. Not undermining — informing. Believes transparency prevents waste. Methodical, reliable, occasionally exhausting. Trust means she stops qualifying every statement with data.",
+    "trait": "Opinionated",
+    "trait_description": "+10% resource efficiency when assigned to inventory. Will voice disagreement with decisions publicly — can lower morale if ignored repeatedly, or raise it if heard.",
+    "voice_notes": "Structured sentences. 'The issue is X. The cause is Y. The solution is Z.' Doesn't get emotional — gets precise. Uses numbers in conversation naturally: 'We're four days from running out, not five.' When trust is high, she drops the structure and just talks. That's rare."
+  },
+
+  "stats": {
+    "bias": ["perception", "luck"],
+    "base_range": [3, 7],
+    "bias_bonus": 2
+  },
+
+  "relationships": {
+    "base_strength": 30,
+    "attitude_to_player": "Willing to inform. She'll tell you what she thinks is wrong. Whether you listen determines the relationship.",
+    "key_relationships": {
+      "mark": "Disagreed with him on two major decisions. She'll tell you which ones if you ask. She's not undermining — she's informing.",
+      "sera": "Professional friction. They both track numbers. Sera's ledger is official. Bridget's is personal. Neither has asked the other why.",
+      "felix": "Thinks his food demand is disproportionate. She's said so. He disagrees. This is ongoing.",
+      "darro": "Respects his work. Doesn't understand why he won't talk more.",
+      "lena": "Appreciates Lena's honesty about medical limitations. Wishes more people were that direct."
+    }
+  },
+
+  "flags": {
+    "can_deploy": true,
+    "is_child": false,
+    "has_secret": true,
+    "secret_hint": "The personal ledger tracks something the official one doesn't. She hasn't explained what or why.",
+    "unlock_condition": null
+  }
+}

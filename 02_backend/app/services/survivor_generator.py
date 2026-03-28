@@ -4,28 +4,51 @@ from pathlib import Path
 
 
 def _load_lore_characters() -> list[dict]:
-    paths = [
-        Path("/app/06_gamedata/survivors/lore_characters.json"),
-        Path("06_gamedata/survivors/lore_characters.json"),
+    """Load all individual character JSON files from the survivors gamedata folder."""
+    search_paths = [
+        Path("/app/06_gamedata/survivors"),
+        Path("06_gamedata/survivors"),
     ]
-    for p in paths:
-        if p.exists():
-            return json.loads(p.read_text())
-    raise FileNotFoundError("lore_characters.json not found")
+    for base in search_paths:
+        if base.is_dir():
+            characters = []
+            for f in sorted(base.glob("*.json")):
+                if f.name == "lore_characters.json":
+                    continue  # skip legacy combined file
+                data = json.loads(f.read_text())
+                # Flatten the nested structure for DB insertion
+                char = {
+                    "lore_id": data["lore_id"],
+                    "name": data["name"],
+                    "background": data["identity"]["background"],
+                    "background_detail": data["identity"].get("background_detail"),
+                    "age_bracket": data["identity"].get("age_bracket"),
+                    "persona": data["personality"].get("persona"),
+                    "trait": data["personality"].get("trait"),
+                    "trait_description": data["personality"].get("trait_description"),
+                    "stat_bias": data["stats"].get("bias", []),
+                    "base_range": data["stats"].get("base_range", [3, 7]),
+                    "base_relationship": data["relationships"].get("base_strength", 30),
+                    "can_deploy": data["flags"].get("can_deploy", True),
+                }
+                characters.append(char)
+            if characters:
+                return characters
+    raise FileNotFoundError("No character files found in survivors gamedata")
 
 
-def _roll_stats(stat_bias: list[str]) -> dict[str, int]:
+def _roll_stats(stat_bias: list[str], base_range: list[int] = None) -> dict[str, int]:
+    low, high = base_range or [3, 7]
     stats = {
-        "strength": random.randint(3, 7),
-        "agility": random.randint(3, 7),
-        "perception": random.randint(3, 7),
-        "endurance": random.randint(3, 7),
-        "luck": random.randint(3, 7),
+        "strength": random.randint(low, high),
+        "agility": random.randint(low, high),
+        "perception": random.randint(low, high),
+        "endurance": random.randint(low, high),
+        "luck": random.randint(low, high),
     }
     for bias in stat_bias:
         if bias in stats:
             stats[bias] += 2
-    # variance
     for key in stats:
         stats[key] += random.randint(-1, 1)
         stats[key] = max(1, min(10, stats[key]))
@@ -33,22 +56,30 @@ def _roll_stats(stat_bias: list[str]) -> dict[str, int]:
 
 
 def seed_survivors(cur, save_slot_id: str):
-    """Seed all 15 lore characters for a new save slot. 5 random activated, 10 not."""
+    """Seed all lore characters for a new save slot. 5 random deployable ones activated, rest not."""
     characters = _load_lore_characters()
-    random.shuffle(characters)
 
-    starters = characters[:5]
-    rest = characters[5:]
+    # Split into deployable and non-deployable
+    deployable = [c for c in characters if c["can_deploy"]]
+    non_deployable = [c for c in characters if not c["can_deploy"]]
+
+    # Pick 5 random starters from deployable pool
+    random.shuffle(deployable)
+    starters = deployable[:5]
+    rest_deployable = deployable[5:]
 
     for char in starters:
         _insert_survivor(cur, save_slot_id, char, is_activated=True)
 
-    for char in rest:
+    for char in rest_deployable:
+        _insert_survivor(cur, save_slot_id, char, is_activated=False)
+
+    for char in non_deployable:
         _insert_survivor(cur, save_slot_id, char, is_activated=False)
 
 
 def _insert_survivor(cur, save_slot_id: str, char: dict, is_activated: bool):
-    stats = _roll_stats(char.get("stat_bias", []))
+    stats = _roll_stats(char.get("stat_bias", []), char.get("base_range"))
     max_hp = 50 + (stats["endurance"] * 10)
 
     cur.execute(

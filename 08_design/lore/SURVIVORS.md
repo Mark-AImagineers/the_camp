@@ -193,6 +193,52 @@ Her older sibling is somewhere in the Camp. Barely managing. Doing their best. J
 
 ---
 
+### Dag
+**Late 30s. Before: farmer. The real kind — soil under the nails, not the hobby kind.**
+
+He arrived six months ago carrying seed packets in a waterproof bag like they were worth more than gold. They were. He'd walked for three weeks through territory nobody walks through, and when people asked him how he survived it, he said *I didn't stop moving* and changed the subject.
+
+He set up the growing beds along the south wall without asking permission. Nobody objected because nobody else knew how. Within a month, the Camp had greens that weren't from a can. Within two months, he'd identified which soil in the surrounding area could support planting and which was dead.
+
+He doesn't talk about where he came from or who he left behind. He talks about growing seasons, water tables, and nitrogen. The deflection is obvious. Nobody pushes it because the food he produces buys a kind of silence that everyone respects.
+
+---
+
+### Noor
+**Early 30s. Before: veterinarian. Large animals, not pets.**
+
+She arrived with a group that didn't make it. She was the only one still standing when Tomás found them at the south perimeter — three others dead, two dying, and Noor with a broken wrist trying to set someone else's leg. Lena reset the wrist. Noor was functional within a week.
+
+She knows anatomy. Not human, but close enough that Lena considers her the only person in the Camp worth consulting. She can stitch a wound, read an infection, and make field decisions about triage that most people couldn't make sober in a hospital. She's calm under pressure in a way that suggests she's been through worse than what the Camp has seen.
+
+She doesn't scare easily. She doesn't bluff. She'll tell you exactly how bad something is and then she'll help you fix it.
+
+---
+
+### Sol
+**Mid 20s. Before: courier. Bike messenger in the city.**
+
+Fast. That's the first thing everyone says about him. Fast and reckless in a way that should have killed him by now and somehow hasn't. He knows the city grid — not from maps, from muscle memory. Every shortcut, every alley, every building with a roof exit. He navigated by instinct before the After, and in the After that instinct became the difference between getting supplies home and not coming back.
+
+He talks too much. He knows he talks too much. It's not nerves — it's processing. He narrates what he's doing while he does it, which is annoying in the Camp and useful on runs because it means his team always knows where he is and what he sees.
+
+He's not a fighter. He'll say that clearly and without shame. What he is, is someone who can get in, grab what's needed, and get out before the situation turns. He's been doing it for four years and he's still here, which is its own kind of argument.
+
+---
+
+### Hana
+**Early 40s. Before: army logistics officer. Fifteen years in.**
+
+She doesn't talk about her service and she doesn't need to — it's in how she moves, how she organizes space, how she looks at a room and sees sightlines before furniture. She arrived alone, clean, carrying a pack that was exactly the right weight for the distance she'd covered. Everything about her is calibrated.
+
+She assessed the Camp's defenses on her first day and didn't say anything about them for a week. When she finally spoke to Tomás about it, she laid out fourteen points of vulnerability in order of severity. He agreed with twelve of them. The other two he hadn't noticed.
+
+She's not warm. She's not cold. She's operational. She'll follow a chain of command if it exists and build one if it doesn't. What she won't do is watch people make avoidable mistakes with lives on the line and say nothing about it.
+
+Darro respects her. That's rare and it was immediate.
+
+---
+
 ## The Rest
 
 There are others. Faces in the morning. Names on Sera's list that you haven't matched to people yet.

@@ -1,0 +1,44 @@
+{
+  "lore_id": "marsh",
+  "name": "Marsh",
+
+  "identity": {
+    "background": "Unknown",
+    "background_detail": "He's the one you notice standing by the perimeter when he should be asleep. He doesn't pace — he stands, still, facing out, like he's waiting for something specific. Nobody's asked him directly what he's waiting for. The people who've thought about it decided they don't want to know.",
+    "age_bracket": "late_20s",
+    "before": "Doesn't say. The stillness says enough."
+  },
+
+  "personality": {
+    "persona": "Almost silent. Still in a way that feels trained, not chosen. Follows Rook without it looking like following. Eats alone. Useful on runs — good instincts, doesn't panic. There's a flatness to how he handles danger that makes people uncomfortable. Trust doesn't make him warm — it makes him present. He starts showing up where you need him before you ask.",
+    "trait": "Vigilant",
+    "trait_description": "+3 Perception on night expeditions. Reduces surprise attack chance by 20%. Watches the gate — first to detect incoming threats or arrivals.",
+    "voice_notes": "Minimal. Sometimes just nods. When he speaks it's factual: 'Movement. East. Two.' Doesn't use full sentences unless directly asked a question, and even then keeps it to the minimum. The most expressive thing about him is where he stands — that's how he communicates priority."
+  },
+
+  "stats": {
+    "bias": ["perception", "endurance"],
+    "base_range": [3, 7],
+    "bias_bonus": 2
+  },
+
+  "relationships": {
+    "base_strength": 10,
+    "attitude_to_player": "Absent until needed. He doesn't form opinions about leadership — he watches the perimeter. Trust means he shows up before you call him. That's the most you'll get.",
+    "key_relationships": {
+      "rook": "Follows him. The bond is deep, silent, and predates the Camp.",
+      "ivo": "The three of them share something. Marsh's role in it is the quiet part.",
+      "tomas": "Knows Tomás watches him. Doesn't react. Doesn't change. That's either nothing or everything.",
+      "yssa": "She's tried talking to him. He answered in single words. She found it funny. He didn't.",
+      "cullum": "Two people who exist at the edges of the Camp. They don't interact. They notice each other."
+    }
+  },
+
+  "flags": {
+    "can_deploy": true,
+    "is_child": false,
+    "has_secret": true,
+    "secret_hint": "What he's watching for at the gate. What the three of them left behind. It may still be coming.",
+    "unlock_condition": null
+  }
+}

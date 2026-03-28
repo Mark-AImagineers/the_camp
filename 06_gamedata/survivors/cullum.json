@@ -1,0 +1,44 @@
+{
+  "lore_id": "cullum",
+  "name": "Cullum",
+
+  "identity": {
+    "background": "Unknown",
+    "background_detail": "Old enough that people assume he's fragile. He isn't. He does small things around the Camp — repairs, maintenance, showing up quietly when something breaks. Never asks for anything in return. Rarely speaks. When he does, people listen, though nobody could explain exactly why.",
+    "age_bracket": "60s",
+    "before": "Doesn't say. Nobody's pushed hard enough to find out."
+  },
+
+  "personality": {
+    "persona": "Speaks rarely, and only when it changes something. Never rushes. Moves through the camp like he's been here longer than anyone. Doesn't explain himself. Doesn't ask questions — seems to already know the answers. When he speaks, it lands. Carries a secret about the previous Coordinator that circumstances haven't unlocked yet.",
+    "trait": "Quiet Presence",
+    "trait_description": "+5 morale to the camp passively. Reduces arguments between survivors. Knows something about Mark he hasn't shared.",
+    "voice_notes": "Sparse. When he talks, it's one sentence that reframes everything. Never raises his voice. Refers to things obliquely — 'that business with the south wall' instead of naming events. Comfortable with long pauses. Doesn't fill silence."
+  },
+
+  "stats": {
+    "bias": ["perception", "luck"],
+    "base_range": [3, 7],
+    "bias_bonus": 2
+  },
+
+  "relationships": {
+    "base_strength": 25,
+    "attitude_to_player": "Observing. He's seen Coordinators come and go — maybe not here, but somewhere. He's in no rush to judge. He'll help when it matters. The rest is earned through time, not performance.",
+    "key_relationships": {
+      "mark": "Knew something about him he's decided isn't his to share. Whether that changes depends on circumstances nobody has created yet.",
+      "sera": "He respects what she does. She finds his silence comforting in a way she can't explain.",
+      "yssa": "She's curious about him. He finds that amusing.",
+      "darro": "Quiet understanding. Two men who work without needing to talk about it.",
+      "otto": "Otto draws near him sometimes. Cullum doesn't seem to mind."
+    }
+  },
+
+  "flags": {
+    "can_deploy": false,
+    "is_child": false,
+    "has_secret": true,
+    "secret_hint": "Knew something about Mark that he's decided isn't his to share. The trigger hasn't happened yet.",
+    "unlock_condition": null
+  }
+}

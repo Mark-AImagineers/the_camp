@@ -1,0 +1,44 @@
+{
+  "lore_id": "noor",
+  "name": "Noor",
+
+  "identity": {
+    "background": "Veterinarian",
+    "background_detail": "Large animals, not pets. Arrived with a group that didn't make it. She was the only one still standing when Tomás found them at the south perimeter — three others dead, two dying, and Noor with a broken wrist trying to set someone else's leg.",
+    "age_bracket": "early_30s",
+    "before": "Veterinarian. Knew anatomy on things bigger than people. Turns out the knowledge transfers."
+  },
+
+  "personality": {
+    "persona": "Calm under pressure in a way that suggests she's been through worse. Knows anatomy — not human, but close enough. Doesn't scare easily, doesn't bluff. Tells you exactly how bad something is and then helps you fix it. Direct but not harsh. The calm is real, not performed — she's just wired for emergencies.",
+    "trait": "Field Surgeon",
+    "trait_description": "+15% healing when paired with Lena. Can perform emergency treatment on expeditions without medkits (reduced effectiveness). Reduces death chance from critical injuries by one tier.",
+    "voice_notes": "Clear, steady. Uses anatomical terms naturally then catches herself and translates. 'The femoral — the big artery in the leg. It's fine.' Doesn't panic. Doesn't comfort with words — comforts with competence. When trust is high, she talks about the group she arrived with. Briefly. Then moves on."
+  },
+
+  "stats": {
+    "bias": ["perception", "endurance"],
+    "base_range": [3, 7],
+    "bias_bonus": 2
+  },
+
+  "relationships": {
+    "base_strength": 25,
+    "attitude_to_player": "Practical. She's seen leadership fail — the group she arrived with had a leader. She'll follow yours if it works. If it doesn't, she'll say so clearly and without malice.",
+    "key_relationships": {
+      "lena": "The only person in the Camp Lena considers worth consulting. Mutual professional respect. They disagree on methods sometimes — Lena is cautious, Noor is decisive.",
+      "tomas": "He found her at the perimeter. That creates a bond neither of them names. He checks on her. She lets him.",
+      "otto": "Good with him. Animals and children respond to the same calm. Otto lets her near him without flinching.",
+      "darro": "Respects his work. He respects her composure. Not much conversation. Not needed.",
+      "mark": "Never met him. Doesn't carry opinions about someone she didn't know."
+    }
+  },
+
+  "flags": {
+    "can_deploy": true,
+    "is_child": false,
+    "has_secret": false,
+    "secret_hint": null,
+    "unlock_condition": null
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "lore_id": "yssa",
+  "name": "Yssa",
+
+  "identity": {
+    "background": "Student",
+    "background_detail": "She was fifteen when the world ended. The Camp is the only adult life she's ever known. That makes her both the most adapted person here and the most quietly furious about it — she doesn't mourn a career or a life she built because she never got to build one.",
+    "age_bracket": "19",
+    "before": "She was still in school. Now the After is the only life she knows."
+  },
+
+  "personality": {
+    "persona": "Sharp, impatient, unimpressed by authority she hasn't seen earned. No nostalgia for the Before — never had it. Measures people by what they do, not what they say. Blunt. Occasionally funny in a way that catches people off guard. Doesn't respect the previous Coordinator's memory because she never met him. When she respects you, she's fiercely loyal. Until then, expect pushback.",
+    "trait": "Defiant",
+    "trait_description": "+15% speed on extraction. Ignores fear penalties. -5% to follow orders from leaders with low relationship. Won't take orders from people who haven't proved themselves.",
+    "voice_notes": "Short, punchy. Sarcastic when uncomfortable. Doesn't use formal language ever. Says 'yeah' not 'yes.' Rolls her eyes verbally — you can hear it. When she's serious, the humor drops completely and the shift is jarring. Uses nicknames for people she respects."
+  },
+
+  "stats": {
+    "bias": ["agility", "perception"],
+    "base_range": [3, 7],
+    "bias_bonus": 2
+  },
+
+  "relationships": {
+    "base_strength": 20,
+    "attitude_to_player": "Unimpressed. You're new. She doesn't care about the old Coordinator. She'll measure you on what you do — that's either the fairest deal in the Camp or the hardest.",
+    "key_relationships": {
+      "mark": "Never met him. Has no patience for people who use his memory as a yardstick.",
+      "ivo": "Thinks he's funny. Tomás is worried about this. She doesn't know why.",
+      "tomas": "Respects him grudgingly. He's earned it. She wouldn't say it to his face.",
+      "lena": "Functional respect. Lena doesn't patronize her. That's enough.",
+      "cullum": "Curious about him. He doesn't explain himself and she respects that."
+    }
+  },
+
+  "flags": {
+    "can_deploy": true,
+    "is_child": false,
+    "has_secret": false,
+    "secret_hint": null,
+    "unlock_condition": null
+  }
+}
