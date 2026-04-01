@@ -1,4 +1,21 @@
-export default function CenterPanel() {
+import { useEffect, useRef } from 'react'
+import type { ChatState } from '../../lib/chat'
+
+interface Props {
+  chat: ChatState
+}
+
+export default function CenterPanel({ chat }: Props) {
+  const feedRef = useRef<HTMLDivElement>(null)
+  const { selectedSurvivor, histories } = chat
+  const chatLines = selectedSurvivor ? (histories[selectedSurvivor.id] || []) : []
+
+  useEffect(() => {
+    if (feedRef.current) {
+      feedRef.current.scrollTop = feedRef.current.scrollHeight
+    }
+  }, [chatLines.length])
+
   return (
     <div className="panel center-panel">
       {/* Event Log — top half */}
@@ -14,15 +31,28 @@ export default function CenterPanel() {
 
       <div className="center-divider" />
 
-      {/* Conversation / Menu — bottom half */}
+      {/* Conversation — bottom half */}
       <div className="center-console">
-        <div className="center-console-feed">
-          <p className="console-line"><span className="console-prefix">&gt;</span> Awaiting orders...</p>
-        </div>
-        <div className="center-console-input">
-          <span className="console-prefix">&gt;</span>
-          <span className="console-cursor">{'\u2588'}</span>
-        </div>
+        {selectedSurvivor ? (
+          <>
+            <div className="center-console-header">
+              <span className="console-header-name">{selectedSurvivor.name}</span>
+              <span className="console-header-bg"> · {selectedSurvivor.background}</span>
+            </div>
+            <div className="center-console-feed" ref={feedRef}>
+              {chatLines.map((line, i) => (
+                <p key={i} className={`console-line ${line.speaker === 'player' ? 'console-line-player' : 'console-line-survivor'}`}>
+                  <span className="console-prefix">{line.speaker === 'player' ? '>' : `${selectedSurvivor.name}:`}</span>
+                  {line.text}
+                </p>
+              ))}
+            </div>
+          </>
+        ) : (
+          <div className="center-console-feed center-console-idle">
+            <p className="placeholder-text">Select a survivor to talk.</p>
+          </div>
+        )}
       </div>
     </div>
   )

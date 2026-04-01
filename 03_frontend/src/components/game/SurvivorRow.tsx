@@ -18,6 +18,7 @@ interface Survivor {
 interface Props {
   survivor: Survivor
   isExpanded: boolean
+  isSelected?: boolean
   onToggle: () => void
 }
 
@@ -42,7 +43,7 @@ function getInitials(name: string): string {
 
 export type { Survivor }
 
-export default function SurvivorRow({ survivor, isExpanded, onToggle }: Props) {
+export default function SurvivorRow({ survivor, isExpanded, isSelected, onToggle }: Props) {
   const isDead = survivor.is_dead
   const isLocked = !survivor.is_activated
   const hpPct = survivor.max_hp > 0 ? (survivor.hp / survivor.max_hp) * 100 : 0
@@ -51,7 +52,7 @@ export default function SurvivorRow({ survivor, isExpanded, onToggle }: Props) {
 
   return (
     <div
-      className={`survivor-row ${isDead ? 'dead' : ''} ${isLocked ? 'locked' : ''}`}
+      className={`survivor-row ${isDead ? 'dead' : ''} ${isLocked ? 'locked' : ''} ${isSelected ? 'selected' : ''}`}
       onClick={isLocked ? undefined : onToggle}
     >
       {/* Main row */}

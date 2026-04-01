@@ -7,9 +7,11 @@ type Tab = 'people' | 'stash' | 'camp'
 
 interface Props {
   saveSlotId: string | null
+  onSelectSurvivor: (survivor: Survivor) => void
+  selectedSurvivorId: string | null
 }
 
-export default function LeftPanel({ saveSlotId }: Props) {
+export default function LeftPanel({ saveSlotId, onSelectSurvivor, selectedSurvivorId }: Props) {
   const [tab, setTab] = useState<Tab>('people')
   const [survivors, setSurvivors] = useState<Survivor[]>([])
   const [expandedId, setExpandedId] = useState<string | null>(null)
@@ -27,6 +29,11 @@ export default function LeftPanel({ saveSlotId }: Props) {
 
   const toggleExpanded = (id: string) => {
     setExpandedId(prev => prev === id ? null : id)
+  }
+
+  const handleSurvivorClick = (survivor: Survivor) => {
+    toggleExpanded(survivor.id)
+    onSelectSurvivor(survivor)
   }
 
   return (
@@ -55,7 +62,8 @@ export default function LeftPanel({ saveSlotId }: Props) {
                   key={s.id}
                   survivor={s}
                   isExpanded={expandedId === s.id}
-                  onToggle={() => toggleExpanded(s.id)}
+                  isSelected={selectedSurvivorId === s.id}
+                  onToggle={() => handleSurvivorClick(s)}
                 />
               ))}
             </div>

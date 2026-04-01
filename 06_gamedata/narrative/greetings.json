@@ -1,0 +1,147 @@
+{
+  "_doc": "Relationship-tiered greetings. Tiers: 0 (stranger, 0-19), 1 (familiar, 20-39), 2 (trusted, 40-59), 3 (loyal, 60-79), 4 (bonded, 80-100). Each survivor has an array of greetings per tier — one is picked at random.",
+
+  "tiers": [
+    { "id": 0, "label": "Stranger",  "min": 0,  "max": 19 },
+    { "id": 1, "label": "Familiar",  "min": 20, "max": 39 },
+    { "id": 2, "label": "Trusted",   "min": 40, "max": 59 },
+    { "id": 3, "label": "Loyal",     "min": 60, "max": 79 },
+    { "id": 4, "label": "Bonded",    "min": 80, "max": 100 }
+  ],
+
+  "greetings": {
+    "lena": {
+      "0": ["...What do you need.", "I'm busy. Make it quick.", "If this is about morale, talk to someone else."],
+      "1": ["What is it.", "Need something checked?", "I'm between patients. Go ahead."],
+      "2": ["Hey. Supplies are holding — for now.", "What's the situation.", "Sit down if you want. I've got a minute."],
+      "3": ["Good timing. I was about to come find you.", "How are you holding up? And I mean actually.", "I set aside those antibiotics you asked about."],
+      "4": ["There you are. I was worried.", "I'm not a nurse — but I'll make an exception for you.", "Careful. People might think we're friends."]
+    },
+    "darro": {
+      "0": ["...", "Mm.", "You need something built, say it. Otherwise I'm working."],
+      "1": ["Yeah?", "Wall's holding. That's the update.", "Talk while I work."],
+      "2": ["Morning. Foundation's solid today.", "Need a hand with something?", "Got a minute. What's on your mind."],
+      "3": ["Saved you the good lumber.", "I trust your calls. Just keep making them.", "Sit. I made an extra cup."],
+      "4": ["You look tired. Take a break — that's an order from me to you.", "This place holds because you do. Don't forget that.", "I don't say this enough. Thank you."]
+    },
+    "raine": {
+      "0": ["Is this about Otto? Then we talk. Otherwise, I'm busy.", "What.", "I don't have time for small talk."],
+      "1": ["Is Otto alright?", "Go ahead. But make it quick — he needs me.", "What's happening out there."],
+      "2": ["He slept through the night. First time in weeks.", "I appreciate what you're doing for us.", "What do you need? I'll help if I can."],
+      "3": ["Otto drew you something. Don't make a big deal about it.", "You're good with him. He doesn't warm up to many.", "Thank you. For keeping us safe."],
+      "4": ["He asked about you this morning. By name.", "I trust you with my son. That's everything I have to give.", "You're family now. Whether you like it or not."]
+    },
+    "sol": {
+      "0": ["Oh hey — you're the boss, right? Cool, cool, cool. So listen—", "What's up! I mean — what's up, boss? Sir? Chief?", "I was just telling someone — oh wait, that was me talking to myself again."],
+      "1": ["There you are! I had like three things to tell you — wait, four.", "Hey! Did you hear? Probably not, I just found out. Anyway—", "So I was running the south perimeter and — oh, you wanted to talk first? Go ahead."],
+      "2": ["Good to see you, for real. Things feel less heavy when you're around.", "I saved you the good gossip. Ready?", "Hey — you eat today? You gotta eat."],
+      "3": ["I know I talk a lot. But I listen too. What's going on.", "You're the only one who doesn't tell me to shut up. I notice that.", "I got your back out there. You know that, right?"],
+      "4": ["I'd run through a horde for you. I mean — I'd rather not, but I would.", "You're my people. End of list.", "Remember when nobody trusted me? You did. I won't forget that."]
+    },
+    "sera": {
+      "0": ["Can I help you with something?", "The inventory's current. If that's what you're here for.", "...Yes?"],
+      "1": ["Morning. Logs are updated.", "Need the supply count?", "I've reorganized the med shelf. Let me know if that's alright."],
+      "2": ["I made some notes on our consumption rate. Want to see?", "It's good to see you.", "I think we're doing better than last week. The numbers say so, at least."],
+      "3": ["I've been thinking about long-term storage. Can we talk strategy?", "You make hard calls. I respect that more than you know.", "Saved you some tea. It's not great, but it's warm."],
+      "4": ["You know, I used to organize supply closets for a living. Now I'm organizing survival. Funny how things work.", "I'm glad you're the one in charge.", "Before all this, I never mattered to anyone's survival. Now I do. Because of you."]
+    },
+    "tomas": {
+      "0": ["State your business.", "I'm watching the perimeter. Talk fast.", "...Chief."],
+      "1": ["What's the word.", "Perimeter's quiet. That worries me more.", "Go ahead."],
+      "2": ["You've got good instincts. I've seen enough leaders to know.", "Morning. Coffee's gone but the sentiment stands.", "What's our play today."],
+      "3": ["I've got your six. Always.", "You remind me of my old captain. That's the highest compliment I give.", "Let me know where you need me. I'll be there."],
+      "4": ["I retired once. Didn't take. This? This I'd do forever.", "You held this together when nobody thought you could. I saw it.", "I don't follow orders anymore. I follow you. There's a difference."]
+    },
+    "hana": {
+      "0": ["Operational update or personal?", "What's the priority.", "Go."],
+      "1": ["Sitrep's clean. Need details?", "I'm reviewing routes. What do you need.", "Brief me."],
+      "2": ["Good call yesterday. I logged it.", "You're getting better at this. Don't let it go to your head.", "Morning. What's the objective."],
+      "3": ["I've drafted three contingencies for the south route. Pick one.", "You've earned the rank. Even if nobody gave it to you.", "I'd follow you into a bad zone. Just say when."],
+      "4": ["Off the record? I sleep better knowing you're in charge.", "You're the best CO I never officially had.", "I stopped writing after-action reports. This isn't the army. It's better."]
+    },
+    "yssa": {
+      "0": ["What.", "If this is a pep talk, save it.", "I'm not volunteering for anything."],
+      "1": ["Fine. What do you want.", "This better be important.", "I'm listening. Reluctantly."],
+      "2": ["...Okay, you're not as bad as I thought.", "What's the plan? And don't sugarcoat it.", "Morning. I finished the task list. You're welcome."],
+      "3": ["I don't say this to anyone, but — you're alright.", "You actually listen. That's rare.", "I've been thinking about something. Got a minute?"],
+      "4": ["You're the only adult here I actually respect.", "I'd have left a long time ago if it weren't for you. Just so you know.", "Don't die out there. That's not a request."]
+    },
+    "marsh": {
+      "0": ["...", "...", "..."],
+      "1": ["...", "*nods*", "...Mm."],
+      "2": ["...Morning.", "*slight nod*", "...Quiet night."],
+      "3": ["...Brought you something.", "...Be careful out there.", "*holds out a small carved figure, says nothing*"],
+      "4": ["...You're the reason I stayed.", "...I don't have the words. But I'm here.", "*long silence* ...Thank you."]
+    },
+    "bridget": {
+      "0": ["I've got concerns and I'm going to voice them.", "Who's managing the food ratios? Because the math doesn't add up.", "Don't mind me. I'm just keeping count."],
+      "1": ["The numbers are off again. But you probably knew that.", "Morning. I have opinions.", "You wanted transparency? Here it is."],
+      "2": ["Okay, I'll admit — the last call was the right one.", "I've got a proposal. Hear me out.", "You're not perfect but you're competent. That's more than most."],
+      "3": ["I argue because I care. You know that, right?", "I ran the projections. We're going to be okay.", "I trust your judgment. Don't make me regret saying that."],
+      "4": ["Before all this, I counted money. Now I count lives. Yours matters most.", "You turned an accountant into a believer. Impressive.", "I've got your back. And the receipts to prove it."]
+    },
+    "rook": {
+      "0": ["Name's Rook. Or maybe it isn't. What do you need?", "I could help. Depends on what's in it for me.", "Don't trust me. Smart. I wouldn't either."],
+      "1": ["Back again? Alright, what's the job.", "I may have found something useful. Or maybe I didn't. Let's talk.", "You're persistent. I'll give you that."],
+      "2": ["Alright — I'll give you a real answer for once.", "You're the first person I haven't lied to in a while.", "I've got a lead. A real one this time."],
+      "3": ["My real name's not Rook. But you already guessed that.", "I've been watching your back. Don't ask how.", "You've earned the truth. Ask me anything."],
+      "4": ["I've never told anyone this. My name is—", "You're the only person who made me want to stay honest.", "I'd take a bullet. And I don't say that to be dramatic."]
+    },
+    "noor": {
+      "0": ["I'm more used to animals, but go ahead.", "What's wrong? Medical or otherwise.", "I'll help if I can. That's all I promise."],
+      "1": ["How are the others?", "I checked on the water supply. Looks okay.", "Animals are easier, but — go ahead."],
+      "2": ["You look like you need someone to listen. I'm here.", "The camp feels steadier. That's your doing.", "I noticed you haven't rested. You should."],
+      "3": ["I've seen what calm under pressure looks like. You have it.", "I trust your instincts. Even when the odds don't.", "Here — I made something from the herb garden. It'll help you sleep."],
+      "4": ["I lost everyone before this. I'm not losing you.", "You gave me a reason to care again. That's not small.", "Whatever happens — I'm with you. All the way."]
+    },
+    "ivo": {
+      "0": ["Well, hello there. New face — or have we met? I forget.", "Come in, come in. I was just — well, I was thinking. What can I do?", "Interesting. You have that look. The 'I need something' look."],
+      "1": ["Ah, you're back! I remembered something from last time — wait, let me think...", "Good timing. I just organized my thoughts. Mostly.", "Tell me what's happening. I like to understand the full picture."],
+      "2": ["You know, I think this camp has potential. Real potential.", "I've been teaching the kids — informally. Hope that's okay.", "There's a pattern to what's working. Want to hear my theory?"],
+      "3": ["You've built something here. I hope you see that.", "I wrote down everything I know about the surrounding areas. For you.", "History says leaders like you don't come around often. And I'd know."],
+      "4": ["I spent my whole life teaching other people's stories. You're writing one worth telling.", "If this is the end of the world, I'm glad I'm spending it here.", "You're the best student I never had. And I mean that."]
+    },
+    "dag": {
+      "0": ["Soil's not great.", "You here about the field? It needs nitrogen.", "I work better alone. But talk."],
+      "1": ["Rain's coming. Good for the beans.", "Field's producing. Not enough, but it's something.", "Need me for something?"],
+      "2": ["Saved the best plot for root vegetables. Long game.", "You eat yet? There's extra.", "The soil's getting better. So are we."],
+      "3": ["I measured the yield. We're going to make it through winter.", "You know what grows best? Trust. And you've got a green thumb for it.", "Sit with me. The sunset's good from the east field."],
+      "4": ["My grandfather built a farm from nothing. You're doing the same — with people.", "I'll grow whatever you need. Forever.", "This dirt is the only thing I've ever loved. Until this camp."]
+    },
+    "felix": {
+      "0": ["What broke.", "I don't do favors. I do trades. What've you got.", "If it's mechanical, I'll look. If it's personal, find someone else."],
+      "1": ["Something always breaks. What is it this time.", "I fixed the generator. You're welcome. Now what.", "Alright, what's the deal."],
+      "2": ["I fixed it before you asked. Don't get used to it.", "You're practical. I respect that.", "Need a hand? I've got grease to spare."],
+      "3": ["I keep this place running because of you. Don't forget that.", "Built you something. It's not pretty, but it works.", "You're the only one who lets me do my job right. Thanks."],
+      "4": ["I don't say things like this. But — you matter. To me.", "This camp runs because you run it. I just fix the parts.", "I'd build you a whole damn city if you asked."]
+    },
+    "juno": {
+      "0": ["I'm not a kid.", "What.", "I organized the supply closet. Nobody asked me to."],
+      "1": ["...Did I do something wrong?", "I can help. I'm not useless.", "What do you need? I'll figure it out."],
+      "2": ["I sorted the bandages by size. Lena didn't even notice yet.", "Can I come with you sometime? Not on a mission. Just... around.", "You don't talk to me like I'm little. I like that."],
+      "3": ["I made you something. It's dumb. But here.", "Will you teach me? Like, real stuff. Not kid stuff.", "You're the closest thing to... never mind. What do you need?"],
+      "4": ["I'm not going anywhere. You're stuck with me.", "When I grow up, I want to be like you. Don't laugh.", "You're my family now. I decided."]
+    },
+    "otto": {
+      "0": ["*hides behind Raine*", "*stares*", "..."],
+      "1": ["*peeks out*", "...Hi.", "*fidgets*"],
+      "2": ["...I drew a picture. Want to see?", "Mom says you're good.", "*small wave*"],
+      "3": ["Can I help? I can carry things.", "You're nice.", "*holds your hand briefly, then lets go*"],
+      "4": ["*runs up and hugs* I was waiting for you!", "Will you be here tomorrow too?", "You're my favorite. Don't tell mom."]
+    },
+    "alma": {
+      "0": ["*clutches a worn stuffed animal*", "*stares at the ground*", "..."],
+      "1": ["*glances up briefly*", "...You're tall.", "*shuffles feet*"],
+      "2": ["...I like it when it's quiet.", "Do you know any stories?", "*sits nearby, not quite next to you*"],
+      "3": ["I saved you a flower. It's not dead yet.", "Can you sit with me? Just for a minute?", "*hums a small tune when you approach*"],
+      "4": ["*runs over* You came back!", "I don't want you to go on the next one. Please.", "You make the bad dreams go away."]
+    },
+    "cullum": {
+      "0": ["...", "*stares*", "*turns away*"],
+      "1": ["...What.", "*watches you, says nothing for a long time* ...Fine.", "..."],
+      "2": ["...Heard what you did out there.", "...Not bad.", "*nods once*"],
+      "3": ["...Watch your left side out there.", "*leaves something useful where you'll find it*", "...I'll go where you need me."],
+      "4": ["...You're the only one who didn't push.", "I don't know who I was before. But I know who I'm with now.", "*long pause* ...Brother."]
+    }
+  }
+}

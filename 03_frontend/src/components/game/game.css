@@ -140,6 +140,11 @@
   background: #1a1a1a;
 }
 
+.survivor-row.selected {
+  background: #1a1500;
+  border-left: 2px solid #ba7517;
+}
+
 .survivor-row.locked {
   opacity: 0.35;
   cursor: default;
@@ -375,30 +380,45 @@
   justify-content: flex-end;
 }
 
+.center-console-header {
+  padding: 6px 12px;
+  border-bottom: 1px solid #1e1e1e;
+  background: #0a0a0a;
+}
+
+.console-header-name {
+  font-size: 10px;
+  color: #c9b99a;
+}
+
+.console-header-bg {
+  font-size: 10px;
+  color: #4a3d2e;
+}
+
+.center-console-idle {
+  justify-content: center;
+  align-items: center;
+}
+
 .console-line {
   font-size: 11px;
-  color: #7a6a54;
   margin: 0;
   line-height: 1.6;
+}
+
+.console-line-survivor {
+  color: #c9b99a;
+}
+
+.console-line-player {
+  color: #7a6a54;
 }
 
 .console-prefix {
   color: #ba7517;
   margin-right: 6px;
-}
-
-.center-console-input {
-  padding: 6px 12px;
-  border-top: 1px solid #1e1e1e;
-  display: flex;
-  align-items: center;
-  background: #0a0a0a;
-}
-
-.console-cursor {
-  color: #ba7517;
-  font-size: 11px;
-  animation: blink 1s step-end infinite;
+  font-size: 10px;
 }
 
 .cursor-blink {
@@ -417,40 +437,56 @@
   grid-column: 3;
 }
 
-/* Bottom Bar */
+/* Bottom Bar — Chat Input */
 .bottombar {
   grid-column: 1 / -1;
-  background: #0d0d0d;
+  background: #0a0a0a;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   padding: 0 12px;
   border-top: 1px solid #1e1e1e;
 }
 
-.bottombar-status {
-  font-size: 10px;
-  color: #4a3d2e;
+.bottombar-form {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 6px;
 }
 
-.bottombar-deploy {
-  background: transparent;
-  border: 1px solid #ba7517;
+.bottombar-prompt {
+  font-size: 10px;
   color: #ba7517;
-  font-family: monospace;
-  font-size: 10px;
-  letter-spacing: 0.1em;
-  padding: 5px 16px;
-  cursor: pointer;
-  border-radius: 0;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
-.bottombar-deploy:disabled {
-  border-color: #2a2a2a;
+.bottombar-caret {
+  font-size: 11px;
+  color: #ba7517;
+  flex-shrink: 0;
+}
+
+.bottombar-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #c9b99a;
+  font-family: monospace;
+  font-size: 11px;
+  caret-color: #ba7517;
+  padding: 0;
+}
+
+.bottombar-input::placeholder {
   color: #2a2a2a;
+}
+
+.bottombar-input:disabled {
   cursor: not-allowed;
 }
 
-.bottombar-deploy:not(:disabled):hover {
-  background: #1a1500;
+.bottombar-input:disabled::placeholder {
+  color: #1e1e1e;
 }
