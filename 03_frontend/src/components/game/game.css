@@ -308,7 +308,7 @@
   font-size: 9px;
 }
 
-/* Center Panel */
+/* Center Panel — split: log (top) + console (bottom) */
 .center-panel {
   grid-row: 2;
   grid-column: 2;
@@ -316,7 +316,15 @@
   flex-direction: column;
 }
 
-.center-header {
+/* Event Log — top section */
+.center-log {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.center-log-header {
   padding: 8px 12px;
   border-bottom: 1px solid #2a2a2a;
   background: #1a1a1a;
@@ -327,9 +335,10 @@
   color: #4a3d2e;
 }
 
-.center-feed {
+.center-log-feed {
   flex: 1;
   padding: 12px;
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -339,6 +348,57 @@
 .center-placeholder {
   margin-top: 0;
   margin-bottom: 0.5rem;
+}
+
+/* Divider between log and console */
+.center-divider {
+  height: 1px;
+  background: #2a2a2a;
+  flex-shrink: 0;
+}
+
+/* Console — bottom section */
+.center-console {
+  flex: 0 0 35%;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  background: #0d0d0d;
+}
+
+.center-console-feed {
+  flex: 1;
+  padding: 8px 12px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.console-line {
+  font-size: 11px;
+  color: #7a6a54;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.console-prefix {
+  color: #ba7517;
+  margin-right: 6px;
+}
+
+.center-console-input {
+  padding: 6px 12px;
+  border-top: 1px solid #1e1e1e;
+  display: flex;
+  align-items: center;
+  background: #0a0a0a;
+}
+
+.console-cursor {
+  color: #ba7517;
+  font-size: 11px;
+  animation: blink 1s step-end infinite;
 }
 
 .cursor-blink {
