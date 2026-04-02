@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react'
 import { useEffect, useRef } from 'react'
 import type { ChatState } from '../../lib/chat'
 import type { GameLogState } from '../../lib/gameLog'
@@ -29,7 +30,7 @@ export default function CenterPanel({ chat, gameLog, responding, loadingHistory 
 
   // Group events by game_day for day markers
   const renderLogEntries = () => {
-    const entries: JSX.Element[] = []
+    const entries: ReactNode[] = []
     let lastDay = 0
 
     for (const event of gameLog.events) {
