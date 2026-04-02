@@ -5,6 +5,9 @@ from app.core.database import get_db
 from app.core.security import decode_token
 from app.services.survivor_generator import seed_survivors
 from app.services.chat import get_survivor_response
+from app.services.game_log import get_events, get_current_game_day
+from app.services.chat_evaluator import evaluate_exchange
+from app.services.consequences import apply_consequences, load_chat_rules, get_hard_boundaries, get_recent_emotional_tags
 
 router = APIRouter()
 
@@ -207,9 +210,89 @@ def list_survivors(slot_id: str, authorization: str = Header()):
     return {"survivors": survivors}
 
 
+@router.get("/{slot_id}/events")
+def get_game_events(slot_id: str, authorization: str = Header(), limit: int = 100):
+    user_id = _get_user_id(authorization)
+    conn = get_db()
+    cur = conn.cursor()
+    cur.execute("SET app.current_user_id = %s", (user_id,))
+
+    cur.execute(
+        "SELECT 1 FROM game.save_slots WHERE id = %s AND user_id = %s",
+        (slot_id, user_id),
+    )
+    if not cur.fetchone():
+        cur.close()
+        conn.close()
+        raise HTTPException(status_code=404, detail="Slot not found")
+
+    cur.execute("SET app.current_save_slot_id = %s", (slot_id,))
+    events = get_events(cur, slot_id, limit=min(limit, 500))
+    cur.close()
+    conn.close()
+    return {"events": events}
+
+
+MAX_CHAT_MESSAGES = 50
+
+
 class ChatRequest(BaseModel):
     message: str
-    history: list[dict] = []
+
+
+def _load_chat_history(cur, save_slot_id: str, survivor_id: str) -> list[dict]:
+    cur.execute(
+        """SELECT speaker, text FROM game.chat_messages
+           WHERE save_slot_id = %s AND survivor_id = %s
+           ORDER BY created_at ASC""",
+        (save_slot_id, survivor_id),
+    )
+    return [{"speaker": r[0], "text": r[1]} for r in cur.fetchall()]
+
+
+def _save_chat_message(cur, save_slot_id: str, survivor_id: str, speaker: str, text: str):
+    cur.execute(
+        "INSERT INTO game.chat_messages (save_slot_id, survivor_id, speaker, text) VALUES (%s, %s, %s, %s)",
+        (save_slot_id, survivor_id, speaker, text),
+    )
+    # Enforce cap — delete oldest beyond limit
+    cur.execute(
+        """DELETE FROM game.chat_messages
+           WHERE id IN (
+               SELECT id FROM game.chat_messages
+               WHERE save_slot_id = %s AND survivor_id = %s
+               ORDER BY created_at DESC
+               OFFSET %s
+           )""",
+        (save_slot_id, survivor_id, MAX_CHAT_MESSAGES),
+    )
+
+
+@router.get("/{slot_id}/survivors/{survivor_id}/chat")
+def get_chat_history(
+    slot_id: str,
+    survivor_id: str,
+    authorization: str = Header(),
+):
+    user_id = _get_user_id(authorization)
+    conn = get_db()
+    cur = conn.cursor()
+    cur.execute("SET app.current_user_id = %s", (user_id,))
+
+    cur.execute(
+        "SELECT 1 FROM game.save_slots WHERE id = %s AND user_id = %s",
+        (slot_id, user_id),
+    )
+    if not cur.fetchone():
+        cur.close()
+        conn.close()
+        raise HTTPException(status_code=404, detail="Slot not found")
+
+    cur.execute("SET app.current_save_slot_id = %s", (slot_id,))
+    history = _load_chat_history(cur, slot_id, survivor_id)
+    cur.close()
+    conn.close()
+    return {"history": history}
 
 
 @router.post("/{slot_id}/survivors/{survivor_id}/chat")
@@ -244,10 +327,10 @@ def chat_with_survivor(
         (survivor_id, slot_id),
     )
     row = cur.fetchone()
-    cur.close()
-    conn.close()
 
     if not row:
+        cur.close()
+        conn.close()
         raise HTTPException(status_code=404, detail="Survivor not found")
 
     survivor = {
@@ -264,9 +347,37 @@ def chat_with_survivor(
     }
 
     if survivor["is_dead"]:
+        cur.close()
+        conn.close()
         return {"response": "..."}
     if not survivor["is_activated"]:
+        cur.close()
+        conn.close()
         raise HTTPException(status_code=400, detail="Survivor not yet encountered")
 
-    response = get_survivor_response(survivor, req.message, req.history)
+    # Load history from DB
+    history = _load_chat_history(cur, slot_id, survivor_id)
+
+    # Load emotional context for system prompt
+    emotional_tags = get_recent_emotional_tags(cur, slot_id, survivor_id)
+    boundaries = get_hard_boundaries(survivor["lore_id"], survivor["relationship_strength"])
+
+    # Get AI response (with emotional context and boundaries)
+    response = get_survivor_response(survivor, req.message, history, emotional_tags, boundaries)
+
+    # Persist both messages
+    _save_chat_message(cur, slot_id, survivor_id, "player", req.message)
+    _save_chat_message(cur, slot_id, survivor_id, "survivor", response)
+
+    # Evaluate the exchange and apply consequences
+    config = load_chat_rules()
+    evaluation = evaluate_exchange(survivor["name"], req.message, response, config)
+    if evaluation:
+        game_day = get_current_game_day()
+        apply_consequences(cur, slot_id, survivor_id, survivor, evaluation, game_day)
+
+    conn.commit()
+
+    cur.close()
+    conn.close()
     return {"response": response}

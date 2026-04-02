@@ -9,36 +9,39 @@ export interface ChatLine {
 export interface ChatState {
   selectedSurvivor: Survivor | null
   histories: Record<string, ChatLine[]>
+  loadedFromDb: Record<string, boolean>
 }
 
-const MAX_LINES = 50
-
 export function createChatState(): ChatState {
-  return { selectedSurvivor: null, histories: {} }
+  return { selectedSurvivor: null, histories: {}, loadedFromDb: {} }
 }
 
 export function selectSurvivor(state: ChatState, survivor: Survivor): ChatState {
-  const id = survivor.id
-  const existing = state.histories[id]
-
   // If already selected, deselect
-  if (state.selectedSurvivor?.id === id) {
+  if (state.selectedSurvivor?.id === survivor.id) {
     return { ...state, selectedSurvivor: null }
   }
-
-  // If no history yet, add a greeting
-  if (!existing || existing.length === 0) {
-    const greeting = getGreeting(survivor.lore_id, survivor.relationship_strength)
-    return {
-      selectedSurvivor: survivor,
-      histories: {
-        ...state.histories,
-        [id]: [{ speaker: 'survivor', text: greeting }],
-      },
-    }
-  }
-
   return { ...state, selectedSurvivor: survivor }
+}
+
+export function setHistory(state: ChatState, survivorId: string, history: ChatLine[]): ChatState {
+  return {
+    ...state,
+    histories: { ...state.histories, [survivorId]: history },
+    loadedFromDb: { ...state.loadedFromDb, [survivorId]: true },
+  }
+}
+
+export function addGreeting(state: ChatState, survivor: Survivor): ChatState {
+  const id = survivor.id
+  const greeting = getGreeting(survivor.lore_id, survivor.relationship_strength)
+  return {
+    ...state,
+    histories: {
+      ...state.histories,
+      [id]: [{ speaker: 'survivor', text: greeting }],
+    },
+  }
 }
 
 export function addPlayerMessage(state: ChatState, text: string): ChatState {
@@ -47,10 +50,7 @@ export function addPlayerMessage(state: ChatState, text: string): ChatState {
   const history = [...(state.histories[id] || []), { speaker: 'player' as const, text }]
   return {
     ...state,
-    histories: {
-      ...state.histories,
-      [id]: history.slice(-MAX_LINES),
-    },
+    histories: { ...state.histories, [id]: history },
   }
 }
 
@@ -58,9 +58,6 @@ export function addSurvivorMessage(state: ChatState, survivorId: string, text: s
   const history = [...(state.histories[survivorId] || []), { speaker: 'survivor' as const, text }]
   return {
     ...state,
-    histories: {
-      ...state.histories,
-      [survivorId]: history.slice(-MAX_LINES),
-    },
+    histories: { ...state.histories, [survivorId]: history },
   }
 }

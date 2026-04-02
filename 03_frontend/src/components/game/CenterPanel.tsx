@@ -1,32 +1,71 @@
 import { useEffect, useRef } from 'react'
 import type { ChatState } from '../../lib/chat'
+import type { GameLogState } from '../../lib/gameLog'
 
 interface Props {
   chat: ChatState
+  gameLog: GameLogState
   responding?: boolean
+  loadingHistory?: boolean
 }
 
-export default function CenterPanel({ chat, responding }: Props) {
-  const feedRef = useRef<HTMLDivElement>(null)
+export default function CenterPanel({ chat, gameLog, responding, loadingHistory }: Props) {
+  const chatFeedRef = useRef<HTMLDivElement>(null)
+  const logFeedRef = useRef<HTMLDivElement>(null)
   const { selectedSurvivor, histories } = chat
   const chatLines = selectedSurvivor ? (histories[selectedSurvivor.id] || []) : []
 
   useEffect(() => {
-    if (feedRef.current) {
-      feedRef.current.scrollTop = feedRef.current.scrollHeight
+    if (chatFeedRef.current) {
+      chatFeedRef.current.scrollTop = chatFeedRef.current.scrollHeight
     }
-  }, [chatLines.length])
+  }, [chatLines.length, responding])
+
+  useEffect(() => {
+    if (logFeedRef.current) {
+      logFeedRef.current.scrollTop = logFeedRef.current.scrollHeight
+    }
+  }, [gameLog.events.length])
+
+  // Group events by game_day for day markers
+  const renderLogEntries = () => {
+    const entries: JSX.Element[] = []
+    let lastDay = 0
+
+    for (const event of gameLog.events) {
+      if (event.game_day !== lastDay) {
+        entries.push(
+          <div key={`day-${event.game_day}`} className="log-day-marker">
+            ── Day {event.game_day} ──
+          </div>
+        )
+        lastDay = event.game_day
+      }
+      entries.push(
+        <p key={event.id} className={`log-entry log-${event.event_type}`}>
+          {event.text}
+        </p>
+      )
+    }
+    return entries
+  }
 
   return (
     <div className="panel center-panel">
-      {/* Event Log — top half */}
+      {/* Game Log — top half */}
       <div className="center-log">
         <div className="center-log-header">
-          <span className="center-header-text">No active expedition</span>
+          <span className="center-header-text">Camp Log</span>
         </div>
-        <div className="center-log-feed">
-          <p className="placeholder-text center-placeholder">Deploy a team to begin.</p>
-          <span className="cursor-blink">{'\u2588'}</span>
+        <div className="center-log-feed" ref={logFeedRef}>
+          {gameLog.events.length === 0 ? (
+            <>
+              <p className="placeholder-text center-placeholder">No events yet.</p>
+              <span className="cursor-blink">{'\u2588'}</span>
+            </>
+          ) : (
+            renderLogEntries()
+          )}
         </div>
       </div>
 
@@ -40,7 +79,13 @@ export default function CenterPanel({ chat, responding }: Props) {
               <span className="console-header-name">{selectedSurvivor.name}</span>
               <span className="console-header-bg"> · {selectedSurvivor.background}</span>
             </div>
-            <div className="center-console-feed" ref={feedRef}>
+            <div className="center-console-feed" ref={chatFeedRef}>
+              {loadingHistory && (
+                <p className="console-line console-typing">
+                  <span className="console-prefix">&gt;</span>
+                  <span className="typing-indicator">Loading conversation...</span>
+                </p>
+              )}
               {chatLines.map((line, i) => (
                 <p key={i} className={`console-line ${line.speaker === 'player' ? 'console-line-player' : 'console-line-survivor'}`}>
                   <span className="console-prefix">{line.speaker === 'player' ? '>' : `${selectedSurvivor.name}:`}</span>

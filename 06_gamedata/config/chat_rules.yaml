@@ -1,0 +1,123 @@
+# Chat Rules & Consequences Configuration
+# Edit this file to tune conversation consequences without touching code.
+
+# Emotional evaluation — the second lightweight AI call after each exchange
+evaluation:
+  model: "gpt-4o-mini"
+  max_tokens: 200
+  temperature: 0.3
+
+# How relationship_strength moves per sentiment type
+relationship_deltas:
+  positive: 2
+  negative: -3
+  neutral: 0
+  mixed: 1
+
+# Clamp relationship_strength to this range
+relationship_range:
+  min: 0
+  max: 100
+
+# Probability that a social log entry appears after a consequence (0.0 - 1.0)
+# Lower = less log spam. Set to 0 to disable social log entries entirely.
+social_log_probability: 0.4
+
+# Hard boundaries — topics survivors refuse at given trust levels
+# threshold: minimum relationship_strength required to discuss the topic
+# threshold 100 = never (no one reaches 100 naturally)
+# refusal: the exact line the survivor says when the boundary is hit
+hard_boundaries:
+  raine:
+    - topic: "abandoning or giving up otto"
+      threshold: 100
+      refusal: "Don't. Don't even say that."
+    - topic: "otto being a burden or liability"
+      threshold: 100
+      refusal: "We're done talking."
+    - topic: "risking otto's safety"
+      threshold: 60
+      refusal: "I'm not discussing that with you. Not yet."
+  lena:
+    - topic: "being called doctor or nurse"
+      threshold: 100
+      refusal: "I'm not a nurse. I've told you this."
+    - topic: "performing surgery or complex medical procedures"
+      threshold: 80
+      refusal: "That's beyond what I can do. I won't pretend otherwise."
+  marsh:
+    - topic: "his past or what happened before"
+      threshold: 80
+      refusal: "..."
+    - topic: "why he doesn't talk"
+      threshold: 60
+      refusal: "..."
+  juno:
+    - topic: "being too young or just a kid"
+      threshold: 100
+      refusal: "I'm not a kid."
+    - topic: "needing adult supervision"
+      threshold: 60
+      refusal: "I can handle it. Stop."
+  otto:
+    - topic: "separation from raine"
+      threshold: 100
+      refusal: "*shakes head and backs away*"
+  rook:
+    - topic: "real name or true identity"
+      threshold: 60
+      refusal: "Nice try."
+    - topic: "past crimes or criminal history"
+      threshold: 40
+      refusal: "You don't need to know that."
+  cullum:
+    - topic: "who he was before"
+      threshold: 70
+      refusal: "*turns away*"
+  alma:
+    - topic: "her parents or family"
+      threshold: 60
+      refusal: "*goes quiet*"
+  bridget:
+    - topic: "ignoring the numbers or data"
+      threshold: 100
+      refusal: "The math doesn't lie. Even if you don't want to hear it."
+
+# Log message templates — {survivor} and {target} are interpolated
+# Multiple templates per category — one is picked at random
+log_messages:
+  social_positive:
+    - "{survivor} seems lighter today."
+    - "{survivor} was humming something near the water barrel."
+    - "You catch {survivor} glancing your way. Not unfriendly."
+    - "{survivor} nodded at you during the morning count."
+  social_negative:
+    - "{survivor} seems quieter than usual around you."
+    - "{survivor} avoided eye contact at dinner."
+    - "Something shifted in {survivor}'s demeanor."
+    - "{survivor} left the fire when you sat down."
+  social_ripple_positive:
+    - "{survivor} seems warmer since you talked to {target}."
+    - "{survivor} mentioned you were good to {target}."
+  social_ripple_negative:
+    - "{survivor} heard about your conversation with {target}. They seem uneasy."
+    - "{survivor} is quieter since you spoke with {target}."
+  promise_made:
+    - "You made a promise to {survivor}. They'll remember."
+
+# Social ripple — how connected survivors are affected by your interactions
+social_ripple:
+  enabled: true
+  default_multiplier: 0.3
+  # Override multiplier for specific pairs (survivor: { connected_survivor: multiplier })
+  relationship_multipliers:
+    otto: { raine: 0.8 }
+    raine: { otto: 0.7 }
+    juno: { otto: 0.5, alma: 0.4 }
+    alma: { juno: 0.4 }
+    sol: { sera: 0.4 }
+    lena: { sera: 0.3, juno: 0.3 }
+    darro: { dag: 0.4 }
+    dag: { darro: 0.4 }
+    tomas: { rook: 0.3 }
+    yssa: { ivo: 0.3 }
