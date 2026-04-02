@@ -3,9 +3,10 @@ import type { ChatState } from '../../lib/chat'
 
 interface Props {
   chat: ChatState
+  responding?: boolean
 }
 
-export default function CenterPanel({ chat }: Props) {
+export default function CenterPanel({ chat, responding }: Props) {
   const feedRef = useRef<HTMLDivElement>(null)
   const { selectedSurvivor, histories } = chat
   const chatLines = selectedSurvivor ? (histories[selectedSurvivor.id] || []) : []
@@ -46,6 +47,12 @@ export default function CenterPanel({ chat }: Props) {
                   {line.text}
                 </p>
               ))}
+              {responding && (
+                <p className="console-line console-line-survivor console-typing">
+                  <span className="console-prefix">{selectedSurvivor.name}:</span>
+                  <span className="typing-indicator">...</span>
+                </p>
+              )}
             </div>
           </>
         ) : (

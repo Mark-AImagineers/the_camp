@@ -4,15 +4,16 @@ import type { Survivor } from './SurvivorRow'
 interface Props {
   selectedSurvivor: Survivor | null
   onSend: (text: string) => void
+  disabled?: boolean
 }
 
-export default function BottomBar({ selectedSurvivor, onSend }: Props) {
+export default function BottomBar({ selectedSurvivor, onSend, disabled }: Props) {
   const [input, setInput] = useState('')
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     const trimmed = input.trim()
-    if (!trimmed || !selectedSurvivor) return
+    if (!trimmed || !selectedSurvivor || disabled) return
     onSend(trimmed)
     setInput('')
   }
@@ -30,7 +31,7 @@ export default function BottomBar({ selectedSurvivor, onSend }: Props) {
           value={input}
           onChange={e => setInput(e.target.value)}
           placeholder={selectedSurvivor ? 'Say something...' : 'Select a survivor to talk'}
-          disabled={!selectedSurvivor}
+          disabled={!selectedSurvivor || disabled}
           autoComplete="off"
           spellCheck={false}
         />

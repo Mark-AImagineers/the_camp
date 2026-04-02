@@ -5,6 +5,8 @@ interface Survivor {
   background: string
   age: number
   persona: string | null
+  voice_notes: string | null
+  quirks: string | null
   stats: { str: number; dex: number; agi: number; per: number; end: number; int: number; lck: number }
   hp: number
   max_hp: number

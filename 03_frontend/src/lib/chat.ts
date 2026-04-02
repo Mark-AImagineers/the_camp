@@ -53,3 +53,14 @@ export function addPlayerMessage(state: ChatState, text: string): ChatState {
     },
   }
 }
+
+export function addSurvivorMessage(state: ChatState, survivorId: string, text: string): ChatState {
+  const history = [...(state.histories[survivorId] || []), { speaker: 'survivor' as const, text }]
+  return {
+    ...state,
+    histories: {
+      ...state.histories,
+      [survivorId]: history.slice(-MAX_LINES),
+    },
+  }
+}

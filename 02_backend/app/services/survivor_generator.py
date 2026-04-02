@@ -15,6 +15,7 @@ def _load_character_file(f: Path) -> dict:
         "age": data["identity"].get("age"),
         "gender": data["identity"].get("gender"),
         "persona": data["personality"].get("persona"),
+        "voice_notes": data["personality"].get("voice_notes"),
         "quirks": data["personality"].get("quirks"),
         "stats": stats,
         "traits": data.get("traits", []),
@@ -83,14 +84,14 @@ def _insert_survivor(cur, save_slot_id: str, char: dict, is_activated: bool):
     cur.execute(
         """INSERT INTO game.survivors (
             save_slot_id, lore_id, name, background, background_detail,
-            age, gender, persona, quirks,
+            age, gender, persona, voice_notes, quirks,
             str, dex, agi, per, endurance, int_stat, lck,
             hp, max_hp, condition, is_activated,
             stat_growth, traits, skills, inventory, rations,
             relationship_strength, morale_modifier
         ) VALUES (
             %s, %s, %s, %s, %s,
-            %s, %s, %s, %s,
+            %s, %s, %s, %s, %s,
             %s, %s, %s, %s, %s, %s, %s,
             %s, %s, 'healthy', %s,
             %s, %s, %s, %s, %s,
@@ -105,6 +106,7 @@ def _insert_survivor(cur, save_slot_id: str, char: dict, is_activated: bool):
             char.get("age"),
             char.get("gender"),
             char.get("persona"),
+            char.get("voice_notes"),
             char.get("quirks"),
             str_val, dex_val, agi_val, per_val, end_val, int_val, lck_val,
             hp_val, hp_val,
